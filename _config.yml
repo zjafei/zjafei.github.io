@@ -4,7 +4,7 @@
 
 # Site
 title: 代码猴
-subtitle: coding is life...
+subtitle: coding is monkey...
 description:
 author: Eric Ma
 language: zh-cn
@@ -72,7 +72,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: landscape
+theme: next
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
