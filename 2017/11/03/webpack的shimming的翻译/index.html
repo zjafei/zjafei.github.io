@@ -8,17 +8,19 @@
   <link rel="dns-prefetch" href="//zjafei.coding.me">
   <title>webpack的shimming的翻译 | 代码猴</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="webpack编译器可以理解写入的ES2015模块，CommonJS或AMD的模块。然而，一些第三方库可能会期望全局依赖（例如jQuery的$）。这些库可能还会创建需要导出的全局变量。这些“broken modules”使得shimming发挥了作用。 W&amp;gt; 我们不建议使用全局变量！ Webpack真正的概念是更多的模块化前端开发。这意味着编写完整包含的隔离模块，而不依赖于隐藏的依赖关系（例">
-<meta name="keywords" content="前端,js,jquery,javascript,html5,开发者,程序猿,程序媛,极客,编程,代码,开源,IT网站,Developer,Programmer,Coder,Geek,html,css,css3,用户体验">
+  <meta name="description" content="webpack编译器可以理解写入的ES2015模块，CommonJS或AMD的模块。然而，一些第三方库可能会期望全局依赖（例如jQuery的$）。这些库可能还会创建需要导出的全局变量。这些“broken modules”使得shimming发挥了作用。
+W&amp;gt; 我们不建议使用全局变量！ Webpack真正的概念是更多的模块化前端开发。这意味着编写完整包含的隔离模块，而不依赖于隐藏的依赖关系（例">
 <meta property="og:type" content="article">
 <meta property="og:title" content="webpack的shimming的翻译">
 <meta property="og:url" content="//zjafei.coding.me/2017/11/03/webpack的shimming的翻译/index.html">
 <meta property="og:site_name" content="代码猴">
-<meta property="og:description" content="webpack编译器可以理解写入的ES2015模块，CommonJS或AMD的模块。然而，一些第三方库可能会期望全局依赖（例如jQuery的$）。这些库可能还会创建需要导出的全局变量。这些“broken modules”使得shimming发挥了作用。 W&amp;gt; 我们不建议使用全局变量！ Webpack真正的概念是更多的模块化前端开发。这意味着编写完整包含的隔离模块，而不依赖于隐藏的依赖关系（例">
-<meta property="og:updated_time" content="2017-11-03T15:56:04.514Z">
+<meta property="og:description" content="webpack编译器可以理解写入的ES2015模块，CommonJS或AMD的模块。然而，一些第三方库可能会期望全局依赖（例如jQuery的$）。这些库可能还会创建需要导出的全局变量。这些“broken modules”使得shimming发挥了作用。
+W&amp;gt; 我们不建议使用全局变量！ Webpack真正的概念是更多的模块化前端开发。这意味着编写完整包含的隔离模块，而不依赖于隐藏的依赖关系（例">
+<meta property="og:updated_time" content="2017-11-04T04:27:12.827Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="webpack的shimming的翻译">
-<meta name="twitter:description" content="webpack编译器可以理解写入的ES2015模块，CommonJS或AMD的模块。然而，一些第三方库可能会期望全局依赖（例如jQuery的$）。这些库可能还会创建需要导出的全局变量。这些“broken modules”使得shimming发挥了作用。 W&amp;gt; 我们不建议使用全局变量！ Webpack真正的概念是更多的模块化前端开发。这意味着编写完整包含的隔离模块，而不依赖于隐藏的依赖关系（例">
+<meta name="twitter:description" content="webpack编译器可以理解写入的ES2015模块，CommonJS或AMD的模块。然而，一些第三方库可能会期望全局依赖（例如jQuery的$）。这些库可能还会创建需要导出的全局变量。这些“broken modules”使得shimming发挥了作用。
+W&amp;gt; 我们不建议使用全局变量！ Webpack真正的概念是更多的模块化前端开发。这意味着编写完整包含的隔离模块，而不依赖于隐藏的依赖关系（例">
   
   
     <link rel="icon" href="/0/logo.png">
@@ -342,6 +344,20 @@
 </article>
 
   
+<nav id="article-nav">
+  
+    <a href="/2017/11/05/webpack的常用插件/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          webpack的常用插件
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">

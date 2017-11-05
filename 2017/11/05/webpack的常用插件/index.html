@@ -6,17 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="//zjafei.coding.me">
-  <title>代码猴</title>
+  <title>webpack的常用插件 | 代码猴</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="代码猴">
-<meta property="og:url" content="//zjafei.coding.me/index.html">
+  <meta name="description" content="project
+12345678html-webpack-plugin|- package.json|- webpack.config.js|- /src  |- index.js  |- style.css|- /index.html|- /node_modules">
+<meta property="og:type" content="article">
+<meta property="og:title" content="webpack的常用插件">
+<meta property="og:url" content="//zjafei.coding.me/2017/11/05/webpack的常用插件/index.html">
 <meta property="og:site_name" content="代码猴">
-<meta property="og:description">
+<meta property="og:description" content="project
+12345678html-webpack-plugin|- package.json|- webpack.config.js|- /src  |- index.js  |- style.css|- /index.html|- /node_modules">
+<meta property="og:updated_time" content="2017-11-05T12:30:49.256Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="代码猴">
-<meta name="twitter:description">
+<meta name="twitter:title" content="webpack的常用插件">
+<meta name="twitter:description" content="project
+12345678html-webpack-plugin|- package.json|- webpack.config.js|- /src  |- index.js  |- style.css|- /index.html|- /node_modules">
   
   
     <link rel="icon" href="/0/logo.png">
@@ -140,16 +144,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-webpack的常用插件" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-webpack的常用插件" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/11/05/webpack的常用插件/">webpack的常用插件</a>
+    <h1 class="article-title" itemprop="name">
+      webpack的常用插件
     </h1>
   
 
@@ -164,11 +166,74 @@
       
         <p><strong>project</strong></p>
 <figure class="highlight diff"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">html-webpack-plugin</div><div class="line">|- package.json</div><div class="line">|- webpack.config.js</div><div class="line">|- /src</div><div class="line">  |- index.js</div><div class="line">  |- style.css</div><div class="line">|- /index.html</div><div class="line">|- /node_modules</div></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2017/11/05/webpack的常用插件/#more">... >></a>
-        
+<a id="more"></a>
+<p><strong>index.html</strong><br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>hello webpack<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"description"</span> <span class="attr">content</span>=<span class="string">""</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"./dist/index.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p><strong>package.json</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="string">"name"</span>: <span class="string">"html-webpack-plugin"</span>,</div><div class="line">  <span class="string">"version"</span>: <span class="string">"1.0.0"</span>,</div><div class="line">  <span class="string">"description"</span>: <span class="string">""</span>,</div><div class="line">  <span class="string">"main"</span>: <span class="string">"index.js"</span>,</div><div class="line">  <span class="string">"scripts"</span>: &#123;</div><div class="line">    <span class="string">"build"</span>: <span class="string">"webpack --config webpack.config.js"</span></div><div class="line">  &#125;,</div><div class="line">  <span class="string">"repository"</span>: &#123;&#125;,</div><div class="line">  <span class="string">"keywords"</span>: [],</div><div class="line">  <span class="string">"author"</span>: <span class="string">""</span>,</div><div class="line">  <span class="string">"license"</span>: <span class="string">"ISC"</span>,</div><div class="line">  <span class="string">"devDependencies"</span>: &#123;</div><div class="line">    <span class="string">"css-loader"</span>: <span class="string">"^0.28.7"</span>,</div><div class="line">    <span class="string">"style-loader"</span>: <span class="string">"^0.19.0"</span>,</div><div class="line">    <span class="string">"webpack"</span>: <span class="string">"^3.8.1"</span></div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><strong>package.json</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);</div><div class="line"></div><div class="line"><span class="built_in">module</span>.exports = &#123;</div><div class="line">    entry: &#123;</div><div class="line">        index: <span class="string">'./src/index.js'</span>,</div><div class="line">    &#125;,</div><div class="line">    output: &#123;</div><div class="line">        filename: <span class="string">'[name].js'</span>,</div><div class="line">        path: path.resolve(__dirname, <span class="string">'dist'</span>),</div><div class="line">    &#125;,</div><div class="line">    <span class="built_in">module</span>: &#123;</div><div class="line">        rules: [</div><div class="line">            &#123;</div><div class="line">                test: <span class="regexp">/\.css$/</span>,</div><div class="line">                use: [</div><div class="line">                    &#123; <span class="attr">loader</span>: <span class="string">'style-loader'</span> &#125;,</div><div class="line">                    &#123;</div><div class="line">                        loader: <span class="string">'css-loader'</span>,</div><div class="line">                        options: &#123;</div><div class="line">                            modules: <span class="literal">true</span></div><div class="line">                        &#125;</div><div class="line">                    &#125;</div><div class="line">                ]</div><div class="line">            &#125;</div><div class="line">        ]</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<p><strong>src/index.js</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> style <span class="keyword">from</span> <span class="string">'./style.css'</span>;</div><div class="line"></div><div class="line"><span class="keyword">const</span> h1 = <span class="built_in">document</span>.createElement(<span class="string">'h1'</span>);</div><div class="line">h1.className = style.danger;</div><div class="line">h1.innerHTML = <span class="string">'hello webpack'</span>;</div><div class="line"><span class="built_in">document</span>.body.appendChild(h1);</div></pre></td></tr></table></figure>
+<p><strong>src/style.css</strong></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.danger</span>&#123;</div><div class="line">    <span class="attribute">color</span>: red</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">npm i</div><div class="line">npm run build</div></pre></td></tr></table></figure>
+<p><strong>extract-text-webpack-plugin</strong></p>
+<p><a href="https://doc.webpack-china.org/plugins/extract-text-webpack-plugin/" target="_blank" rel="external">extract-text-webpack-plugin</a>：从捆绑包或捆绑包中提取文本到单独的文件中。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install --save-dev extract-text-webpack-plugin</div></pre></td></tr></table></figure>
+<figure class="highlight diff"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div></pre></td><td class="code"><pre><div class="line">const path = require('path');</div><div class="line"><span class="addition">+const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin');</span></div><div class="line"></div><div class="line">module.exports = &#123;</div><div class="line">    entry: &#123;</div><div class="line">        index: './src/index.js',</div><div class="line">    &#125;,</div><div class="line">    output: &#123;</div><div class="line">        filename: '[name].js',</div><div class="line">        path: path.resolve(__dirname, 'dist'),</div><div class="line">    &#125;,</div><div class="line">    module: &#123;</div><div class="line">        rules: [</div><div class="line"><span class="deletion">-           &#123;</span></div><div class="line"><span class="deletion">-               test: /\.css$/,</span></div><div class="line"><span class="deletion">-               use: [</span></div><div class="line"><span class="deletion">-                  &#123; loader: 'style-loader' &#125;,</span></div><div class="line"><span class="deletion">-                  &#123;</span></div><div class="line"><span class="deletion">-                       loader: 'css-loader',</span></div><div class="line"><span class="deletion">-                       options: &#123;</span></div><div class="line"><span class="deletion">-                           modules: true</span></div><div class="line"><span class="deletion">-                       &#125;</span></div><div class="line"><span class="deletion">-                   &#125;</span></div><div class="line"><span class="deletion">-               ]</span></div><div class="line"><span class="deletion">-           &#125;</span></div><div class="line"><span class="addition">+           &#123;</span></div><div class="line"><span class="addition">+               test: /\.css$/,</span></div><div class="line"><span class="addition">+               use: ExtractTextWebpackPlugin.extract(&#123;</span></div><div class="line"><span class="addition">+                   fallback: "style-loader",</span></div><div class="line"><span class="addition">+                   use: [&#123;</span></div><div class="line"><span class="addition">+                       loader: 'css-loader',</span></div><div class="line"><span class="addition">+                       options: &#123;</span></div><div class="line"><span class="addition">+                           modules: true,</span></div><div class="line"><span class="addition">+                           localIdentName: '[path]_[name]_[local]_[hash:base64:5]'</span></div><div class="line"><span class="addition">+                       &#125;</span></div><div class="line"><span class="addition">+                   &#125;]</span></div><div class="line"><span class="addition">+               &#125;)</span></div><div class="line"><span class="addition">+           &#125;</span></div><div class="line">        ]</div><div class="line"><span class="deletion">-   &#125;</span></div><div class="line"><span class="addition">+   &#125;,</span></div><div class="line"><span class="addition">+plugins: [</span></div><div class="line"><span class="addition">+       new ExtractTextWebpackPlugin("style.css")</span></div><div class="line"><span class="addition">+   ]</span></div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<p><strong>index.html</strong><br><figure class="highlight diff"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">&lt;head&gt;</div><div class="line">    &lt;meta charset="UTF-8"&gt;</div><div class="line">    &lt;title&gt;hello webpack&lt;/title&gt;</div><div class="line">    &lt;meta name="description" content=""&gt;</div><div class="line">    &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;</div><div class="line"><span class="addition">+   &lt;link type="text/css" rel="stylesheet" href="./dist/style.css"/&gt;</span></div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">&lt;script src="./dist/index.js"&gt;&lt;/script&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm run build</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">use: ExtractTextWebpackPlugin.extract(</div><div class="line">    &#123;</div><div class="line">        fallback: <span class="string">"style-loader"</span>, <span class="comment">// 编译后用什么loader来提取css文件</span></div><div class="line">        use: <span class="string">"css-loader"</span> <span class="comment">// 指需要什么样的loader去编译文件,这里由于源文件是.css所以选择css-loader</span></div><div class="line">    &#125;</div><div class="line">)</div></pre></td></tr></table></figure>
+<p><strong>clean-webpack-plugin</strong></p>
+<p><a href="https://www.npmjs.com/package/clean-webpack-plugin" target="_blank" rel="external">clean-webpack-plugin</a>：对目标文件的清理</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install --save-dev clean-webpack-plugin</div></pre></td></tr></table></figure>
+<figure class="highlight diff"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line">const path = require('path');</div><div class="line">const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin');</div><div class="line"><span class="addition">+const CleanWebpackPlugin = require('clean-webpack-plugin');</span></div><div class="line"></div><div class="line">module.exports = &#123;</div><div class="line">    entry: &#123;</div><div class="line">        index: './src/index.js',</div><div class="line">    &#125;,</div><div class="line">    output: &#123;</div><div class="line">        filename: '[name].js',</div><div class="line">        path: path.resolve(__dirname, 'dist'),</div><div class="line">    &#125;,</div><div class="line">    module: &#123;</div><div class="line">        rules: [</div><div class="line">           &#123;</div><div class="line">               test: /\.css$/,</div><div class="line">               use: ExtractTextWebpackPlugin.extract(&#123;</div><div class="line">                   fallback: "style-loader",</div><div class="line">                   use: [&#123;</div><div class="line">                       loader: 'css-loader',</div><div class="line">                       options: &#123;</div><div class="line">                           modules: true,</div><div class="line">                           localIdentName: '[path]_[name]_[local]_[hash:base64:5]'</div><div class="line">                       &#125;</div><div class="line">                   &#125;]</div><div class="line">               &#125;)</div><div class="line">           &#125;</div><div class="line">        ]</div><div class="line">     &#125;,</div><div class="line">plugins: [</div><div class="line"><span class="addition">+       new CleanWebpackPlugin(['dist']),</span></div><div class="line">        new ExtractTextWebpackPlugin("style.css")</div><div class="line">    ]</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm run build</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//参数说明</span></div><div class="line"><span class="keyword">new</span> CleanWebpackPlugin(</div><div class="line">    [<span class="string">'dist/main.*.js'</span>,<span class="string">'dist/manifest.*.js'</span>],　  <span class="comment">//匹配删除的文件</span></div><div class="line">    &#123;</div><div class="line">        root: __dirname,       　　　　　　　　　　<span class="comment">//根目录</span></div><div class="line">        verbose:  <span class="literal">true</span>,        　　　　　　　　　　<span class="comment">//开启在控制台输出信息</span></div><div class="line">        dry:      <span class="literal">false</span>        　　　　　　　　　　<span class="comment">//启用删除文件</span></div><div class="line">    &#125;</div><div class="line">)</div></pre></td></tr></table></figure>
+<p><strong>html-webpack-plugin</strong><br><a href="https://doc.webpack-china.org/plugins/html-webpack-plugin" target="_blank" rel="external">html-webpack-plugin</a>：简化了HTML文件的创建，以便为您的webpack包提供服务。 这对于在文件名中包含每次会随着变异会发生变化的哈希的webpack bundle尤其有用。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install --save-dev html-webpack-plugin</div></pre></td></tr></table></figure>
+<figure class="highlight diff"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div></pre></td><td class="code"><pre><div class="line">const path = require('path');</div><div class="line">const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin');</div><div class="line">const CleanWebpackPlugin = require('clean-webpack-plugin');</div><div class="line"><span class="addition">+const HtmlWebpackPlugin = require('html-webpack-plugin');</span></div><div class="line"></div><div class="line">module.exports = &#123;</div><div class="line">    entry: &#123;</div><div class="line">        index: './src/index.js',</div><div class="line">    &#125;,</div><div class="line">    output: &#123;</div><div class="line">        filename: '[name].js',</div><div class="line">        path: path.resolve(__dirname, 'dist'),</div><div class="line">    &#125;,</div><div class="line">    module: &#123;</div><div class="line">        rules: [</div><div class="line">           &#123;</div><div class="line">               test: /\.css$/,</div><div class="line">               use: ExtractTextWebpackPlugin.extract(&#123;</div><div class="line">                   fallback: "style-loader",</div><div class="line">                   use: [&#123;</div><div class="line">                       loader: 'css-loader',</div><div class="line">                       options: &#123;</div><div class="line">                           modules: true,</div><div class="line">                           localIdentName: '[path]_[name]_[local]_[hash:base64:5]'</div><div class="line">                       &#125;</div><div class="line">                   &#125;]</div><div class="line">               &#125;)</div><div class="line">           &#125;</div><div class="line">        ]</div><div class="line">     &#125;,</div><div class="line">plugins: [</div><div class="line"><span class="addition">+       new HtmlWebpackPlugin(&#123;</span></div><div class="line"><span class="addition">+           filename: 'main.html',</span></div><div class="line"><span class="addition">+           template: './src/template.html',</span></div><div class="line"><span class="addition">+           title: 'Webpack App title from webpack'</span></div><div class="line"><span class="addition">+       &#125;),</span></div><div class="line">        new CleanWebpackPlugin(['dist']),</div><div class="line">        new ExtractTextWebpackPlugin("style.css")</div><div class="line">    ]</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<p><strong>src/template</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span><span class="tag">&lt;<span class="name">%=</span> <span class="attr">htmlWebpackPlugin.options.title</span> %&gt;</span><span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm run build</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//参数说明</span></div><div class="line"><span class="keyword">new</span> HtmlWebpackPlugin(</div><div class="line">    &#123;</div><div class="line">        title: <span class="string">'Webpack App title from webpack'</span>, <span class="comment">// 用来生成页面的 title 元素</span></div><div class="line">        filename: <span class="string">'main.html'</span>, <span class="comment">// 输出的 HTML 文件名，默认是 index.html, 也可以直接配置带有子目录。</span></div><div class="line">        template: <span class="string">'./src/template.html'</span> <span class="comment">// 模板文件路径，支持加载器，比如 html!./index.html</span></div><div class="line">        inject: <span class="string">'head'</span>, <span class="comment">// true | 'head' | 'body' | false  ,注入所有的资源到特定的 template 或者    templateContent 中，如果设置为 true 或者 body，所有的 javascript 资源将被放置到 body 元素的底部，'head' 将放置到 head 元素中。</span></div><div class="line">        favicon: <span class="string">'path/to/yourfile.ico'</span>, <span class="comment">// 添加特定的 favicon 路径到输出的 HTML 文件中。</span></div><div class="line">        minify: &#123; <span class="comment">// &#123;&#125; | false , 传递 html-minifier 选项给 minify 输出</span></div><div class="line">            removeAttributeQuotes: <span class="literal">true</span> <span class="comment">// 移除属性的引号</span></div><div class="line">        &#125;,</div><div class="line">        hash: <span class="literal">true</span>, <span class="comment">// true | false, 如果为 true, 将添加一个唯一的 webpack 编译 hash 到所有包含的脚本和 CSS件，对于解除 cache 很有用。&lt;script type=text/javascript src=bundle.js?22b9692e22e7be37b57e&gt;&lt;/script&gt;</span></div><div class="line">        cache: <span class="literal">true</span>, <span class="comment">// true | false，如果为 true, 这是默认值，仅仅在文件修改之后才会发布文件。</span></div><div class="line">        showErrors:<span class="literal">true</span>, <span class="comment">// true | false, 如果为 true, 这是默认值，错误信息会写入到 HTML 页面中</span></div><div class="line">        chunks: [<span class="string">'chunk1'</span>,<span class="string">'chunk2'</span>], <span class="comment">// 允许只添加某些块 (比如，仅仅 unit test 块)</span></div><div class="line">        excludeChunks: [<span class="string">'chunk3'</span>,<span class="string">'chunk4'</span>],<span class="comment">// 允许跳过某些块，(比如，跳过单元测试的块)        </span></div><div class="line">    &#125;</div><div class="line">)</div></pre></td></tr></table></figure>
+<blockquote>
+<p>参考<a href="https://segmentfault.com/a/1190000007294861" target="_blank" rel="external">https://segmentfault.com/a/1190000007294861</a></p>
+</blockquote>
+
       
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/0/alipay.png">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/0/weixin.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -177,16 +242,75 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/05/webpack的常用插件/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://zjafei.coding.me/2017/11/05/webpack的常用插件/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2017/11/03/webpack的shimming的翻译/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">webpack的shimming的翻译</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -206,75 +330,14 @@
 
 
 
-
   
-    <article id="post-webpack的shimming的翻译" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/11/03/webpack的shimming的翻译/">webpack的shimming的翻译</a>
-    </h1>
   
 
-        
-        <a href="/2017/11/03/webpack的shimming的翻译/" class="archive-article-date">
-  	<time datetime="2017-11-03T14:10:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-03</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>webpack编译器可以理解写入的ES2015模块，CommonJS或AMD的模块。然而，一些第三方库可能会期望全局依赖（例如jQuery的$）。这些库可能还会创建需要导出的全局变量。这些“broken modules”使得shimming发挥了作用。</p>
-<p>W&gt; <strong>我们不建议使用全局变量！</strong> Webpack真正的概念是更多的模块化前端开发。这意味着编写完整包含的隔离模块，而不依赖于隐藏的依赖关系（例如全局变量）。所以请仅在必要时去主要做。</p>
-<p><em>shimming</em> 的另一个使用场景就是，如果您希望使用浏览器的<a href="https://en.wikipedia.org/wiki/Polyfill" target="_blank" rel="external">polyfill</a>功能来支持更多的用户。在这种情况下，您可能只想将这些Polyfill提供给需要修补的浏览器（即按需加载）。
-        
-          <a class="article-more-a" href="/2017/11/03/webpack的shimming的翻译/#more">... >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/03/webpack的shimming的翻译/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
+  
 
   
+
   
 
 
@@ -297,8 +360,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
