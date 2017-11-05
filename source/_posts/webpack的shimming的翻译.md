@@ -1,8 +1,7 @@
 ---
 title: webpack的shimming的翻译
 date: 2017-11-03 22:10:04
-tags: ['js', 'webpack', 'shimming','javascript','前端']
-category: coding
+tags:
 ---
 webpack编译器可以理解写入的ES2015模块，CommonJS或AMD的模块。然而，一些第三方库可能会期望全局依赖（例如jQuery的$）。这些库可能还会创建需要导出的全局变量。这些“broken modules”使得shimming发挥了作用。
 
