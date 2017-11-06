@@ -304,7 +304,7 @@ plugins: [
 ```
 
 
-__src/template__
+__src/template.html__
 
 ``` html
 <html>
