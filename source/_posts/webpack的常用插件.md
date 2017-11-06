@@ -2,7 +2,7 @@
 title: webpack的常用插件
 date: 2017-11-05 20:29:15
 tags: ['webpack','前端','js','javascript']
-type: 'coding'
+category: 'coding'
 ---
 
 __project__
