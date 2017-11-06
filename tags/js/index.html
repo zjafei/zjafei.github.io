@@ -6,21 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="//zjafei.coding.me">
-  <title>webpack的shimming的翻译 | 代码猴</title>
+  <title>Tag: js | 代码猴</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="webpack编译器可以理解写入的ES2015模块，CommonJS或AMD的模块。然而，一些第三方库可能会期望全局依赖（例如jQuery的$）。这些库可能还会创建需要导出的全局变量。这些“broken modules”使得shimming发挥了作用。
-W&amp;gt; 我们不建议使用全局变量！ Webpack真正的概念是更多的模块化前端开发。这意味着编写完整包含的隔离模块，而不依赖于隐藏的依赖关系（例">
-<meta property="og:type" content="article">
-<meta property="og:title" content="webpack的shimming的翻译">
-<meta property="og:url" content="//zjafei.coding.me/2017/11/03/webpack的shimming的翻译/index.html">
+  <meta name="description">
+<meta property="og:type" content="website">
+<meta property="og:title" content="代码猴">
+<meta property="og:url" content="//zjafei.coding.me/tags/js/index.html">
 <meta property="og:site_name" content="代码猴">
-<meta property="og:description" content="webpack编译器可以理解写入的ES2015模块，CommonJS或AMD的模块。然而，一些第三方库可能会期望全局依赖（例如jQuery的$）。这些库可能还会创建需要导出的全局变量。这些“broken modules”使得shimming发挥了作用。
-W&amp;gt; 我们不建议使用全局变量！ Webpack真正的概念是更多的模块化前端开发。这意味着编写完整包含的隔离模块，而不依赖于隐藏的依赖关系（例">
-<meta property="og:updated_time" content="2017-11-06T01:28:46.000Z">
+<meta property="og:description">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="webpack的shimming的翻译">
-<meta name="twitter:description" content="webpack编译器可以理解写入的ES2015模块，CommonJS或AMD的模块。然而，一些第三方库可能会期望全局依赖（例如jQuery的$）。这些库可能还会创建需要导出的全局变量。这些“broken modules”使得shimming发挥了作用。
-W&amp;gt; 我们不建议使用全局变量！ Webpack真正的概念是更多的模块化前端开发。这意味着编写完整包含的隔离模块，而不依赖于隐藏的依赖关系（例">
+<meta name="twitter:title" content="代码猴">
+<meta name="twitter:description">
   
   
     <link rel="icon" href="/0/logo.png">
@@ -150,144 +146,86 @@ W&amp;gt; 我们不建议使用全局变量！ Webpack真正的概念是更多�
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-webpack的shimming的翻译" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      webpack的shimming的翻译
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2017" class="archive-year">2017</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2017/11/05/webpack的常用插件/" class="archive-article-date">
+  	<time datetime="2017-11-05T12:29:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-05</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2017/11/05/webpack的常用插件/">webpack的常用插件</a>
     </h1>
   
 
-        
-        <a href="/2017/11/03/webpack的shimming的翻译/" class="archive-article-date">
+        <div class="article-info info-on-right">
+          
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">webpack</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javascript</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+          
+
+        </div>
+        <div class="clearfix"></div>
+    </header>
+  </div>
+</article>
+  
+    
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2017/11/03/webpack的shimming的翻译/" class="archive-article-date">
   	<time datetime="2017-11-03T14:10:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-03</time>
 </a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>webpack编译器可以理解写入的ES2015模块，CommonJS或AMD的模块。然而，一些第三方库可能会期望全局依赖（例如jQuery的$）。这些库可能还会创建需要导出的全局变量。这些“broken modules”使得shimming发挥了作用。</p>
-<p>W&gt; <strong>我们不建议使用全局变量！</strong> Webpack真正的概念是更多的模块化前端开发。这意味着编写完整包含的隔离模块，而不依赖于隐藏的依赖关系（例如全局变量）。所以请仅在必要时去主要做。</p>
-<p><em>shimming</em> 的另一个使用场景就是，如果您希望使用浏览器的<a href="https://en.wikipedia.org/wiki/Polyfill" target="_blank" rel="external">polyfill</a>功能来支持更多的用户。在这种情况下，您可能只想将这些Polyfill提供给需要修补的浏览器（即按需加载）。<a id="more"></a></p>
-<p>以下文章将介绍这两种用例。</p>
-<p>T&gt;为了简单起见，本指南源于“<a href="/guides/getting-started">Getting Started</a>”中的示例。请确保您在移动之前熟悉该设置。</p>
-<h2 id="垫片全局变量"><a href="#垫片全局变量" class="headerlink" title="垫片全局变量"></a>垫片全局变量</h2><p>我们从第一个使用shimming的全局变量的用例开始。在我们做任何事情之前，我们再来看看我们的项目：</p>
-<p><strong>project</strong></p>
-<figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">webpack-demo</span><br><span class="line">|- package.json</span><br><span class="line">|- webpack.config.js</span><br><span class="line">|- /dist</span><br><span class="line">|- /src</span><br><span class="line">  |- index.js</span><br><span class="line">|- /node_modules</span><br></pre></td></tr></table></figure>
-<p>记得我们在使用 <code>lodash</code> ？为了演示目的，我们假设希望在整个应用程序中lodash要作为全局变量。为此我们可以使用<code>ProvidePlugin</code>插件。</p>
-<p><a href="/plugins/provide-plugin"><code>ProvidePlugin</code></a> 使用WebPACK变量的形式使包可以在每个模块编译通过。 如果WebPACK看到变量被使用，它将在最后一个bundle中引入指定的包。下面我们取消 <code>import</code> 改用插件的方式来提供 <code>lodash</code>:</p>
-<p><strong>src/index.js</strong></p>
-<figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="deletion">- import _ from 'lodash';</span></span><br><span class="line"><span class="deletion">-</span></span><br><span class="line">  function component() &#123;</span><br><span class="line">    var element = document.createElement('div');</span><br><span class="line"></span><br><span class="line"><span class="deletion">-   // Lodash, now imported by this script</span></span><br><span class="line">    element.innerHTML = _.join(['Hello', 'webpack'], ' ');</span><br><span class="line"></span><br><span class="line">    return element;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  document.body.appendChild(component());</span><br></pre></td></tr></table></figure>
-<p><strong>webpack.config.js</strong></p>
-<figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">  const path = require('path');</span><br><span class="line"></span><br><span class="line">  module.exports = &#123;</span><br><span class="line">    entry: './src/index.js',</span><br><span class="line">    output: &#123;</span><br><span class="line">      filename: 'bundle.js',</span><br><span class="line">      path: path.resolve(__dirname, 'dist')</span><br><span class="line"><span class="deletion">-   &#125;</span></span><br><span class="line"><span class="addition">+   &#125;,</span></span><br><span class="line"><span class="addition">+   plugins: [</span></span><br><span class="line"><span class="addition">+     new webpack.ProvidePlugin(&#123;</span></span><br><span class="line"><span class="addition">+       lodash: 'lodash'</span></span><br><span class="line"><span class="addition">+     &#125;)</span></span><br><span class="line"><span class="addition">+   ]</span></span><br><span class="line">  &#125;;</span><br></pre></td></tr></table></figure>
-<p>以上就是对webpack的配置…</p>
-<blockquote>
-<p>一旦你引用了一次 <code>lodash</code>的实例变量，引入<code>lodash</code> 包并且提供给需要他的模块。</p>
-</blockquote>
-<p>如果我们运行 build ，我们将看到同样的输出：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">TODO: Include output</span><br></pre></td></tr></table></figure>
-<p>我们还可以使用 <code>ProvidePlugin</code> 通过使用路径数组（路径数组机构如下：<code>[module, child, ...children?]</code>）来配置模块的单个导出。所以让我们想想一下，如果 <code>lodash</code> 的 <code>join</code> 被调用的时候，我们只需要输出这一个方法：<br> So let’s imagine we only wanted to provide the <code>join</code> method from <code>lodash</code> wherever it’s invoked:</p>
-<p><strong>src/index.js</strong></p>
-<figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">  function component() &#123;</span><br><span class="line">    var element = document.createElement('div');</span><br><span class="line"></span><br><span class="line"><span class="deletion">-   element.innerHTML = _.join(['Hello', 'webpack'], ' ');</span></span><br><span class="line"><span class="addition">+   element.innerHTML = join(['Hello', 'webpack'], ' ');</span></span><br><span class="line"></span><br><span class="line">    return element;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  document.body.appendChild(component());</span><br></pre></td></tr></table></figure>
-<p><strong>webpack.config.js</strong></p>
-<figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">  const path = require('path');</span><br><span class="line"></span><br><span class="line">  module.exports = &#123;</span><br><span class="line">    entry: './src/index.js',</span><br><span class="line">    output: &#123;</span><br><span class="line">      filename: 'bundle.js',</span><br><span class="line">      path: path.resolve(__dirname, 'dist')</span><br><span class="line">    &#125;,</span><br><span class="line">    plugins: [</span><br><span class="line">      new webpack.ProvidePlugin(&#123;</span><br><span class="line"><span class="deletion">-       lodash: 'lodash'</span></span><br><span class="line"><span class="addition">+       join: ['lodash', 'join']</span></span><br><span class="line">      &#125;)</span><br><span class="line">    ]</span><br><span class="line">  &#125;;</span><br></pre></td></tr></table></figure>
-<p>通过 <a href="/guides/tree-shaking">Tree Shaking</a> <code>lodash</code>库的其他部分将被优雅的舍去。</p>
-<h2 id="局部垫片"><a href="#局部垫片" class="headerlink" title="局部垫片"></a>局部垫片</h2><p>一些传统模块依赖于 <code>window</code> 对象。更新我们的<code>index.js</code>，作为事例：</p>
-<figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">  function component() &#123;</span><br><span class="line">    var element = document.createElement('div');</span><br><span class="line"></span><br><span class="line">    element.innerHTML = join(['Hello', 'webpack'], ' ');</span><br><span class="line"><span class="addition">+</span></span><br><span class="line"><span class="addition">+   // Assume we are in the context of `window`</span></span><br><span class="line"><span class="addition">+   this.alert('Hmmm, this probably isn\'t a great idea...')</span></span><br><span class="line"></span><br><span class="line">    return element;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  document.body.appendChild(component());</span><br></pre></td></tr></table></figure>
-<p>现在有一个问题，当模块在CommonJS上下文中执行时，<code>this</code> 等于 <code>module.exports</code>。在这个事例中我们将使用 <a href="/loaders/imports-loader/"><code>imports-loader</code></a> 来替换 <code>this</code> ：</p>
-<p><strong>webpack.config.js</strong></p>
-<figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">  const path = require('path');</span><br><span class="line"></span><br><span class="line">  module.exports = &#123;</span><br><span class="line">    entry: './src/index.js',</span><br><span class="line">    output: &#123;</span><br><span class="line">      filename: 'bundle.js',</span><br><span class="line">      path: path.resolve(__dirname, 'dist')</span><br><span class="line">    &#125;,</span><br><span class="line"><span class="addition">+   module: &#123;</span></span><br><span class="line"><span class="addition">+     rules: [</span></span><br><span class="line"><span class="addition">+       &#123;</span></span><br><span class="line"><span class="addition">+         test: require.resolve('index.js'),</span></span><br><span class="line"><span class="addition">+         use: 'imports-loader?this=&gt;window'</span></span><br><span class="line"><span class="addition">+       &#125;</span></span><br><span class="line"><span class="addition">+     ]</span></span><br><span class="line"><span class="addition">+   &#125;,</span></span><br><span class="line">    plugins: [</span><br><span class="line">      new webpack.ProvidePlugin(&#123;</span><br><span class="line">        join: ['lodash', 'join']</span><br><span class="line">      &#125;)</span><br><span class="line">    ]</span><br><span class="line">  &#125;;</span><br></pre></td></tr></table></figure>
-<h2 id="全局变量的导出"><a href="#全局变量的导出" class="headerlink" title="全局变量的导出"></a>全局变量的导出</h2><p>我们通常会创建一个充满了全局变量的库。我们可以在我们的设置中添加一个小模块来演示这个：</p>
-<p><strong>project</strong></p>
-<figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">  webpack-demo</span><br><span class="line">  |- package.json</span><br><span class="line">  |- webpack.config.js</span><br><span class="line">  |- /dist</span><br><span class="line">  |- /src</span><br><span class="line">    |- index.js</span><br><span class="line"><span class="addition">+   |- globals.js</span></span><br><span class="line">  |- /node_modules</span><br></pre></td></tr></table></figure>
-<p><strong>src/globals.js</strong></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> file = <span class="string">'blah.txt'</span>;</span><br><span class="line"><span class="keyword">var</span> helpers = &#123;</span><br><span class="line">  <span class="attr">test</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; <span class="built_in">console</span>.log(<span class="string">'test something'</span>); &#125;,</span><br><span class="line">  <span class="attr">parse</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; <span class="built_in">console</span>.log(<span class="string">'parse something'</span>); &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>现在，你可能永远不会在自己的代码中如此操作，但是你可能会遇到要使用一下已过时的库，其中包含与上述相似的代码。在这种情况下，我们可以使用 <a href="/loaders/exports-loader/"><code>exports-loader</code></a> 将该全局变量像一般模块那样导出。例如，将 <code>file</code> 导出为 <code>file</code>，<code>helpers.parse</code> 导出为 <code>parse</code>：</p>
-<p><strong>webpack.config.js</strong></p>
-<figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">  const path = require('path');</span><br><span class="line"></span><br><span class="line">  module.exports = &#123;</span><br><span class="line">    entry: './src/index.js',</span><br><span class="line">    output: &#123;</span><br><span class="line">      filename: 'bundle.js',</span><br><span class="line">      path: path.resolve(__dirname, 'dist')</span><br><span class="line">    &#125;,</span><br><span class="line">    module: &#123;</span><br><span class="line">      rules: [</span><br><span class="line">        &#123;</span><br><span class="line">          test: require.resolve('index.js'),</span><br><span class="line">          use: 'imports-loader?this=&gt;window'</span><br><span class="line"><span class="deletion">-       &#125;</span></span><br><span class="line"><span class="addition">+       &#125;,</span></span><br><span class="line"><span class="addition">+       &#123;</span></span><br><span class="line"><span class="addition">+         test: require.resolve('globals.js'),</span></span><br><span class="line"><span class="addition">+         use: 'exports-loader?file,parse=helpers.parse'</span></span><br><span class="line"><span class="addition">+       &#125;</span></span><br><span class="line">      ]</span><br><span class="line">    &#125;,</span><br><span class="line">    plugins: [</span><br><span class="line">      new webpack.ProvidePlugin(&#123;</span><br><span class="line">        join: ['lodash', 'join']</span><br><span class="line">      &#125;)</span><br><span class="line">    ]</span><br><span class="line">  &#125;;</span><br></pre></td></tr></table></figure>
-<p>现在从我们的入口脚本（即 <code>src/index.js</code>）中，<code>import { file, parse } from &#39;./globals.js&#39;;</code> 都应该顺利进行。</p>
-<h2 id="加载腻子"><a href="#加载腻子" class="headerlink" title="加载腻子"></a>加载腻子</h2><p>到目前为止，我们讨论的几乎所有内容都与处理传统包有关。我们继续谈谈我们的第二个话题： <strong>腻子</strong>。</p>
-<p>有很多方法来加载腻子. 例如，要包括 <a href="https://babeljs.io/docs/usage/polyfill/" target="_blank" rel="external"><code>babel-polyfill</code></a>，我们可以简单地：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i --save babel-polyfill</span><br></pre></td></tr></table></figure>
-<p>并<code>import</code>它，以便将其包含在我们的主包中：</p>
-<p><strong>src/index.js</strong></p>
-<figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="addition">+ import 'babel-polyfill';</span></span><br><span class="line"><span class="addition">+</span></span><br><span class="line">  function component() &#123;</span><br><span class="line">    var element = document.createElement('div');</span><br><span class="line"></span><br><span class="line">    element.innerHTML = join(['Hello', 'webpack'], ' ');</span><br><span class="line"></span><br><span class="line">    return element;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  document.body.appendChild(component());</span><br></pre></td></tr></table></figure>
-<p>T&gt;请注意，我们没有将<code>import</code>绑定到变量。这是因为腻子只能在其他代码前自行运行。才能允许我们假设某些本机功能存在。</p>
-<p><strong>但是把腻子包括到主包中这种做法并不推荐</strong>，因为这样会让现代浏览器用户下载过多不必要的脚本，降低用户体验。</p>
-<p>现在我们删除 <code>import</code> 并且添加一个新的腻子 <a href="https://github.com/github/fetch" target="_blank" rel="external"><code>whatwg-fetch</code></a> ：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i --save whatwg-fetch</span><br></pre></td></tr></table></figure>
-<p><strong>src/index.js</strong></p>
-<figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="deletion">- import 'babel-polyfill';</span></span><br><span class="line"><span class="deletion">-</span></span><br><span class="line">  function component() &#123;</span><br><span class="line">    var element = document.createElement('div');</span><br><span class="line"></span><br><span class="line">    element.innerHTML = join(['Hello', 'webpack'], ' ');</span><br><span class="line"></span><br><span class="line">    return element;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  document.body.appendChild(component());</span><br></pre></td></tr></table></figure>
-<p><strong>project</strong></p>
-<figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">  webpack-demo</span><br><span class="line">  |- package.json</span><br><span class="line">  |- webpack.config.js</span><br><span class="line">  |- /dist</span><br><span class="line">  |- /src</span><br><span class="line">    |- index.js</span><br><span class="line">    |- globals.js</span><br><span class="line"><span class="addition">+   |- polyfills.js</span></span><br><span class="line">  |- /node_modules</span><br></pre></td></tr></table></figure>
-<p><strong>src/polyfills.js</strong></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">'babel-polyfill'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'whatwg-fetch'</span>;</span><br></pre></td></tr></table></figure>
-<p><strong>webpack.config.js</strong></p>
-<figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">  const path = require('path');</span><br><span class="line"></span><br><span class="line">  module.exports = &#123;</span><br><span class="line"><span class="deletion">-   entry: './src/index.js',</span></span><br><span class="line"><span class="addition">+   entry: &#123;</span></span><br><span class="line"><span class="addition">+     polyfills: './src/polyfills.js',</span></span><br><span class="line"><span class="addition">+     index: './src/index.js'</span></span><br><span class="line"><span class="addition">+   &#125;,</span></span><br><span class="line">    output: &#123;</span><br><span class="line"><span class="deletion">-     filename: 'bundle.js',</span></span><br><span class="line"><span class="addition">+     filename: '[name].bundle.js',</span></span><br><span class="line">      path: path.resolve(__dirname, 'dist')</span><br><span class="line">    &#125;,</span><br><span class="line">    module: &#123;</span><br><span class="line">      rules: [</span><br><span class="line">        &#123;</span><br><span class="line">          test: require.resolve('index.js'),</span><br><span class="line">          use: 'imports-loader?this=&gt;window'</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">          test: require.resolve('globals.js'),</span><br><span class="line">          use: 'exports-loader?file,parse=helpers.parse'</span><br><span class="line">        &#125;</span><br><span class="line">      ]</span><br><span class="line">    &#125;,</span><br><span class="line">    plugins: [</span><br><span class="line">      new webpack.ProvidePlugin(&#123;</span><br><span class="line">        join: ['lodash', 'join']</span><br><span class="line">      &#125;)</span><br><span class="line">    ]</span><br><span class="line">  &#125;;</span><br></pre></td></tr></table></figure>
-<p>有了这个，我们可以添加逻辑来有条件地加载我们的新的 <code>polyfills.bundle.js</code> 文件。您如何做出这一决定取决于您需要支持的技术和浏览器。我们将做一些简单的测试来确定我们的腻子是否需要：</p>
-<p><strong>dist/index.html</strong></p>
-<figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">  &lt;html&gt;</span><br><span class="line">    &lt;head&gt;</span><br><span class="line">      &lt;title&gt;Getting Started&lt;/title&gt;</span><br><span class="line"><span class="addition">+     &lt;script&gt;</span></span><br><span class="line"><span class="addition">+       var modernBrowser = (</span></span><br><span class="line"><span class="addition">+         'fetch' in window &amp;&amp;</span></span><br><span class="line"><span class="addition">+         'assign' in Object</span></span><br><span class="line"><span class="addition">+       );</span></span><br><span class="line"><span class="addition">+</span></span><br><span class="line"><span class="addition">+       if ( !modernBrowser ) &#123;</span></span><br><span class="line"><span class="addition">+         var scriptElement = document.createElement('script');</span></span><br><span class="line"><span class="addition">+</span></span><br><span class="line"><span class="addition">+         scriptElement.async = false;</span></span><br><span class="line"><span class="addition">+         scriptElement.src = '/polyfills.bundle.js';</span></span><br><span class="line"><span class="addition">+         document.head.appendChild(scriptElement);</span></span><br><span class="line"><span class="addition">+       &#125;</span></span><br><span class="line"><span class="addition">+     &lt;/script&gt;</span></span><br><span class="line">    &lt;/head&gt;</span><br><span class="line">    &lt;body&gt;</span><br><span class="line">      &lt;script src="index.bundle.js"&gt;&lt;/script&gt;</span><br><span class="line">    &lt;/body&gt;</span><br><span class="line">  &lt;/html&gt;</span><br></pre></td></tr></table></figure>
-<p>Now we can <code>fetch</code> some data within our entry script:</p>
-<p><strong>src/index.js</strong></p>
-<figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">  function component() &#123;</span><br><span class="line">    var element = document.createElement('div');</span><br><span class="line"></span><br><span class="line">    element.innerHTML = join(['Hello', 'webpack'], ' ');</span><br><span class="line"></span><br><span class="line">    return element;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  document.body.appendChild(component());</span><br><span class="line"><span class="addition">+</span></span><br><span class="line"><span class="addition">+ fetch('https://jsonplaceholder.typicode.com/users')</span></span><br><span class="line"><span class="addition">+   .then(response =&gt; response.json())</span></span><br><span class="line"><span class="addition">+   .then(json =&gt; &#123;</span></span><br><span class="line"><span class="addition">+     console.log('We retrieved some data! AND we\'re confident it will work on a variety of browser distributions.')</span></span><br><span class="line"><span class="addition">+     console.log(json)</span></span><br><span class="line"><span class="addition">+   &#125;)</span></span><br><span class="line"><span class="addition">+   .catch(error =&gt; console.error('Something went wrong when fetching this data: ', error))</span></span><br></pre></td></tr></table></figure>
-<p>如果我们运行build，将会生成一个 <code>polyfills.bundle.js</code> 文件，并且浏览器中的所有内容都应该顺利运行。请注意，这种设置可能会得到改善，因为这只是解决如何把腻子只提供给真正需要它们的用户的一种方法。</p>
-<h2 id="进一步的优化"><a href="#进一步的优化" class="headerlink" title="进一步的优化"></a>进一步的优化</h2><p><code>babel-preset-env</code> 包则是通过一个 <a href="https://github.com/ai/browserslist" target="_blank" rel="external">browserslist</a>来匹配你浏览器，并且转码你浏览器所不支持的的代码。通过<code>useBuiltIns</code> 选项进行预设，默认为 <code>false</code>，通过 <code>import</code> 的方法导入更细粒度的功能来覆盖你的全局 <code>babel-polyfill</code>配置：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">'core-js/modules/es7.string.pad-start'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'core-js/modules/es7.string.pad-end'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'core-js/modules/web.timers'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'core-js/modules/web.immediate'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'core-js/modules/web.dom.iterable'</span>;</span><br></pre></td></tr></table></figure>
-<p>有关详细信息，请参阅<a href="https://github.com/babel/babel-preset-env" target="_blank" rel="external">知识库</a>。</p>
-<h2 id="Node的内部插件"><a href="#Node的内部插件" class="headerlink" title="Node的内部插件"></a>Node的内部插件</h2><p>Node的内部插件，比如 <code>process</code> 能够根据您的配置文件直接打腻子，而无需使用任何特殊的loaders或插件。 查看<a href="/configuration/node">node配置页面</a>，那里有过多的信息和事例。</p>
-<h2 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h2><p>在处理传统模块时，还有一些其他工具可以帮助您。</p>
-<p><a href="/loaders/script-loader/"><code>script-loader</code></a>能够评估你的全局上下文的代码。作用类似于一个 <code>script</code> 的标签容器。在这种模式下，每个正常的库都应该工作。<code>require</code>、<code>module</code> 等等未被定义。</p>
-<p>W&gt;当使用 <code>script-loader</code> 时，将该模块作为字符串添加到捆绑包中。它不会被 <code>webpack</code> 最小化，所以请使用最小化的版本。对于这个加载器添加的库，也么有 <code>devtool</code> 支持。</p>
-<p>当没有AMD/CommonJS版本的模块，并且您想要包括到 <code>dist</code> 中去，你可以在 <a href="/configuration/module/#module-noparse"><code>noParse</code></a> 中标记这个模块。他将告诉webpack引用这个模块不需要匹配或分析 <code>require()</code> 和  <code>import</code> 语法。这种做法也用于提高构建性能。</p>
-<p>W&gt; 任何需要AST的功能， 例如 <code>ProvidePlugin</code>，将不再工作。</p>
-<p>最后，有一些模块支持不同的 <a href="/concepts/modules">模块风格</a>，如AMD，CommonJS和传统。在大多数情况下，他们首先检查 <code>define</code>，然后使用一些古怪的代码来导出属性。在这种情况下，可以通过 <a href="/loaders/imports-loader/"><code>imports-loader</code></a> 设置 <code>define=&gt;false</code> 来强制导入CommonJS路径。</p>
-<hr>
-<blockquote>
-<p>原文：<a href="https://webpack.js.org/guides/shimming/" target="_blank" rel="external">https://webpack.js.org/guides/shimming/</a></p>
-</blockquote>
-
-      
-
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="/0/alipay.png">
-                      <span class="reward-type">支付宝</span>
-                    </div>
-                    
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="/0/weixin.png">
-                      <span class="reward-type">微信</span>
-                    </div>
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
         </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2017/11/03/webpack的shimming的翻译/">webpack的shimming的翻译</a>
+    </h1>
+  
+
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -315,7 +253,7 @@ W&amp;gt; 我们不建议使用全局变量！ Webpack真正的概念是更多�
 		</ul>
 	</div>
 
-      
+          
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -328,108 +266,17 @@ W&amp;gt; 我们不建议使用全局变量！ Webpack真正的概念是更多�
 	</div>
 
 
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://zjafei.coding.me/2017/11/03/webpack的shimming的翻译/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2017/11/05/webpack的常用插件/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          webpack的常用插件
-        
-      </div>
-    </a>
   
   
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-  
+    </div></section>
   
 
-  
-
-  
-
-  
+    
 
 
           </div>
@@ -452,9 +299,9 @@ W&amp;gt; 我们不建议使用全局变量！ Webpack真正的概念是更多�
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
+		isPost: false,
 		isArchive: false,
-		isTag: false,
+		isTag: true,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,

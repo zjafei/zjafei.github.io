@@ -57,6 +57,8 @@
 			
 				<li><a href="/">主页</a></li>
 	        
+				<li><a href="/categories/coding">代码</a></li>
+	        
 			</ul>
 		</nav>
 		<nav class="header-smart-menu">
@@ -107,6 +109,8 @@
 			
 				
 			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -125,7 +129,9 @@
 				<ul style="width: 50%">
 				
 				
-					<li style="width: 100%"><a href="/">主页</a></li>
+					<li style="width: 50%"><a href="/">主页</a></li>
+		        
+					<li style="width: 50%"><a href="/categories/coding">代码</a></li>
 		        
 				</ul>
 			</nav>
@@ -163,7 +169,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p><strong>project</strong></p>
-<figure class="highlight diff"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">html-webpack-plugin</div><div class="line">|- package.json</div><div class="line">|- webpack.config.js</div><div class="line">|- /src</div><div class="line">  |- index.js</div><div class="line">  |- style.css</div><div class="line">|- /index.html</div><div class="line">|- /node_modules</div></pre></td></tr></table></figure>
+<figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">html-webpack-plugin</span><br><span class="line">|- package.json</span><br><span class="line">|- webpack.config.js</span><br><span class="line">|- /src</span><br><span class="line">  |- index.js</span><br><span class="line">  |- style.css</span><br><span class="line">|- /index.html</span><br><span class="line">|- /node_modules</span><br></pre></td></tr></table></figure>
         
           <a class="article-more-a" href="/2017/11/05/webpack的常用插件/#more">... >></a>
         
@@ -174,6 +180,29 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">webpack</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javascript</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -230,7 +259,7 @@
       
         <p>webpack编译器可以理解写入的ES2015模块，CommonJS或AMD的模块。然而，一些第三方库可能会期望全局依赖（例如jQuery的$）。这些库可能还会创建需要导出的全局变量。这些“broken modules”使得shimming发挥了作用。</p>
 <p>W&gt; <strong>我们不建议使用全局变量！</strong> Webpack真正的概念是更多的模块化前端开发。这意味着编写完整包含的隔离模块，而不依赖于隐藏的依赖关系（例如全局变量）。所以请仅在必要时去主要做。</p>
-<p><em>shimming</em> 的另一个使用场景就是，如果您希望使用浏览器的<a href="https://en.wikipedia.org/wiki/Polyfill" target="_blank" rel="external">polyfill</a>功能来支持更多的用户。在这种情况下，您可能只想将这些Polyfill提供给需要修补的浏览器（即按需加载）。
+<p><em>shimming</em> 的另一个使用场景就是，如果您希望使用浏览器的<a href="https://en.wikipedia.org/wiki/Polyfill">polyfill</a>功能来支持更多的用户。在这种情况下，您可能只想将这些Polyfill提供给需要修补的浏览器（即按需加载）。
         
           <a class="article-more-a" href="/2017/11/03/webpack的shimming的翻译/#more">... >></a>
         
@@ -241,7 +270,45 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">webpack</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javascript</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">shimming</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/coding//" class="article-tag-list-link color2">coding</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
         <p class="article-more-link">
@@ -358,6 +425,26 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">webpack</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">前端</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">js</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">shimming</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>
