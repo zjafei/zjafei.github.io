@@ -56,7 +56,7 @@ __package.json__
   }
 }
 ```
-__package.json__
+__webpack.config.js__
 
 ``` javascript
 const path = require('path');
@@ -311,7 +311,8 @@ __src/template__
   <head>
     <meta charset="UTF-8">
     <title><%= htmlWebpackPlugin.options.title %></title>
-  <body>
+  </head>
+  <body></body>
 </html>
 ```
 ```bash
