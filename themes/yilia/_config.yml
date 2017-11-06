@@ -2,8 +2,9 @@
 
 menu:
   主页: /
-  ##随笔: /tags/随笔/
-
+  代码: /categories/coding
+  # 生活: /categories/life
+  # 其他: /categories/other
 # SubNav
 subnav:
   github: "https://github.com/zjafei"
