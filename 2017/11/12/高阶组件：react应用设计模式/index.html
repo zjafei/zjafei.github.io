@@ -6,17 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="//zjafei.coding.me">
-  <title>Category: coding | 代码猴</title>
+  <title>高阶组件：react应用设计模式 | 代码猴</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="代码猴">
-<meta property="og:url" content="//zjafei.coding.me/categories/coding/index.html">
+  <meta name="description" content="In this article we will discuss how to use Higher Order Components to keep your React applications tidy, well structured and easy to maintain. We’ll discuss how pure functions keep code clean and how">
+<meta property="og:type" content="article">
+<meta property="og:title" content="高阶组件：react应用设计模式">
+<meta property="og:url" content="//zjafei.coding.me/2017/11/12/高阶组件：react应用设计模式/index.html">
 <meta property="og:site_name" content="代码猴">
-<meta property="og:description">
+<meta property="og:description" content="In this article we will discuss how to use Higher Order Components to keep your React applications tidy, well structured and easy to maintain. We’ll discuss how pure functions keep code clean and how">
+<meta property="og:updated_time" content="2017-11-12T03:21:28.055Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="代码猴">
-<meta name="twitter:description">
+<meta name="twitter:title" content="高阶组件：react应用设计模式">
+<meta name="twitter:description" content="In this article we will discuss how to use Higher Order Components to keep your React applications tidy, well structured and easy to maintain. We’ll discuss how pure functions keep code clean and how">
   
   
     <link rel="icon" href="/0/logo.png">
@@ -146,36 +147,208 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-高阶组件：react应用设计模式" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/11/12/高阶组件：react应用设计模式/" class="archive-article-date">
-  	<time datetime="2017-11-12T02:22:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-12</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/11/12/高阶组件：react应用设计模式/">高阶组件：react应用设计模式</a>
+    <h1 class="article-title" itemprop="name">
+      高阶组件：react应用设计模式
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2017/11/12/高阶组件：react应用设计模式/" class="archive-article-date">
+  	<time datetime="2017-11-12T02:22:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-12</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>In this article we will discuss how to use Higher Order Components to keep your React applications tidy, well structured and easy to maintain. We’ll discuss how pure functions keep code clean and how these same principles can be applied to React components.<br>在这片文章里我们将讨论任何使用高阶组件保持你的react应用整洁，结构合理，易于维护。纯函数是如何保持代码整洁并且如何将这些原则应用到react组件中。<a id="more"></a></p>
+<h2 id="Pure-Functions"><a href="#Pure-Functions" class="headerlink" title="Pure Functions"></a><strong>Pure Functions</strong></h2><h2 id="纯函数"><a href="#纯函数" class="headerlink" title="纯函数"></a><strong>纯函数</strong></h2><p>A function is considered pure if it adheres to the following properties:</p>
+<p>如果一个函数遵循以下几个规则那么他就是纯函数：</p>
+<ul>
+<li>All the data it deals with are declared as arguments</li>
+<li><p>函数处理的数据都是作为参数传递给函数。</p>
+</li>
+<li><p>It does not mutate data it was given or any other data (these are often referred to as side effects).</p>
+</li>
+<li><p>他不接受不确定的数据或者任何其他数据（他们通常是副作用的）。</p>
+</li>
+<li><p>Given the same input, it will always return the same output.</p>
+</li>
+<li>同样的输入，函数将得到同样的输出。</li>
+</ul>
+<p>For example, the add function below is pure:</p>
+<p>举个例子，下面的add函数就是个纯函数：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">x, y</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x + y;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>However, the function badAdd below is impure:</p>
+<p>下面badadd就是不是纯函数：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> y = <span class="number">2</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">badAdd</span>(<span class="params">x</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x + y;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>This function is not pure because it references data that it hasn’t directly been given. As a result, it’s possible to call this function with the same input and get different output:</p>
+<p>这个函数之所以不是纯函数是因为他所引用的数据不是直接给予的（不是通过参数传递，而是直接引用了外部全局变量。）。所以当你输入相同的数据时候可能得到不一样的输出。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> y = <span class="number">2</span>;</span><br><span class="line"></span><br><span class="line">badAdd(<span class="number">3</span>) <span class="comment">// 5</span></span><br><span class="line"></span><br><span class="line">y = <span class="number">3</span>;</span><br><span class="line"></span><br><span class="line">badAdd(<span class="number">3</span>) <span class="comment">// 6</span></span><br></pre></td></tr></table></figure></p>
+<p>To read more about pure functions you can read “An introduction to reasonably pure programming” by Mark Brown.</p>
+<p>要了解更多关于纯函数的内容，你可以阅读一下Mark Brown写的“An introduction to reasonably pure programming”。</p>
+<h2 id="Higher-Order-Functions"><a href="#Higher-Order-Functions" class="headerlink" title="Higher Order Functions"></a><strong>Higher Order Functions</strong></h2><h2 id="高阶函数"><a href="#高阶函数" class="headerlink" title="高阶函数"></a><strong>高阶函数</strong></h2><p>A higher order function is a function that when called, returns another function. Often they also take a function as an argument, but this is not required for a function to be considered higher order.</p>
+<p>高阶函数的定义是，当一个函数被调用他将输出另一个函数。有时他们把函数作为参数，但是这个不是高阶函数的必要条件。</p>
+<p>Let’s say we have our <code>add</code> function from above, and we want to write some code so that when we call it we log the result to the <code>console</code> before returning the result. We’re unable to edit the <code>add</code> function, so instead we can create a new function:</p>
+<p>让我们再来看看前面说过的 <code>add</code> 函数，我们希望他在返回结果前，<code>console</code> 一下结果。我们不能改变 <code>add</code> 函数，所以我们要创建一个新函数来替代他：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">addAndLog</span>(<span class="params">x, y</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> result = add(x, y);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'Result'</span>, result);</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>We decide that logging results of functions is useful, and now we want to do the same with a subtract function. Rather than duplicate the above, we could write a higher order function that can take a function and return a new function that calls the given function and logs the result before then returning it:</p>
+<p>我们显示函数的记录结果是有用的，现在我们要对减法函数做同样的事情。而不是复制上述内容，我们可以编写一个更高阶的函数，它可以执行一个函数接受函数作为参数，被调用的函数会返回结果和显示记录，函数则会返回新的函数。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">logAndReturn</span>(<span class="params">func</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> args = <span class="built_in">Array</span>.prototype.slice.call(<span class="built_in">arguments</span>);</span><br><span class="line">        <span class="keyword">var</span> result = func.apply(<span class="literal">null</span>, args);</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'Result'</span>, result);</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Now we can take this function <code>and</code> use it to add logging to add and <code>subtract</code>:</p>
+<p>现在我们可以使用这个函数为 <code>add</code> 和 <code>subtract</code> 函数添加显示记录：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> addAndLog = logAndReturn(add);</span><br><span class="line"></span><br><span class="line">addAndLog(<span class="number">4</span>, <span class="number">4</span>) <span class="comment">// 8 is returned, ‘Result 8’ is logged</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> subtractAndLog = logAndReturn(subtract);</span><br><span class="line"></span><br><span class="line">subtractAndLog(<span class="number">4</span>, <span class="number">3</span>) <span class="comment">// 1 is returned, ‘Result 1’ is logged;</span></span><br></pre></td></tr></table></figure>
+<p><code>logAndReturn</code> is a HOF because it takes a function as its argument and returns a new function that we can call. These are really useful for wrapping existing functions that you can’t change in behavior. For more information on this, check M. David Green’s article “Higher-Order Functions in JavaScript which goes into much more detail on the subject.</p>
+<p><code>logAndReturn</code> 就是一个高阶函数因为他接受一个函数作为参数，并且返回一个函数被我们调用。封装且不改变现有函数的内部实现是非常有用的。希望了解更多相关内容可以去看看M. David Green写的 “Higher-Order Functions in JavaScript”。</p>
+<p>Additionally you can check out this CodePen, which shows the above code in action.</p>
+<p>另外你可以去CodePen，那里有上面说到的代码。</p>
+<h2 id="Higher-Order-Components"><a href="#Higher-Order-Components" class="headerlink" title="Higher Order Components"></a><strong>Higher Order Components</strong></h2><h2 id="高阶组件"><a href="#高阶组件" class="headerlink" title="高阶组件"></a><strong>高阶组件</strong></h2><p>Moving into React land, we can use the same logic as above to take existing React components and give them some extra behaviours.</p>
+<p>现在我们讨论讨论React，上面讲到的逻辑我们同样可以在React组件上使用，以赋予他们更多的行为。</p>
+<p>In this section we’re going to use React Router, the de facto routing solution for React. If you’d like to get started with the library I highly recommend the React Router Tutorial on GitHub.</p>
+<p>在这节我们将使用React Router，这个是React的路由解决方案。如果你开始使用库，我强烈建议你使用GitHub上的React Router Tutorial。</p>
+<h2 id="React-Router’s-Link-component-React"><a href="#React-Router’s-Link-component-React" class="headerlink" title="React Router’s Link component React"></a><strong>React Router’s Link component React</strong></h2><h2 id="路由链接组件"><a href="#路由链接组件" class="headerlink" title="路由链接组件"></a><strong>路由链接组件</strong></h2><p>React Router provides a <code>&lt;Link&gt;</code> component that is used to link between pages in a React application. One of the properties that this <code>&lt;Link&gt;</code> component takes is <code>activeClassName</code>. When a <code>&lt;Link&gt;</code> has this property and it is currently active (the user is on a URL that the link points to), the component will be given this class, enabling the developer to style it.</p>
+<p>React 路由提供 <code>&lt;Link&gt;</code> 用于链接React应用里的页面。<code>&lt;Link&gt;</code> 组件其中一个属性是 <code>activeClassName</code>。当 <code>&lt;Link&gt;</code> 组件处于活动状态时使用了这个属性（用户经过链接时候的意思），组件将使用这个样类名，以便开发人员能够对其样式进行美化。</p>
+<p>This is a really useful feature, and in our hypothetical application we decide that we always want to use this property. However, after doing so we quickly discover that this is making all our <code>&lt;Link&gt;</code> components very verbose:</p>
+<p>这是一个非常有用的功能，在我们假设的应用程序中，我们决定我们总是使用这个属性。然而，很快我们会发现这会使 <code>&lt;Link&gt;</code> 组件变得臃肿：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">Link</span> <span class="attr">to</span>=<span class="string">"/"</span> <span class="attr">activeClassName</span>=<span class="string">"active-link"</span>&gt;</span> Home <span class="tag">&lt;/<span class="name">Link</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">Link</span> <span class="attr">to</span>=<span class="string">"/about"</span> <span class="attr">activeClassName</span>=<span class="string">"active-link"</span>&gt;</span> About<span class="tag">&lt;/<span class="name">Link</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">Link</span> <span class="attr">to</span>=<span class="string">"/contact"</span> <span class="attr">activeClassName</span>=<span class="string">"active-link"</span>&gt;</span> Contact<span class="tag">&lt;/<span class="name">Link</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>Notice that we are having to repeat the class name property every time. Not only does this make our components verbose, it also means that if we decide to change the class name we’ve got to do it in a lot of places.</p>
+<p>注意我们每次都必须重复使用那个类的属性名。这不仅使我们的组件臃肿，这也意味着如果我们决定改变类名，我们必须在很多地方进行修改。</p>
+<p>Instead, we can write a component that wraps the <code>&lt;Link&gt;</code> component:</p>
+<p>替换，我们要写一个组件去封装 <code>&lt;Link&gt;</code> 组件：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> AppLink=React.createClass(&#123;</span><br><span class="line">    <span class="attr">render</span>:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span>(</span><br><span class="line">            <span class="xml"><span class="tag">&lt;<span class="name">Link</span> <span class="attr">to</span>=<span class="string">&#123;this.props.to&#125;</span> <span class="attr">activeClassName</span>=<span class="string">"active-link"</span>&gt;</span></span><br><span class="line">                &#123;this.props.children&#125;</span><br><span class="line">            <span class="tag">&lt;/<span class="name">Link</span>&gt;</span></span>;</span><br><span class="line">        );</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>And now we can use this component, which tidies up our links:</p>
+<p>现在我们可以使用这个组件来整合我们的链接：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">AppLink</span> <span class="attr">to</span>=<span class="string">"/"</span>&gt;</span>Home<span class="tag">&lt;/<span class="name">AppLink</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">AppLink</span> <span class="attr">to</span>=<span class="string">"/about"</span>&gt;</span>About<span class="tag">&lt;/<span class="name">AppLink</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">AppLink</span> <span class="attr">to</span>=<span class="string">"/contact"</span>&gt;</span>Contact<span class="tag">&lt;/<span class="name">AppLink</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>In the React ecosystem these components are known as higher order components because they take an existing component and manipulate it slightly without changing the existing component. You can also think of these as wrapper components, but you’ll find them commonly referred to as higher order components in React-based content.</p>
+<p>在React生态系统中，这些组件被称为高阶组件，因为他们采用现有组件并对他们进行封装，但是并没有更改现有组件。你也可以将他们视为封装组件，但你会发现他们通常被称为 <code>React-based</code> 内容中的高阶组件。</p>
+<h2 id="Functional-Stateless-Components"><a href="#Functional-Stateless-Components" class="headerlink" title="Functional, Stateless Components"></a><strong>Functional, Stateless Components</strong></h2><h2 id="函数式无状态组件"><a href="#函数式无状态组件" class="headerlink" title="函数式无状态组件"></a><strong>函数式无状态组件</strong></h2><p>React 0.14 introduced support for functional, stateless components. These are components that have the following characteristics:</p>
+<p>React0.14开始提供函数式无状态组件，函数式无状态组件具有以下特点：</p>
+<ul>
+<li><p>They do not have any state.</p>
+</li>
+<li><p>他们没有state</p>
+</li>
+<li><p>They do not use any React lifecycle methods (such as componentWillMount()).</p>
+</li>
+<li><p>他们无法使用React生命周期函数（比如 componentWillMount()）</p>
+</li>
+<li><p>They only define the render method and nothing more.</p>
+</li>
+<li><p>他们只定义了 render 方法，没有其他的了。</p>
+</li>
+</ul>
+<p>When a component adheres to the above, we can define it as a function, rather than using React.createClass (or class App extends React.Component if you’re using ES2015 classes). For example, the two expressions below both produce the same component:</p>
+<p>当一个组件遵守上述内容时，我们可以将其定义为一个函数，而不是使用React.createClass（如果你使用了 ES2015  classes 你也可以使用class 来扩展你的React 组件）。下面的两个表达式产生相同的组件：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> App = React.createClass(&#123;</span><br><span class="line">    <span class="attr">render</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">p</span>&gt;</span>My name is &#123; this.props.name &#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span>;</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> App = <span class="function"><span class="keyword">function</span>(<span class="params">props</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">p</span>&gt;</span>My name is &#123; props.name &#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span>;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>In the functional, stateless component instead of referring to this.props we’re instead passed props as an argument. You can read more about this on the React documentation.</p>
+<p>在函数式无状态组件中，不是引用this.props，而是将props用作参数。React文档有更多介绍。</p>
+<p>Because higher order components often wrap an existing component you’ll often find you can define them as a functional component. For the rest of this article I’ll do that whenever possible.</p>
+<p>因为更高阶的组件通常会封装一个现有的组件，所以您经常会发现可以将它们定义为函数组件。在本文的其余部分，我将尽可能地这样做。</p>
+<h2 id="Better-Higher-Order-Components"><a href="#Better-Higher-Order-Components" class="headerlink" title="Better Higher Order Components"></a><strong>Better Higher Order Components</strong></h2><h2 id="更好的高阶组件"><a href="#更好的高阶组件" class="headerlink" title="更好的高阶组件"></a><strong>更好的高阶组件</strong></h2><p>The above component works, but we can do much better. The AppLink component that we created isn’t quite fit for purpose.</p>
+<p>我们不只局限于组件可以正常运行，我们希望做的更好。我们创建的 <code>AppLink</code> 组件就不太适合。</p>
+<h2 id="Accepting-multiple-properties"><a href="#Accepting-multiple-properties" class="headerlink" title="Accepting multiple properties"></a><strong>Accepting multiple properties</strong></h2><h2 id="接受多个参数"><a href="#接受多个参数" class="headerlink" title="接受多个参数"></a><strong>接受多个参数</strong></h2><p>The <code>&lt;AppLink&gt;</code> component expects two properties:</p>
+<p><code>&lt;AppLink&gt;</code> 组件估计会有两个参数：</p>
+<ul>
+<li>this.props.to which is the URL the link should take the user to</li>
+<li><p>this.props.to 表示链接让用户访问的URL</p>
+</li>
+<li><p>this.props.children which is the text shown to the user</p>
+</li>
+<li>this.props.children 表示显示的文本</li>
+</ul>
+<p>However, the <code>&lt;Link&gt;</code> component accepts many more properties, and there might be a time when you want to pass extra properties along with the two above which we nearly always want to pass. We haven’t made <code>&lt;AppLink&gt;</code> very extensible by hard coding the exact properties we need.</p>
+<p>当然，<code>&lt;Link&gt;</code> 组件可以接受更多发属性，有时我们只是想组件允许传递额外的属性以及上述的两个属性。我们并没有通过代码属性让 <code>&lt;AppLink&gt;</code> 有很高的扩展性。</p>
+<h2 id="The-JSX-spread"><a href="#The-JSX-spread" class="headerlink" title="The JSX spread"></a><strong>The JSX spread</strong></h2><h2 id="JSX-传递"><a href="#JSX-传递" class="headerlink" title="JSX 传递"></a><strong>JSX 传递</strong></h2><p>JSX, the HTML-like syntax we use to define React elements, supports the spread operator for passing an object to a component as properties. For example, the code samples below achieve the same thing:</p>
+<p>JSX，一种类似于HTML的语法用于定义React组件，支持扩展操作符将对象作为属性传递给组件。例如，下面的代码示例实现了同样的事情：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> props=&#123;<span class="attr">a</span>:<span class="number">1</span>,<span class="attr">b</span>:<span class="number">2</span>&#125;;</span><br><span class="line">&lt;Foo a=&#123;props.a &#125;b=&#123;props.b&#125; /&gt;</span><br><span class="line"></span><br><span class="line">&lt;Foo &#123;...props&#125; /&gt;</span><br></pre></td></tr></table></figure>
+<p>Using <code>{...props}</code> spreads each key in the object and passes it to <code>Foo</code> as an individual property.</p>
+<p>使用 <code>{... props}</code> 扩展对象中的每个键，并将其作为单个属性传递给 <code>Foo</code>。</p>
+<p>We can make use of this trick with <code>&lt;AppLink&gt;</code> so we support any arbitrary property that <code>&lt;Link&gt;</code> supports. By doing this we also future proof ourselves; if <code>&lt;Link&gt;</code> adds any new properties in the future our wrapper component will already support them. While we’re at it, I’m also going to change  <code>AppLink</code> to be a functional component.</p>
+<p>我们可以利用 <code>&lt;AppLink&gt;</code> 这个技巧，让我们支持 <code>&lt;Link&gt;</code> 支持的任意属性。通这样做，我们也将来证明自己；如果 <code>&lt;Link&gt;</code> 在将来添加任何新的属性，我们的包装器组件将已经支持它们。在我们这样做的时候，我同时要将 <code>AppLink</code> 改成函数式组件。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> AppLink = <span class="function"><span class="keyword">function</span>(<span class="params">props</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">Link</span> &#123;<span class="attr">...props</span>&#125; <span class="attr">activeClassName</span>=<span class="string">"active-link"</span> /&gt;</span>;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure>
+<p>Now <link> will accept any properties and pass them through. Note that we also can use the self closing form instead of explicitly referencing {props.children} in-between the <link> tags. React allows children to be passed as a regular prop or as child elements of a component between the opening and closing tag.</p>
+<p>现在将接受任何属性并传递它们。请注意，我们还可以使用笔和标签，而不是在标签之间传递{props.children}。React允许 children 作为常规 prop 或作为在开始和结束标签之间的组件的子元素进行传递。</p>
+<h2 id="Property-ordering-in-React"><a href="#Property-ordering-in-React" class="headerlink" title="Property ordering in React"></a><strong>Property ordering in React</strong></h2><h2 id="React中属性的排序"><a href="#React中属性的排序" class="headerlink" title="React中属性的排序"></a><strong>React中属性的排序</strong></h2><p>Imagine that for one specific link on your page, you have to use a different activeClassName. You try passing it into <applink>, since we pass all properties through:</applink></p>
+<p>想象一下，对于页面上的一个特定链接，你必须使用不同的 activeClassName。尝试将其传递到 <applink> 中，我们通过以下方式传递所有属性： </applink></p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;AppLink to=“/special-link” activeClassName=“special-active” &gt;</span><br><span class="line">    Special Secret Link</span><br><span class="line">&lt;<span class="regexp">/AppLink&gt;</span></span><br></pre></td></tr></table></figure>
+<p>However, this doesn’t work. The reason is because of the ordering of properties when we render the <code>&lt;Link&gt;</code> component:</p>
+<p>但是，这不行。渲染 <code>&lt;Link&gt;</code> 组件时属性的顺序：</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">return</span> <span class="xml"><span class="tag">&lt; <span class="attr">Link</span> &#123;<span class="attr">...props</span>&#125; <span class="attr">activeClassName</span>=<span class="string">"active-link"</span> /&gt;</span>;</span></span><br></pre></td></tr></table></figure>
+<p>When you have the same property multiple times in a React component, the last declaration wins. This means that our last <code>activeClassName=&quot;active-link&quot;</code> declaration will always win, since it’s placed after <code>{...this.props}</code>. To fix this we can reorder the properties so we spread this.props last. This means that we set sensible defaults that we’d like to use, but the user can override them if they really need to:</p>
+<p>当您在React组件中多次具有相同的属性时，最后一个会被使用。这就意味着放在 <code>{...this.props}</code> 后面的 <code>activeClassName=&quot;active-link&quot;</code> 会被使用。我们可以把 this.props 放在最后来解决这个问题。这意味着如果用户真的需要我们可以设置一些想要合理的默认值，但是这些默认值是可以被覆盖：</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">Link</span> <span class="attr">activeClassName</span>=<span class="string">"active-link"</span> &#123;<span class="attr">...props</span>&#125; /&gt;</span>;</span></span><br></pre></td></tr></table></figure>
+<p>By creating higher order components that wrap existing ones but with additional behavior, we keep our code base clean and defend against future changes by not repeating properties and keeping their values in just one place.</p>
+<p>通过创建一个逛街组件可以使现有的组件得到额外的功能，我们尽量保持我们的代码简洁，并且通过不重复的属性来应对未来的变化，同时把他们的值保存在一个地方。</p>
+<h2 id="Higher-Order-Component-Creators"><a href="#Higher-Order-Component-Creators" class="headerlink" title="Higher Order Component Creators"></a><strong>Higher Order Component Creators</strong></h2><h2 id="高阶组件创造者"><a href="#高阶组件创造者" class="headerlink" title="高阶组件创造者"></a><strong>高阶组件创造者</strong></h2><p>Often you’ll have a number of components that you’ll need to wrap in the same behavior. This is very similar to earlier in this article when we wrapped <code>add</code> and <code>subtract</code> to add logging to them.</p>
+<p>通常你需要给很多组件添加同样的方法。这就和我们前面说到的给 <code>add</code> 函数和 <code>subtract</code> 函数添加显示输出一样。</p>
+<p>Let’s imagine in your application you have an object that contains information on the current user who is authenticated on the system. You need some of your React components to be able to access this information, but rather than blindly making it accessible for every component you want to be more strict about which components receive the information.</p>
+<p>让我们想象一下，在你的应用程序中，你有一个对象，其中包含关于系统进行身份验证的当前用户的信息。你需要你的 React 组件可以访问这些信息，而不是盲目地使每个组件都可以访问，你更希望严格地控制哪些组件接收信息。</p>
+<p>The way to solve this is to create a function that we can call with a React component. The function will then return a new React component that will render the given component but with an extra property which will give it access to the user information.</p>
+<p>解决的方法就是我们可以创建一个函数去调用一个 React 组件。函数会返回一个可以访问用户信息并且把原来组件进行渲染的新 React 组件。</p>
+<p>That sounds pretty complicated, but it’s made more straightforward with some code:</p>
+<p>听起来很复杂，但是通过一些代码就可以很简洁了：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">wrapWithUser</span>(<span class="params">Component</span>)</span>&#123;</span><br><span class="line">    <span class="comment">// information that we don’t want everything to access</span></span><br><span class="line">    <span class="comment">// 收限制的用户信息</span></span><br><span class="line">    <span class="keyword">var</span> secretUserInfo = &#123;</span><br><span class="line">        <span class="attr">name</span>:<span class="string">'Jack Franklin'</span>,</span><br><span class="line">        <span class="attr">favouriteColour</span>:<span class="string">'blue'</span></span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// return a newly generated React component</span></span><br><span class="line">    <span class="comment">// using a functional, stateless component</span></span><br><span class="line">    <span class="comment">// 返回一个新的 React 组件</span></span><br><span class="line">    <span class="comment">// 使用一个无状态函数式组件</span></span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">props</span>)</span>&#123;</span><br><span class="line">        <span class="comment">// pass in the user variable as a property, along with</span></span><br><span class="line">        <span class="comment">// all the other props that we might be given</span></span><br><span class="line">        <span class="comment">// 用户信息作为属性进行传递</span></span><br><span class="line">        <span class="comment">// 其他属性我们可以自定义</span></span><br><span class="line">        <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">Component</span> <span class="attr">user</span>=<span class="string">&#123;secretUserInfo&#125;</span> &#123;<span class="attr">...props</span>&#125; /&gt;</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure>
+<p>The function takes a React component (which is easy to spot given React components have to have capital letters at the beginning) and returns a new function that will render the component it was given with an extra property of user, which is set to the <code>secretUserInfo</code>.</p>
+<p>函数通过一个React组件（自定义的React组件必须有大写字母开头）并返回一个新的函数，它将使用设置在 <code>secretUserInfo</code> 里的用户的属性来渲染那个组件。</p>
+<p>Now let’s take a component, <code>&lt;AppHeader&gt;</code>, which wants access to this information so it can display the logged in user:</p>
+<p>现在我们有一个 <code>&lt;AppHeader&gt;</code> 组件需要这些信息，以便把登陆的用户信息展示出来：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> AppHeader=<span class="function"><span class="keyword">function</span>(<span class="params">props</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(props.user)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">p</span>&gt;</span>Logged in as &#123;props.user.name&#125; <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">p</span>&gt;</span>You need to login<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>The final step is to connect this component up so it is given <code>this.props.user</code>. We can create a new component by passing this one into our <code>wrapWithUser</code> function.</p>
+<p>最后一步是将此组件连接起来，我们可以通过 <code>wrapWithUser</code> 函数创建新的组件，以便把 <code>this.props.user</code> 传递给他。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> ConnectedAppHeader = wrapWithUser(AppHeader);</span><br></pre></td></tr></table></figure>
+<p>We now have a <code>&lt;ConnectedAppHeader&gt;</code> component that can be rendered, and will have access to the <code>user</code> object.</p>
+<p>现在我们有了 <code>&lt;ConnectedAppHeader&gt;</code> 组件可以访问 <code>user</code> 对象，并且渲染原来的组件。</p>
+<p>I chose to call the component <code>ConnectedAppHeader</code> because I think of it as being connected with some extra piece of data that not every component is given access to.</p>
+<p>我给这个组件起名叫 <code>ConnectedAppHeader</code> 因为他传递了一些不希望所有组件都可以使用的额外数据。</p>
+<p>This pattern is very common in <strong>React</strong> libraries, particularly in <strong>Redux</strong>, so being aware of how it works and the reasons it’s being used will help you as your application grows and you rely on other third party libraries that use this approach.</p>
+<p>这种模式在 <strong>React</strong> 库中非常常见，特别是在 <strong>Redux</strong> 中，知道你依赖的第三方库是如何工作的，它被使用的原因将帮助你随着你的应用程序一起成长。</p>
+<h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a><strong>Conclusion</strong></h2><h2 id="结论"><a href="#结论" class="headerlink" title="结论"></a><strong>结论</strong></h2><p>This article has shown how, by applying principles of functional programming such as pure functions and higher order components to React, you can create a codebase that’s easier to maintain and work with on a daily basis.</p>
+<p>这篇文章即将结束，通过应用诸如纯函数和更高阶函数的函数式编程的原理应用到React，您可以创建一个更容易维护和使用的代码库。</p>
+<p>By creating higher order components you’re able to keep data defined in only one place, making refactoring easier. Higher order function creators enable you to keep most data private and only expose pieces of data to the components that really need it. By doing this you make it obvious which components are using which bits of data, and as your application grows you’ll find this beneficial.</p>
+<p>通过创建更高阶的组件，你只能将数据定义在一个位置，使重构更容易。更高阶的函数创建者使你能够将大部分数据保留为私有，并且仅将数据片段暴露给真正需要的组件。通过这样做，你可以清楚地知道哪些组件正在使用哪些数据，并且随着应用程序的发展，你会发现这是有益的。</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/0/alipay.png">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/0/weixin.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -227,7 +400,7 @@
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -240,281 +413,104 @@
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://zjafei.coding.me/2017/11/12/高阶组件：react应用设计模式/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/11/11/使您的JavaScript纯净/" class="archive-article-date">
-  	<time datetime="2017-11-11T03:06:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-11</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2017/11/11/使您的JavaScript纯净/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">使您的JavaScript纯净</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/11/11/使您的JavaScript纯净/">使您的JavaScript纯净</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javascript</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">pure funtion</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">纯函数</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">side effects</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">副作用</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/coding//" class="article-tag-list-link color2">coding</a>
-        		</li>
-      		
-		</ul>
-	</div>
+        
+        
+    </div>
+</aside>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/11/11/webpack-集成-Integrations-翻译/" class="archive-article-date">
-  	<time datetime="2017-11-11T02:29:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-11</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/11/11/webpack-集成-Integrations-翻译/">webpack 集成(Integrations) 翻译</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">webpack</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javascript</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">integrations</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/coding//" class="article-tag-list-link color2">coding</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/11/05/webpack的常用插件/" class="archive-article-date">
-  	<time datetime="2017-11-05T12:29:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-05</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/11/05/webpack的常用插件/">webpack的常用插件</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">webpack</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javascript</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/coding//" class="article-tag-list-link color2">coding</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/11/03/webpack的shimming的翻译/" class="archive-article-date">
-  	<time datetime="2017-11-03T14:10:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-03</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/11/03/webpack的shimming的翻译/">webpack的shimming的翻译</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">webpack</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javascript</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">shimming</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/coding//" class="article-tag-list-link color2">coding</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
   
-    </div></section>
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -537,10 +533,10 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
-		isCategory: true,
+		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
 		root: "/",
