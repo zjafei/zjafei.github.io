@@ -6,17 +6,39 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="//zjafei.coding.me">
-  <title>Tag: 两栏 | 代码猴</title>
+  <title>ubuntu安装Jenkins | 代码猴</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="代码猴">
-<meta property="og:url" content="//zjafei.coding.me/tags/两栏/index.html">
+  <meta name="description" content="A. 首先查看是否安装了JDK和JRE（建议openjdk-7-jre和openjdk-7-jdk）：1java -version
+如果没有安装，执行：
+1.更新包指数
+1sudo apt-get update
+2.安装Java运行时环境
+1sudo apt-get install default-jre
+3.安装JDK
+1sudo apt-get install default-jdk">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ubuntu安装Jenkins">
+<meta property="og:url" content="//zjafei.coding.me/2017/12/06/ubuntu安装Jenkins/index.html">
 <meta property="og:site_name" content="代码猴">
-<meta property="og:description">
+<meta property="og:description" content="A. 首先查看是否安装了JDK和JRE（建议openjdk-7-jre和openjdk-7-jdk）：1java -version
+如果没有安装，执行：
+1.更新包指数
+1sudo apt-get update
+2.安装Java运行时环境
+1sudo apt-get install default-jre
+3.安装JDK
+1sudo apt-get install default-jdk">
+<meta property="og:updated_time" content="2017-12-06T12:47:34.277Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="代码猴">
-<meta name="twitter:description">
+<meta name="twitter:title" content="ubuntu安装Jenkins">
+<meta name="twitter:description" content="A. 首先查看是否安装了JDK和JRE（建议openjdk-7-jre和openjdk-7-jdk）：1java -version
+如果没有安装，执行：
+1.更新包指数
+1sudo apt-get update
+2.安装Java运行时环境
+1sudo apt-get install default-jre
+3.安装JDK
+1sudo apt-get install default-jdk">
   
   
     <link rel="icon" href="/0/logo.png">
@@ -156,76 +178,112 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-ubuntu安装Jenkins" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/11/23/css布局：两栏、三栏，从圣杯到双飞翼/" class="archive-article-date">
-  	<time datetime="2017-11-23T14:45:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-23</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/11/23/css布局：两栏、三栏，从圣杯到双飞翼/">css布局：两栏、三栏，从圣杯到双飞翼</a>
+    <h1 class="article-title" itemprop="name">
+      ubuntu安装Jenkins
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2017/12/06/ubuntu安装Jenkins/" class="archive-article-date">
+  	<time datetime="2017-12-06T11:40:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-06</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="A-首先查看是否安装了JDK和JRE（建议openjdk-7-jre和openjdk-7-jdk）："><a href="#A-首先查看是否安装了JDK和JRE（建议openjdk-7-jre和openjdk-7-jdk）：" class="headerlink" title="A. 首先查看是否安装了JDK和JRE（建议openjdk-7-jre和openjdk-7-jdk）："></a>A. 首先查看是否安装了<code>JDK</code>和<code>JRE</code>（建议<code>openjdk-7-jre</code>和<code>openjdk-7-jdk</code>）：</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -version</span><br></pre></td></tr></table></figure>
+<p>如果没有安装，执行：</p>
+<p>1.更新包指数</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br></pre></td></tr></table></figure>
+<p>2.安装Java运行时环境</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install default-jre</span><br></pre></td></tr></table></figure>
+<p>3.安装JDK</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install default-jdk</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<h2 id="B-下面的步骤是正式安装Jenkins："><a href="#B-下面的步骤是正式安装Jenkins：" class="headerlink" title="B. 下面的步骤是正式安装Jenkins："></a>B. 下面的步骤是正式安装<code>Jenkins</code>：</h2><p>1.获取秘钥<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -q -O - https://pkg.jenkins.io/debian/jenkins-ci.org.key | sudo apt-key add -</span><br></pre></td></tr></table></figure></p>
+<p>2.添加源列表<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo sh -c <span class="string">'echo deb http://pkg.jenkins.io/debian-stable binary/ &gt; /etc/apt/sources.list.d/jenkins.list'</span></span><br></pre></td></tr></table></figure></p>
+<p>3.更新<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br></pre></td></tr></table></figure></p>
+<p>4.安装<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install jenkins</span><br></pre></td></tr></table></figure></p>
+<p>Jenkins服务默认运行在8080端口，如果Jenkins服务不能启动，可以编辑：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/etc/default/jenkins</span><br></pre></td></tr></table></figure></p>
+<p>替换<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">HTTP_PORT=8080</span><br></pre></td></tr></table></figure></p>
+<p>为<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">HTTP_PORT=8000</span><br></pre></td></tr></table></figure></p>
+<p>8000为你所希望Jenkins服务的端口</p>
+<p>5.打开浏览器输了你的主机ip和Jenkins的服务端口如：192.168.1.22:8080</p>
+<p>6.页面会索要一个key，key的地址 <code>/var/lib/jenkins/secrets/initialAdminPassword</code></p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/0/alipay.png">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/0/weixin.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">css布局</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">CI</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">css</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">持续集成</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">两栏</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">jenkins</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">三栏</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">continuous integration</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">圣杯</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">双飞翼</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">bfc</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">块格式化上下文</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">ubuntu</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -238,17 +296,104 @@ var _hmt = _hmt || [];
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://zjafei.coding.me/2017/12/06/ubuntu安装Jenkins/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2017/11/23/css布局：两栏、三栏，从圣杯到双飞翼/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">css布局：两栏、三栏，从圣杯到双飞翼</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -271,9 +416,9 @@ var _hmt = _hmt || [];
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
