@@ -6,48 +6,42 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="//zjafei.coding.me">
-  <title>从高阶函数到高阶组件 | 代码猴</title>
+  <title>npm对项目依赖包版本管理的机制 | 代码猴</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="纯函数(https://zh.wikipedia.org/wiki/纯函数)如果一个函数遵循以下几个规则那么他就是纯函数：
+  <meta name="description" content="semver语义化版本控制规范
+版本格式：主版本号.次版本号.修订号，版本号(major, minor, patch)递增规则如下：
 
-函数处理的数据都是通过参数传递给函数。
-他不接受不确定的数据或者任何其他数据（他们通常是副作用的）。
-同样的输入，函数将得到同样的输出。
+主版本号：当你做了不兼容的 API 修改，
+次版本号：当你做了向下兼容的功能性新增，
+修订号：当你做了向下兼容的问题修正。
 
-纯函数的好处主要有几点：
-
-无状态。线程安全。不需要线程同步。
-纯函数相互调用组装起来的函数，还是纯函数。
-应用程序或者运行环境（Ru">
+Versions版本是指例如 0.4.1、1.2.7、1.2.4-beta.0 这样表示包的特定版本的字符串。
+Ranges范围则是对满足">
 <meta property="og:type" content="article">
-<meta property="og:title" content="从高阶函数到高阶组件">
-<meta property="og:url" content="//zjafei.coding.me/2017/11/15/从高阶函数到高阶组件/index.html">
+<meta property="og:title" content="npm对项目依赖包版本管理的机制">
+<meta property="og:url" content="//zjafei.coding.me/2017/12/11/npm对包版本管理的机制/index.html">
 <meta property="og:site_name" content="代码猴">
-<meta property="og:description" content="纯函数(https://zh.wikipedia.org/wiki/纯函数)如果一个函数遵循以下几个规则那么他就是纯函数：
+<meta property="og:description" content="semver语义化版本控制规范
+版本格式：主版本号.次版本号.修订号，版本号(major, minor, patch)递增规则如下：
 
-函数处理的数据都是通过参数传递给函数。
-他不接受不确定的数据或者任何其他数据（他们通常是副作用的）。
-同样的输入，函数将得到同样的输出。
+主版本号：当你做了不兼容的 API 修改，
+次版本号：当你做了向下兼容的功能性新增，
+修订号：当你做了向下兼容的问题修正。
 
-纯函数的好处主要有几点：
-
-无状态。线程安全。不需要线程同步。
-纯函数相互调用组装起来的函数，还是纯函数。
-应用程序或者运行环境（Ru">
-<meta property="og:updated_time" content="2017-12-11T03:57:50.013Z">
+Versions版本是指例如 0.4.1、1.2.7、1.2.4-beta.0 这样表示包的特定版本的字符串。
+Ranges范围则是对满足">
+<meta property="og:updated_time" content="2017-12-11T06:32:24.344Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="从高阶函数到高阶组件">
-<meta name="twitter:description" content="纯函数(https://zh.wikipedia.org/wiki/纯函数)如果一个函数遵循以下几个规则那么他就是纯函数：
+<meta name="twitter:title" content="npm对项目依赖包版本管理的机制">
+<meta name="twitter:description" content="semver语义化版本控制规范
+版本格式：主版本号.次版本号.修订号，版本号(major, minor, patch)递增规则如下：
 
-函数处理的数据都是通过参数传递给函数。
-他不接受不确定的数据或者任何其他数据（他们通常是副作用的）。
-同样的输入，函数将得到同样的输出。
+主版本号：当你做了不兼容的 API 修改，
+次版本号：当你做了向下兼容的功能性新增，
+修订号：当你做了向下兼容的问题修正。
 
-纯函数的好处主要有几点：
-
-无状态。线程安全。不需要线程同步。
-纯函数相互调用组装起来的函数，还是纯函数。
-应用程序或者运行环境（Ru">
+Versions版本是指例如 0.4.1、1.2.7、1.2.4-beta.0 这样表示包的特定版本的字符串。
+Ranges范围则是对满足">
   
   
     <link rel="icon" href="/0/logo.png">
@@ -187,58 +181,101 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-从高阶函数到高阶组件" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-npm对包版本管理的机制" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      从高阶函数到高阶组件
+      npm对项目依赖包版本管理的机制
     </h1>
   
 
         
-        <a href="/2017/11/15/从高阶函数到高阶组件/" class="archive-article-date">
-  	<time datetime="2017-11-15T01:33:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-15</time>
+        <a href="/2017/12/11/npm对包版本管理的机制/" class="archive-article-date">
+  	<time datetime="2017-12-11T04:00:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-11</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="纯函数-https-zh-wikipedia-org-wiki-纯函数"><a href="#纯函数-https-zh-wikipedia-org-wiki-纯函数" class="headerlink" title="纯函数(https://zh.wikipedia.org/wiki/纯函数)"></a>纯函数(<a href="https://zh.wikipedia.org/wiki/%E7%BA%AF%E5%87%BD%E6%95%B0" target="_blank" rel="external">https://zh.wikipedia.org/wiki/纯函数</a>)</h2><p>如果一个函数遵循以下几个规则那么他就是纯函数：</p>
+        <h2 id="semver"><a href="#semver" class="headerlink" title="semver"></a>semver</h2><p><a href="https://semver.org/lang/zh-CN/" target="_blank" rel="external">语义化版本控制规范</a></p>
+<p>版本格式：主版本号.次版本号.修订号，版本号(major, minor, patch)递增规则如下：</p>
+<ol>
+<li>主版本号：当你做了不兼容的 API 修改，</li>
+<li>次版本号：当你做了向下兼容的功能性新增，</li>
+<li>修订号：当你做了向下兼容的问题修正。</li>
+</ol>
+<h4 id="Versions"><a href="#Versions" class="headerlink" title="Versions"></a>Versions</h4><p>版本是指例如 0.4.1、1.2.7、1.2.4-beta.0 这样表示包的特定版本的字符串。</p>
+<h4 id="Ranges"><a href="#Ranges" class="headerlink" title="Ranges"></a>Ranges</h4><p>范围则是对满足特定规则的版本的一种表示，例如 1.2.3-2.3.4、1.x、^0.2、&gt;1.4.0</p>
 <ul>
-<li>函数处理的数据都是通过参数传递给函数。</li>
-<li>他不接受不确定的数据或者任何其他数据（他们通常是<a href="https://zh.wikipedia.org/wiki/函数副作用" target="_blank" rel="external">副作用</a>的）。</li>
-<li>同样的输入，函数将得到同样的输出。</li>
-</ul>
-<p>纯函数的好处主要有几点：</p>
+<li><p><code>&lt;</code> 小于某个版</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"babel"</span>: <span class="string">"&lt;6.5.2"</span>,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>&lt;=</code> 小于等于某个版本</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"babel"</span>: <span class="string">"&lt;=6.5.2"</span>,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>&gt;</code> 大于某个版本</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"babel"</span>: <span class="string">"&gt;6.5.2"</span>,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>&gt;=</code> 大于等于某个版本</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"babel"</span>: <span class="string">"&gt;=6.5.2"</span>,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>=</code> 等于某个版本</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"babel"</span>: <span class="string">"=6.5.2"</span>,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>X, x,*</code> 限定主版本号和次版本号</p>
+<blockquote>
 <ul>
-<li>无状态。线程安全。不需要线程同步。</li>
-<li><code>纯函数相互调用组装起来的函数，还是纯函数</code>。</li>
-<li>应用程序或者运行环境（Runtime）可以对纯函数的运算结果进行缓存，运算加快速度。<a id="more"></a></li>
+<li>* := &gt;=0.0.0（任何版本满足）</li>
+<li>1.x := &gt;=1.0.0 &lt;2.0.0 (匹配的主要版本)</li>
+<li>1.2.x := &gt;=1.2.0 &lt;1.3.0 (匹配的主要和次要版本)</li>
+<li>“” (空字符) := * := &gt;=0.0.0</li>
+<li>1 := 1.x.x := &gt;=1.0.0 &lt;2.0.0</li>
+<li>1.2 := 1.2.x := &gt;=1.2.0 &lt;1.3.0</li>
 </ul>
-<p>例子：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//纯函数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">x, y</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x + y;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//不是纯函数</span></span><br><span class="line"><span class="keyword">var</span> y = <span class="number">2</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">badAdd</span>(<span class="params">x</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x + y;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="高阶函数-https-zh-wikipedia-org-wiki-高阶函数"><a href="#高阶函数-https-zh-wikipedia-org-wiki-高阶函数" class="headerlink" title="高阶函数(https://zh.wikipedia.org/wiki/高阶函数)"></a>高阶函数(<a href="https://zh.wikipedia.org/wiki/%E9%AB%98%E9%98%B6%E5%87%BD%E6%95%B0" target="_blank" rel="external">https://zh.wikipedia.org/wiki/高阶函数</a>)</h2><p>在数学和计算机科学中，高阶函数是至少满足下列一个条件的函数：</p>
+</blockquote>
+</li>
+</ul>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"babel"</span>: <span class="string">"~6.5.x"</span>,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ul>
-<li>接受一个或多个函数作为输入</li>
-<li>输出一个函数</li>
+<li><code>~</code> 限定主版本号和次版本号<blockquote>
+<ul>
+<li>~1.2.3 := &gt;=1.2.3 <1.(2+1).0 :="">=1.2.3 &lt;1.3.0</1.(2+1).0></li>
+<li>~1.2 := &gt;=1.2.0 <1.(2+1).0 :="">=1.2.0 &lt;1.3.0 (等同于 1.2.x)</1.(2+1).0></li>
+<li>~1 := &gt;=1.0.0 &lt;(1+1).0.0 := &gt;=1.0.0 &lt;2.0.0 (等同于 1.x)</li>
+<li>~0.2.3 := &gt;=0.2.3 <0.(2+1).0 :="">=0.2.3 &lt;0.3.0</0.(2+1).0></li>
+<li>~0.2 := &gt;=0.2.0 <0.(2+1).0 :="">=0.2.0 &lt;0.3.0 (等同于 0.2.x)</0.(2+1).0></li>
+<li>~0 := &gt;=0.0.0 &lt;(0+1).0.0 := &gt;=0.0.0 &lt;1.0.0 (等同于 0.x)</li>
 </ul>
-<p>例子：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">addition</span>(<span class="params">x, y</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> X + Y;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>业务发生改变需要console，addition不能修改，因为你不知道add都用在了哪里，你的修改会对现有代码参数什么样的后果。于是有了下面的结果：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">additionAndLog</span>(<span class="params">x, y</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> result = addition(x, y);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'Result'</span>, result);</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>由于你的修改没有对现有代码产生不好的影响，所以减法、乘法、除法都要做console的添加：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">subtractionAndLog</span>(<span class="params">x, y</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> result = subtraction(x, y);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'Result'</span>, result);</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">multiplicationAndLog</span>(<span class="params">x, y</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> result = multiplication(x, y);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'Result'</span>, result);</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">divisionAndLog</span>(<span class="params">x, y</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> result = division(x, y);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'Result'</span>, result);</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>由于你的修改没有对现有代码产生不好的影响，所以n个函数都要做console的添加！！！<br>改变思路：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">logAndReturn</span>(<span class="params">func</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> args = <span class="built_in">Array</span>.prototype.slice.call(<span class="built_in">arguments</span>)</span><br><span class="line">        <span class="comment">// arguments是个类数组 &#123;0:42, 1:52, 2:63, length:3&#125;</span></span><br><span class="line">        <span class="comment">// Array的实例的slice给arguments使用</span></span><br><span class="line">        <span class="keyword">var</span> result = func.apply(<span class="literal">null</span>, args);</span><br><span class="line">        <span class="comment">// Function.apply(obj,args)能接受两个参数：</span></span><br><span class="line">        <span class="comment">// obj: 这个对象将代替Function类中的this对象</span></span><br><span class="line">        <span class="comment">// args： 这是个数组，它将作为参数传递给Function类</span></span><br><span class="line">        <span class="comment">// function Person(name,age)&#123;</span></span><br><span class="line">        <span class="comment">//     this.name=name;</span></span><br><span class="line">        <span class="comment">//     this.age=age;</span></span><br><span class="line">        <span class="comment">//     this.sayhello=function()&#123;alert("hello")//&#125;;</span></span><br><span class="line">        <span class="comment">// &#125; </span></span><br><span class="line">        <span class="comment">// function Student(name,age,grade,school)&#123;</span></span><br><span class="line">        <span class="comment">//     Person.apply(this,arguments);</span></span><br><span class="line">        <span class="comment">//     this.grade=grade;</span></span><br><span class="line">        <span class="comment">//     this.school=school;</span></span><br><span class="line">        <span class="comment">// &#125; </span></span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'Result'</span>, result);</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> additionAndLog =  logAndReturn(addition);</span><br><span class="line"><span class="keyword">const</span> subtractionAndLog =  logAndReturn(subtraction);</span><br><span class="line"><span class="keyword">const</span> multiplicationAndLog =  logAndReturn(multiplication);</span><br><span class="line"><span class="keyword">const</span> divisionAndLog =  logAndReturn(division);</span><br></pre></td></tr></table></figure>
-<h2 id="高阶组件"><a href="#高阶组件" class="headerlink" title="高阶组件"></a>高阶组件</h2><p>一个路由组件的例子：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">Link</span> <span class="attr">to</span>=<span class="string">"/"</span> <span class="attr">activeClassName</span>=<span class="string">"active-link"</span>&gt;</span> Home <span class="tag">&lt;/<span class="name">Link</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">Link</span> <span class="attr">to</span>=<span class="string">"/about"</span> <span class="attr">activeClassName</span>=<span class="string">"active-link"</span>&gt;</span> About<span class="tag">&lt;/<span class="name">Link</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">Link</span> <span class="attr">to</span>=<span class="string">"/contact"</span> <span class="attr">activeClassName</span>=<span class="string">"active-link"</span>&gt;</span> Contact<span class="tag">&lt;/<span class="name">Link</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p>初步优化，提取相同的代码：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> AppLink=React.createClass(&#123;</span><br><span class="line">    <span class="attr">render</span>:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span>(</span><br><span class="line">            <span class="xml"><span class="tag">&lt;<span class="name">Link</span> <span class="attr">to</span>=<span class="string">&#123;this.props.to&#125;</span> <span class="attr">activeClassName</span>=<span class="string">"active-link"</span>&gt;</span></span><br><span class="line">                &#123;this.props.children&#125;</span><br><span class="line">            <span class="tag">&lt;/<span class="name">Link</span>&gt;</span></span>;</span><br><span class="line">        );</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
-<p>改变现在的路由组件：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">AppLink</span> <span class="attr">to</span>=<span class="string">"/"</span>&gt;</span>Home<span class="tag">&lt;/<span class="name">AppLink</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">AppLink</span> <span class="attr">to</span>=<span class="string">"/about"</span>&gt;</span>About<span class="tag">&lt;/<span class="name">AppLink</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">AppLink</span> <span class="attr">to</span>=<span class="string">"/contact"</span>&gt;</span>Contact<span class="tag">&lt;/<span class="name">AppLink</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p>进一步优化，对props的覆盖控制：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//高阶组件覆盖，强调统一</span></span><br><span class="line"><span class="keyword">var</span> AppLink=React.createClass(&#123;</span><br><span class="line">    <span class="attr">render</span>:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">const</span> &#123;children, props&#125; = <span class="keyword">this</span>.props;</span><br><span class="line">        <span class="keyword">return</span>(</span><br><span class="line">            <span class="xml"><span class="tag">&lt;<span class="name">Link</span> &#123;<span class="attr">...props</span>&#125; <span class="attr">activeClassName</span>=<span class="string">"active-link"</span>&gt;</span></span><br><span class="line">                &#123;children&#125;</span><br><span class="line">            <span class="tag">&lt;/<span class="name">Link</span>&gt;</span></span>;</span><br><span class="line">        );</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">//调用组件覆盖，强调默认值和定制化</span></span><br><span class="line"><span class="keyword">var</span> AppLink=React.createClass(&#123;</span><br><span class="line">    <span class="attr">render</span>:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">const</span> &#123;children, props&#125; = <span class="keyword">this</span>.props;</span><br><span class="line">        <span class="keyword">return</span>(</span><br><span class="line">            <span class="xml"><span class="tag">&lt;<span class="name">Link</span> <span class="attr">activeClassName</span>=<span class="string">"active-link"</span> &#123;<span class="attr">...props</span>&#125;&gt;</span></span><br><span class="line">                &#123;children&#125;</span><br><span class="line">            <span class="tag">&lt;/<span class="name">Link</span>&gt;</span></span>;</span><br><span class="line">        );</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
-<h2 id="SAAS项目的应用实例—–权限控制组件"><a href="#SAAS项目的应用实例—–权限控制组件" class="headerlink" title="SAAS项目的应用实例—–权限控制组件"></a>SAAS项目的应用实例—–<authcontrol>权限控制组件</authcontrol></h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">AuthControl</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">    render() &#123;</span><br><span class="line">        <span class="keyword">const</span> &#123; roles, userRoles, deniedAuth, children &#125; = <span class="keyword">this</span>.props;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (_.intersection(roles, userRoles).length === <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span> (deniedAuth !== <span class="literal">undefined</span>) &#123;</span><br><span class="line">                <span class="keyword">return</span> deniedAuth;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> (children);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">AuthControl.propTypes = &#123;</span><br><span class="line">    <span class="attr">roles</span>: React.PropTypes.array.isRequired,</span><br><span class="line">    <span class="attr">userRoles</span>: React.PropTypes.array.isRequired,</span><br><span class="line">    <span class="attr">children</span>: React.PropTypes.element,</span><br><span class="line">    <span class="attr">deniedAuth</span>: React.PropTypes.element,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">AuthControl</span></span><br><span class="line">    <span class="attr">roles</span>=<span class="string">&#123;[</span>'<span class="attr">admin</span>']&#125; </span><br><span class="line">    <span class="attr">userRoles</span>=<span class="string">&#123;[‘user’]&#125;</span></span><br><span class="line">    <span class="attr">deniedAuth</span>=<span class="string">&#123;</span>&lt;<span class="attr">div</span>&gt;</span>没有权限<span class="tag">&lt;/<span class="name">div</span>&gt;</span>&#125;</span><br><span class="line">&gt;</span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span>有权限<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">AuthControl</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
-<h2 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h2><p>通过将纯函数和高阶函数的函数式编程的原理应用到React，您可以创建一个更容易维护和使用的代码库。</p>
+</blockquote>
+</li>
+</ul>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"babel"</span>: <span class="string">"~6.5.2"</span>,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>^</code> 允许变化最左边的非零位的版本位<blockquote>
+<ul>
+<li>^1.2.3 := &gt;=1.2.3 &lt;2.0.0</li>
+<li>^0.2.3 := &gt;=0.2.3 &lt;0.3.0</li>
+<li>^0.0.3 := &gt;=0.0.3 &lt;0.0.4</li>
+<li>^1.2.x := &gt;=1.2.0 &lt;2.0.0</li>
+<li>^0.0.x := &gt;=0.0.0 &lt;0.1.0</li>
+<li>^0.0 := &gt;=0.0.0 &lt;0.1.0</li>
+<li>^1.x := &gt;=1.0.0 &lt;2.0.0</li>
+<li>^0.x := &gt;=0.0.0 &lt;1.0.0</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"babel"</span>: <span class="string">"^6.5.2"</span>,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="npm-install-的版本选择策略"><a href="#npm-install-的版本选择策略" class="headerlink" title="npm install 的版本选择策略"></a>npm install 的版本选择策略</h4><ul>
+<li>package.json没有对应包 install 没有限定版本：安装源的最新版本</li>
+<li>package.json有对应包 install 没有限定版本：package.json根据semver安装版本</li>
+<li>package.json没有对应包 install 限定版本：安装制定版本 package.json写入以^开头的版本依赖</li>
+<li>package.json有对应包 install 限定版本：安装制定版本 package.json依据按住改写以^开头的版本依赖</li>
+</ul>
 
       
 
@@ -283,31 +320,19 @@ var _hmt = _hmt || [];
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">npm</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">semver</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javascript</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">package</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">react</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">高阶函数</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">纯函数</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">高阶组件</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">包版本管理</a>
         		</li>
       		
 		</ul>
@@ -374,7 +399,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://zjafei.coding.me/2017/11/15/从高阶函数到高阶组件/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://zjafei.coding.me/2017/12/11/npm对包版本管理的机制/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -388,18 +413,9 @@ var _hmt = _hmt || [];
   
 <nav id="article-nav">
   
-    <a href="/2017/11/23/css布局：两栏、三栏，从圣杯到双飞翼/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          css布局：两栏、三栏，从圣杯到双飞翼
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/11/12/高阶组件：react应用设计模式/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">高阶组件：react应用设计模式</div>
+    <a href="/2017/12/06/ubuntu安装Jenkins/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">ubuntu安装Jenkins</div>
       <i class="icon-circle-right"></i>
     </a>
   
