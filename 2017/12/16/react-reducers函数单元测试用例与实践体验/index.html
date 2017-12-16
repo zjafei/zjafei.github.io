@@ -6,17 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="//zjafei.coding.me">
-  <title>Tag: npm | 代码猴</title>
+  <title>react reducers函数单元测试用例与实践体验 | 代码猴</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="代码猴">
-<meta property="og:url" content="//zjafei.coding.me/tags/npm/index.html">
+  <meta name="description" content="reduces函数都是纯函数，主要是传递payload来修改state
+代码都是围绕业务来编写的，这样存在的问题就是伴随业务的变化，代码也要相应的改动。那么对应的单元测试代码也要改动。而且就现在的编写思想来看业务的多少就决定了代码的数量。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="react reducers函数单元测试用例与实践体验">
+<meta property="og:url" content="//zjafei.coding.me/2017/12/16/react-reducers函数单元测试用例与实践体验/index.html">
 <meta property="og:site_name" content="代码猴">
-<meta property="og:description">
+<meta property="og:description" content="reduces函数都是纯函数，主要是传递payload来修改state
+代码都是围绕业务来编写的，这样存在的问题就是伴随业务的变化，代码也要相应的改动。那么对应的单元测试代码也要改动。而且就现在的编写思想来看业务的多少就决定了代码的数量。">
+<meta property="og:updated_time" content="2017-12-16T12:18:49.299Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="代码猴">
-<meta name="twitter:description">
+<meta name="twitter:title" content="react reducers函数单元测试用例与实践体验">
+<meta name="twitter:description" content="reduces函数都是纯函数，主要是传递payload来修改state
+代码都是围绕业务来编写的，这样存在的问题就是伴随业务的变化，代码也要相应的改动。那么对应的单元测试代码也要改动。而且就现在的编写思想来看业务的多少就决定了代码的数量。">
   
   
     <link rel="icon" href="/0/logo.png">
@@ -156,83 +160,197 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-react-reducers函数单元测试用例与实践体验" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/12/11/npm对包版本管理的机制/" class="archive-article-date">
-  	<time datetime="2017-12-11T04:00:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-11</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/12/11/npm对包版本管理的机制/">npm对项目依赖包版本管理的机制</a>
+    <h1 class="article-title" itemprop="name">
+      react reducers函数单元测试用例与实践体验
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2017/12/16/react-reducers函数单元测试用例与实践体验/" class="archive-article-date">
+  	<time datetime="2017-12-16T12:10:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>reduces函数都是纯函数，主要是传递<code>payload</code>来修改<code>state</code></p>
+<p>代码都是围绕业务来编写的，这样存在的问题就是伴随业务的变化，代码也要相应的改动。那么对应的单元测试代码也要改动。而且就现在的编写思想来看业务的多少就决定了代码的数量。<br><a id="more"></a><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">reducers: &#123;</span><br><span class="line">    saveIsSearchCustomerFormLoading(state, &#123; payload &#125;) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">Object</span>.assign(&#123;&#125;, state, &#123;</span><br><span class="line">            <span class="attr">isSearchCustomerFormLoading</span>: payload,</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;,</span><br><span class="line">    saveSearchCustomerList(state, &#123; payload &#125;) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">Object</span>.assign(&#123;&#125;, state, &#123;</span><br><span class="line">            <span class="attr">searchCustomerList</span>: &#123;</span><br><span class="line">                <span class="attr">dataList</span>: payload.data_list.map(<span class="function">(<span class="params">customer</span>) =&gt;</span> &#123;</span><br><span class="line">                    <span class="keyword">return</span> <span class="keyword">new</span> Customer(customer);</span><br><span class="line">                &#125;),</span><br><span class="line">                <span class="attr">totalItemCount</span>: payload.total_item_count,</span><br><span class="line">            &#125;,</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;,</span><br><span class="line">    updateSearchCustomerParams(state, &#123; payload &#125;) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">Object</span>.assign(&#123;&#125;, state, &#123;</span><br><span class="line">            <span class="attr">searchCustomerParams</span>: <span class="built_in">Object</span>.assign(&#123;&#125;, state.searchCustomerParams, payload),</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;,</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    saveCreateCustomerForm(state, &#123; payload &#125;) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">Object</span>.assign(&#123;&#125;, state, &#123;</span><br><span class="line">            <span class="attr">createCustomerForm</span>: payload,</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;,</span><br><span class="line">    saveIsCreateCustomerFormVisible(state, &#123; payload &#125;) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">Object</span>.assign(&#123;&#125;, state, &#123;</span><br><span class="line">            <span class="attr">isCreateCustomerFormVisible</span>: payload,</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;,</span><br><span class="line">    saveIsCreateCustomerFormLoading(state, &#123; payload &#125;) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">Object</span>.assign(&#123;&#125;, state, &#123;</span><br><span class="line">            <span class="attr">isCreateCustomerFormLoading</span>: payload,</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;,</span><br><span class="line">    saveCreateCustomerFormData(state, &#123; payload &#125;) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">Object</span>.assign(&#123;&#125;, state, &#123;</span><br><span class="line">            <span class="attr">createCustomerFormData</span>: payload,</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;,</span><br><span class="line">    updateCreateCustomerFormData(state, &#123; payload &#125;) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">Object</span>.assign(&#123;&#125;, state, &#123;</span><br><span class="line">            <span class="attr">createCustomerFormData</span>: <span class="built_in">Object</span>.assign(&#123;&#125;, state.createCustomerFormData, payload),</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure></p>
+<p>但是观察代码后发现，这些函数主要处理的业务都是对state属性的赋值和扩展，而且reduces又是纯函数，所以对函数的抽象就很有必要，也相对简单。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">reducers: &#123;</span><br><span class="line"> saveStateProperty(state, &#123; payload &#125;) &#123;</span><br><span class="line">        <span class="keyword">const</span> &#123; name, value &#125; = payload;</span><br><span class="line">        <span class="keyword">if</span> (state[name] !== <span class="literal">undefined</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="built_in">Object</span>.assign(&#123;&#125;, state, &#123;</span><br><span class="line">                [name]: value,</span><br><span class="line">            &#125;);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> state</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line"></span><br><span class="line"> updateStateProperty(state, &#123; payload &#125;) &#123;</span><br><span class="line">        <span class="keyword">const</span> &#123; name, value &#125; = payload;</span><br><span class="line">        <span class="keyword">if</span> (state[name] !== <span class="literal">undefined</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="built_in">Object</span>.assign(&#123;&#125;, state, &#123;</span><br><span class="line">                [name]: <span class="built_in">Object</span>.assign(&#123;&#125;, state[name], value),</span><br><span class="line">            &#125;);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> state</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>主要变为两个函数 saveStateProperty 负责对某个属性的赋值；updateStateProperty：负责对某个属性的扩展；（其实扩展方法就可以实现赋值的方法，但是考虑函数的功能的单纯和参数的简单，还是分为了两个函数）</p>
+<p>基于上面的实现那么对于reducers测试就不会随着业务的增长而增长。</p>
+<p>测试用例如下</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">describe(<span class="string">'reducers'</span>, () =&gt; &#123;</span><br><span class="line">    test(<span class="string">'saveStateProperty has property as payload\'s name'</span>, () =&gt; &#123;</span><br><span class="line">        expect(app.reducers.saveStateProperty(&#123; <span class="attr">test</span>: <span class="string">'no'</span> &#125;, &#123;</span><br><span class="line">            <span class="attr">payload</span>: &#123;</span><br><span class="line">                <span class="attr">name</span>: <span class="string">'test'</span>,</span><br><span class="line">                <span class="attr">value</span>: <span class="string">'ok'</span></span><br><span class="line"> &#125;</span><br><span class="line">        &#125;)).toEqual(&#123; <span class="attr">test</span>: <span class="string">'ok'</span> &#125;);</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    test(<span class="string">'saveStateProperty has property as payload\'s name'</span>, () =&gt; &#123;</span><br><span class="line">        expect(app.reducers.saveStateProperty(&#123; <span class="attr">test</span>: <span class="string">'no'</span> &#125;, &#123;</span><br><span class="line">            <span class="attr">payload</span>: &#123;</span><br><span class="line">                <span class="attr">name</span>: <span class="string">'test'</span>,</span><br><span class="line">                <span class="attr">value</span>: <span class="string">'ok'</span></span><br><span class="line"> &#125;</span><br><span class="line">        &#125;)).not.toEqual(&#123; <span class="attr">test</span>: <span class="string">'no'</span> &#125;);</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    test(<span class="string">'saveStateProperty with out property as payload\'s name'</span>, () =&gt; &#123;</span><br><span class="line">        expect(app.reducers.saveStateProperty(&#123;&#125;, &#123; <span class="attr">payload</span>: &#123; <span class="attr">name</span>: <span class="string">'test'</span>, <span class="attr">value</span>: <span class="string">'ok'</span> &#125; &#125;)).toEqual(&#123;&#125;);</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    test(<span class="string">'saveStateProperty with out property as payload\'s name'</span>, () =&gt; &#123;</span><br><span class="line">        expect(app.reducers.saveStateProperty(&#123;&#125;, &#123;</span><br><span class="line">            <span class="attr">payload</span>: &#123;</span><br><span class="line">                <span class="attr">name</span>: <span class="string">'test'</span>,</span><br><span class="line">                <span class="attr">value</span>: <span class="string">'ok'</span></span><br><span class="line"> &#125;</span><br><span class="line">        &#125;)).not.toEqual(&#123; <span class="attr">test</span>: <span class="string">'ok'</span> &#125;);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>其实effects部分的函数也存在业务代码过多的问题，而且情况更严重。但是副作用函数的不确定性本身就会带来很多的业务分支，所以现在没有想出什么好的办法。<br>但是基于控件的使用倒是有一定的规律可行。现在的控件基本就是form的验证处理，modal的显示隐藏，list的处理和筛选，还有详情页的字段显示。可以把这些常用组件有规律的事件做一些封装。</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/0/alipay.png">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/0/weixin.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">npm</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">单元测试</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">semver</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">unit test</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">package</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">react</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">包版本管理</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">reducer</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/coding//" class="article-tag-list-link color2">coding</a>
-        		</li>
-      		
-		</ul>
-	</div>
+      
 
+      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://zjafei.coding.me/2017/12/16/react-reducers函数单元测试用例与实践体验/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2017/12/16/react通过redux和redux-saga管理状态/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">react通过redux和redux-saga管理状态</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -255,9 +373,9 @@ var _hmt = _hmt || [];
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
