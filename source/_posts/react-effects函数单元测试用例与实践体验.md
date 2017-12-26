@@ -2,6 +2,7 @@
 title: react effects函数单元测试用例与实践体验
 date: 2017-12-16 20:26:18
 tags: ['单元测试','unit test','react','effects']
+category: 'coding'
 ---
 effects 函数是很强调业务的代码块
 

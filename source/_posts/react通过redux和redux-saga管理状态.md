@@ -2,6 +2,7 @@
 title: react通过redux和redux-saga管理状态
 date: 2017-12-16 19:53:12
 tags: ['reduxe','redux-saga','effect','dispatch','reducer']
+category: 'coding'
 ---
 ## Redux
 ### 应用场景

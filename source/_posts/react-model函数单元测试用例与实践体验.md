@@ -2,6 +2,7 @@
 title: react model函数单元测试用例与实践体验
 date: 2017-12-16 20:42:59
 tags: ['单元测试','unit test','react','model']
+category: 'coding'
 ---
 构造函数的主要作用就是对输入的对象进行类别的区分。以及暴露出一个修饰过的fetch函数。
 

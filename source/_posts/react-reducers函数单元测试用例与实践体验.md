@@ -2,6 +2,7 @@
 title: react reducers函数单元测试用例与实践体验
 date: 2017-12-16 20:10:40
 tags: ['单元测试','unit test','react','reducer']
+category: 'coding'
 ---
 
 reduces函数都是纯函数，主要是传递`payload`来修改`state`
