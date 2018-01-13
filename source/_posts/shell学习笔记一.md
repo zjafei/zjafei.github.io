@@ -1,7 +1,7 @@
 ---
 title: shell学习笔记一
 date: 2018-01-12 09:54:03
-tags: ['shell','学习','package','包版本管理']
+tags: ['shell','bash','脚本','终端','命令行']
 category: 'coding'
 ---
 在计算机科学中，Shell俗称壳（用来区别于核），是指“提供使用者使用界面”的软件（命令解析器）。它类似于DOS下的command.com和后来的cmd.exe。它接收用户命令，然后调用相应的应用程序。
