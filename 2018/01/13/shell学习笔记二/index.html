@@ -6,17 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="//zjafei.coding.me">
-  <title>Tag: reducer | 代码猴</title>
+  <title>shell学习笔记二 | 代码猴</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="代码猴">
-<meta property="og:url" content="//zjafei.coding.me/tags/reducer/index.html">
+  <meta name="description" content="shell是一种程序设计语言。作为命令语言，它交互式解释和执行用户输入的命令或者自动地解释和执行预先设定好的一连串的命令；作为程序设计语言，它定义了各种变量和参数，并提供了许多在高级语言中才具有的控制结构，包括循环和分支。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="shell学习笔记二">
+<meta property="og:url" content="//zjafei.coding.me/2018/01/13/shell学习笔记二/index.html">
 <meta property="og:site_name" content="代码猴">
-<meta property="og:description">
+<meta property="og:description" content="shell是一种程序设计语言。作为命令语言，它交互式解释和执行用户输入的命令或者自动地解释和执行预先设定好的一连串的命令；作为程序设计语言，它定义了各种变量和参数，并提供了许多在高级语言中才具有的控制结构，包括循环和分支。">
+<meta property="og:updated_time" content="2018-01-13T03:48:25.518Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="代码猴">
-<meta name="twitter:description">
+<meta name="twitter:title" content="shell学习笔记二">
+<meta name="twitter:description" content="shell是一种程序设计语言。作为命令语言，它交互式解释和执行用户输入的命令或者自动地解释和执行预先设定好的一连串的命令；作为程序设计语言，它定义了各种变量和参数，并提供了许多在高级语言中才具有的控制结构，包括循环和分支。">
   
   
     <link rel="icon" href="/0/logo.png">
@@ -156,64 +157,132 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-shell学习笔记二" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      shell学习笔记二
+    </h1>
+  
+
+        
+        <a href="/2018/01/13/shell学习笔记二/" class="archive-article-date">
+  	<time datetime="2018-01-13T03:44:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-13</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><code>shell</code>是一种程序设计语言。作为命令语言，它交互式解释和执行用户输入的命令或者自动地解释和执行预先设定好的一连串的命令；作为程序设计语言，它定义了各种变量和参数，并提供了许多在高级语言中才具有的控制结构，包括循环和分支。<br><a id="more"></a></p>
+<h2 id="I-O-输入与输出"><a href="#I-O-输入与输出" class="headerlink" title="I/O 输入与输出"></a>I/O 输入与输出</h2><ul>
+<li>a &gt; b a输出给 b </li>
+<li>a &lt; b 接受d的输入</li>
+<li>a | b a 的输出作为 b 的输入</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">'hello shell'</span> &gt; helloShell</span><br></pre></td></tr></table></figure>
+<p>输出 <code>hello shell</code> 到 <code>helloShell</code> 文件中</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hello eric</span><br></pre></td></tr></table></figure>
+<p>继续</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">'hello eric'</span> &gt; helloShell</span><br></pre></td></tr></table></figure>
+<p><code>helloShell</code> 文件中有 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hello eric</span><br></pre></td></tr></table></figure>
+<p>继续</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">'hello eric'</span> &gt;&gt; helloShell</span><br></pre></td></tr></table></figure>
+<p><code>helloShell</code> 文件中有<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hello eric</span><br><span class="line">hello eric</span><br></pre></td></tr></table></figure></p>
+<p>继续</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tr <span class="string">'l'</span> <span class="string">'x'</span> &lt; helloShell &gt; hexxoShexx</span><br></pre></td></tr></table></figure>
+<p>会创建一个 <code>hexxoShexx</code> 文件，内容为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexxo shexx</span><br></pre></td></tr></table></figure>
+<p>继续</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">'hello shell '</span> | tr <span class="string">'h'</span> <span class="string">'t'</span> &gt; telloStell</span><br></pre></td></tr></table></figure>
+<p>会创建一个 <code>telloStell</code> 文件，内容为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tello stell</span><br></pre></td></tr></table></figure>
+<h2 id="小实验-tr-与-PATH-的结合使用"><a href="#小实验-tr-与-PATH-的结合使用" class="headerlink" title="小实验 tr 与 PATH 的结合使用"></a>小实验 tr 与 PATH 的结合使用</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="variable">$PATH</span> | tr <span class="string">':'</span> <span class="string">'\n'</span> &gt; pathList.txt</span><br></pre></td></tr></table></figure>
+<p>创建 pathList.txt 文件，里面逐行列出了用户的环境变量</p>
+<h2 id="grep-正则匹配输出"><a href="#grep-正则匹配输出" class="headerlink" title="grep 正则匹配输出"></a>grep 正则匹配输出</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">whoami | grep ^e</span><br></pre></td></tr></table></figure>
+<p>输出</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">eric</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">whoami | grep ^i</span><br></pre></td></tr></table></figure>
+<p>无输出</p>
+<h2 id="执行追踪-set-x"><a href="#执行追踪-set-x" class="headerlink" title="执行追踪 set -x"></a>执行追踪 set -x</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">cat &gt; get.sh</span><br><span class="line"><span class="meta">#! /bin/sh</span><br><span class="line"></span></span><br><span class="line"><span class="built_in">set</span> -x</span><br><span class="line"><span class="built_in">echo</span> 1st <span class="built_in">echo</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">set</span> +x</span><br><span class="line"><span class="built_in">echo</span> 2nd <span class="built_in">echo</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><code>ctrl + d</code></p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./get.sh</span><br></pre></td></tr></table></figure>
+<p>输出 </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">+ <span class="built_in">echo</span> 1st <span class="built_in">echo</span></span><br><span class="line">1st <span class="built_in">echo</span></span><br><span class="line">+ <span class="built_in">set</span> +x</span><br><span class="line">2nd <span class="built_in">echo</span></span><br></pre></td></tr></table></figure>
+<p>今天就到这里，下次继续。</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/0/alipay.png">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/0/weixin.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/12/26/dva脚手架的demo/" class="archive-article-date">
-  	<time datetime="2017-12-26T12:52:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-26</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/12/26/dva脚手架的demo/">dva脚手架的demo</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">reduxe</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">shell</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">redux-saga</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">bash</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">effect</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">脚本</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">dispatch</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">终端</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">reducer</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">命令行</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -226,143 +295,104 @@ var _hmt = _hmt || [];
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://zjafei.coding.me/2018/01/13/shell学习笔记二/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/12/16/react-reducers函数单元测试用例与实践体验/" class="archive-article-date">
-  	<time datetime="2017-12-16T12:10:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-16</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2018/01/12/shell学习笔记一/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">shell学习笔记一</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/12/16/react-reducers函数单元测试用例与实践体验/">react reducers函数单元测试用例与实践体验</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">reducer</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">单元测试</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">unit test</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">react</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/coding//" class="article-tag-list-link color2">coding</a>
-        		</li>
-      		
-		</ul>
-	</div>
+        
+        
+    </div>
+</aside>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/12/16/react通过redux和redux-saga管理状态/" class="archive-article-date">
-  	<time datetime="2017-12-16T11:53:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/12/16/react通过redux和redux-saga管理状态/">react通过redux和redux-saga管理状态</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">reduxe</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">redux-saga</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">effect</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">dispatch</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">reducer</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/coding//" class="article-tag-list-link color2">coding</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
   
-    </div></section>
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -385,9 +415,9 @@ var _hmt = _hmt || [];
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
