@@ -21,7 +21,7 @@ React Ele">
 <meta property="og:image" content="//zjafei.coding.me/0/state.png">
 <meta property="og:image" content="//zjafei.coding.me/0/propsFlow.png">
 <meta property="og:image" content="//zjafei.coding.me/0/brothers.png">
-<meta property="og:updated_time" content="2018-01-23T13:45:08.072Z">
+<meta property="og:updated_time" content="2018-02-10T13:39:17.722Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="react基于state和props的父子组件和兄弟组件沟通">
 <meta name="twitter:description" content="react-state react状态管理React是Facebook开源的一个用于构建用户界面的Javascript库，React专注于MVC架构中的V，即视图。
@@ -191,20 +191,20 @@ var _hmt = _hmt || [];
 <h2 id="Virtual-DOM"><a href="#Virtual-DOM" class="headerlink" title="Virtual DOM"></a>Virtual DOM</h2><p>是一个模拟 DOM 树的 JavaScript 对象。 React 使用 Virtual DOM 来渲染 UI， 同时监听 Virtual DOM 上数据的变化并自动迁移这些变化到 UI 上。</p>
 <h2 id="React-Elements"><a href="#React-Elements" class="headerlink" title="React Elements"></a>React Elements</h2><p>代表 HTML 元素的 JavaScript 对象。 这些 JavaScript 对象最后被编译成对应的 HTML 元素。</p>
 <h2 id="JSX"><a href="#JSX" class="headerlink" title="JSX"></a>JSX</h2><p>React 定义的一种 JavaScript 语法扩展，类似于 XML 。 JSX 是可选的， 我们完全可以使用 JavaScript 来编写 React 应用， 不过 JSX 提供了一套更为简便的方式来写 React 应用。<a id="more"></a></p>
-<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> div = React.createElement(<span class="string">'div'</span>, <span class="literal">null</span>, <span class="string">"Hello React"</span>);</span><br><span class="line"><span class="comment">// 使用 JSX</span></span><br><span class="line"><span class="keyword">var</span> div = <span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span>Hello React<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>;</span><br></pre></td></tr></table></figure>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> div = React.createElement(<span class="string">'div'</span>, <span class="literal">null</span>, <span class="string">"Hello React"</span>);</span><br><span class="line"><span class="comment">// 使用 JSX</span></span><br><span class="line"><span class="keyword">var</span> div = &lt;div&gt;Hello React&lt;/div&gt;;</span><br></pre></td></tr></table></figure>
 <h2 id="Components"><a href="#Components" class="headerlink" title="Components"></a>Components</h2><p>封装 React Elements， 包含一个或者多个 React Elements。 Components 用于创建可以复用的 UI 模块，例如 分页，侧栏导航等。</p>
-<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> HelloMessage = React.createClass(&#123;</span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span>Hello &#123;this.props.name&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> HelloMessage = React.createClass(&#123;</span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> &lt;div&gt;Hello &#123;this.props.name&#125;&lt;/div&gt;;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <h2 id="Props"><a href="#Props" class="headerlink" title="Props"></a>Props</h2><p>在上一个例子中，可以看到有一个特殊的引用： <code>this.props.name</code>。 这个引用称之为 <code>Props</code>，可以将他想象成 Component 的设置选项。</p>
 <p>在使用上， Props 类似于 HTML 中的属性：</p>
-<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> HelloMessage = React.createClass(&#123;</span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">HelloMessage</span> <span class="attr">name</span>=<span class="string">"foo"</span> /&gt;</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> HelloMessage = React.createClass(&#123;</span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> &lt;HelloMessage name="foo" /&gt;;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <p>在 Component 内部，通过 this.props.name 来引用这个 Props：</p>
-<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> HelloMessage = React.createClass(&#123;</span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span>Hello &#123;this.props.name&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> HelloMessage = React.createClass(&#123;</span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> &lt;div&gt;Hello &#123;this.props.name&#125;&lt;/div&gt;;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <p>需要注意的是， Props 仅用来定制 Component， 这些数据不应该被改动。 如果涉及到需要做改动的数据， 得考虑使用 <code>state</code>。</p>
 <h2 id="Stateful-Component"><a href="#Stateful-Component" class="headerlink" title="Stateful Component"></a>Stateful Component</h2><p>State 数据代表 Component 的状态， 用于维护 Component 内部的状态。 当 State 发生改变之后， React 将会重新渲染 UI 。State 数据通过 this.state 访问：</p>
-<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> Greeting = React.createClass(&#123;</span><br><span class="line">  <span class="keyword">constructor</span> () &#123;</span><br><span class="line">    <span class="keyword">this</span>.state = &#123; <span class="attr">greeted</span>: <span class="literal">false</span> &#125;;</span><br><span class="line">  &#125;,</span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">var</span> response = <span class="keyword">this</span>.state.greeted ? <span class="string">'Yes'</span> : <span class="string">'No'</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      <span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span>&gt;</span>Hello React<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span>&#123;response&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">button</span> <span class="attr">onClick</span>=<span class="string">&#123;()</span>=&gt;</span>&#123;</span><br><span class="line">            this.setState(&#123;</span><br><span class="line">                    greeted: !this.state.greeted</span><br><span class="line">                &#125;);</span><br><span class="line">            &#125;,&#125;&gt;</span><br><span class="line">            Hi</span><br><span class="line">        <span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> Greeting = React.createClass(&#123;</span><br><span class="line">  <span class="keyword">constructor</span> () &#123;</span><br><span class="line">    <span class="keyword">this</span>.state = &#123; <span class="attr">greeted</span>: <span class="literal">false</span> &#125;;</span><br><span class="line">  &#125;,</span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">var</span> response = <span class="keyword">this</span>.state.greeted ? <span class="string">'Yes'</span> : <span class="string">'No'</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;div&gt;</span><br><span class="line">        &lt;div&gt;Hello React&lt;/div&gt;</span><br><span class="line">        &lt;span&gt;&#123;response&#125;&lt;/span&gt;</span><br><span class="line">        &lt;button onClick=&#123;()=&gt;&#123;</span><br><span class="line">            this.setState(&#123;</span><br><span class="line">                    greeted: !this.state.greeted</span><br><span class="line">                &#125;);</span><br><span class="line">            &#125;,&#125;&gt;</span><br><span class="line">            Hi</span><br><span class="line">        &lt;/button&gt;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <p><img src="/0/state.png" alt="dom action state的关系图"></p>
 <p>当 State 发生改变后， React 将 Component 渲染到 Virtual DOM，新的 Virtual DOM 与 旧版本的进行比对，检查出改变的部分并更新浏览器的 DOM。 在这个例子中，当按钮被点击后， <code>greeted</code>状态数据发生了变化，UI 跟随着更新。</p>
-<h2 id="Props与State的结合"><a href="#Props与State的结合" class="headerlink" title="Props与State的结合"></a>Props与State的结合</h2><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> Greeting = React.createClass(&#123;</span><br><span class="line">  <span class="keyword">constructor</span> () &#123;</span><br><span class="line">    <span class="keyword">this</span>.state = &#123; <span class="attr">greeted</span>: <span class="literal">false</span> &#125;;</span><br><span class="line">  &#125;,</span><br><span class="line">  </span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">var</span> response = <span class="keyword">this</span>.state.greeted ? <span class="string">'Yes'</span> : <span class="string">'No'</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      <span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span>&gt;</span>Hello &#123;this.props.name&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span>&#123;response&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">button</span> <span class="attr">onClick</span>=<span class="string">&#123;()</span>=&gt;</span>&#123;</span><br><span class="line">            this.setState(&#123;</span><br><span class="line">                    greeted: !this.state.greeted</span><br><span class="line">                &#125;);</span><br><span class="line">            &#125;,&#125;&gt;</span><br><span class="line">            Hi</span><br><span class="line">        <span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> users = [<span class="string">"foo"</span>, <span class="string">"bar"</span>, <span class="string">"baz"</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> GreetingApp = React.createClass(&#123;</span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">var</span> greetings = <span class="keyword">this</span>.props.users.map(<span class="function">(<span class="params">user</span>)=&gt;</span>&#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">Greeting</span> <span class="attr">name</span>=<span class="string">&#123;user&#125;</span> /&gt;</span>;</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    return <span class="tag">&lt;<span class="name">div</span>&gt;</span>&#123;greetings&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span></span><br></pre></td></tr></table></figure>
+<h2 id="Props与State的结合"><a href="#Props与State的结合" class="headerlink" title="Props与State的结合"></a>Props与State的结合</h2><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> Greeting = React.createClass(&#123;</span><br><span class="line">  <span class="keyword">constructor</span> () &#123;</span><br><span class="line">    <span class="keyword">this</span>.state = &#123; <span class="attr">greeted</span>: <span class="literal">false</span> &#125;;</span><br><span class="line">  &#125;,</span><br><span class="line">  </span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">var</span> response = <span class="keyword">this</span>.state.greeted ? <span class="string">'Yes'</span> : <span class="string">'No'</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;div&gt;</span><br><span class="line">        &lt;div&gt;Hello &#123;this.props.name&#125;&lt;/div&gt;</span><br><span class="line">        &lt;span&gt;&#123;response&#125;&lt;/span&gt;</span><br><span class="line">         &lt;button onClick=&#123;()=&gt;&#123;</span><br><span class="line">            this.setState(&#123;</span><br><span class="line">                    greeted: !this.state.greeted</span><br><span class="line">                &#125;);</span><br><span class="line">            &#125;,&#125;&gt;</span><br><span class="line">            Hi</span><br><span class="line">        &lt;/button&gt;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> users = [<span class="string">"foo"</span>, <span class="string">"bar"</span>, <span class="string">"baz"</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> GreetingApp = React.createClass(&#123;</span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">var</span> greetings = <span class="keyword">this</span>.props.users.map(<span class="function">(<span class="params">user</span>)=&gt;</span>&#123;</span><br><span class="line">      <span class="keyword">return</span> &lt;Greeting name=&#123;user&#125; /&gt;;</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    return &lt;div&gt;&#123;greetings&#125;&lt;/div&gt;;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <h2 id="单向数据流"><a href="#单向数据流" class="headerlink" title="单向数据流"></a>单向数据流</h2><p>React是单向数据流，数据主要从父节点传递到子节点（通过props）。</p>
 <p>如果父级的某个props改变了，React会重渲染所有的子节点。</p>
 <h3 id="父子组件沟通"><a href="#父子组件沟通" class="headerlink" title="父子组件沟通"></a>父子组件沟通</h3><ul>
@@ -215,7 +215,7 @@ var _hmt = _hmt || [];
 <p><code>子组件更新父组件就需要 父组件通过props传递一个回调函数到子组件中，这个回调函数可以更新父组件，子组件就是通过触发这个回调函数，从而使父组件得到更新。</code></p>
 </blockquote>
 <p><img src="/0/propsFlow.png" alt="父子组件沟通"></p>
-<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> Greeting = React.createClass(&#123;</span><br><span class="line">  <span class="keyword">constructor</span> () &#123;</span><br><span class="line">    <span class="keyword">this</span>.state = &#123; <span class="attr">greeted</span>: <span class="literal">false</span> &#125;;</span><br><span class="line">  &#125;,</span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">var</span> response = <span class="keyword">this</span>.state.greeted ? <span class="string">'Yes'</span> : <span class="string">'No'</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      <span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span>&gt;</span>Hello &#123;this.props.name&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span>&#123;response&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">button</span> <span class="attr">onClick</span>=<span class="string">&#123;()</span>=&gt;</span>&#123;</span><br><span class="line">            const greeted = !this.state.greeted;</span><br><span class="line">            this.setState(&#123;</span><br><span class="line">                    greeted: greeted,</span><br><span class="line">                &#125;);</span><br><span class="line">            this.props.changeName(greeted?'eric':'mazheng');   </span><br><span class="line">            &#125;,&#125;&gt;</span><br><span class="line">            Hi</span><br><span class="line">        <span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> UseGreeting = React.createClass(&#123;</span><br><span class="line">  <span class="keyword">constructor</span> () &#123;</span><br><span class="line">    <span class="keyword">this</span>.state = &#123; <span class="attr">name</span>: <span class="string">'eric'</span> &#125;;</span><br><span class="line">  &#125;,</span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">        <span class="xml"><span class="tag">&lt;<span class="name">Greeting</span></span><br><span class="line">            <span class="attr">name</span>=<span class="string">&#123;this.state.name&#125;</span></span><br><span class="line">            <span class="attr">changeName</span>=<span class="string">&#123;(newName)</span>=&gt;</span>&#123;</span><br><span class="line">                this.setState(&#123;</span><br><span class="line">                    name: newName,</span><br><span class="line">                &#125;); </span><br><span class="line">            &#125;&#125;</span><br><span class="line">        /&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> Greeting = React.createClass(&#123;</span><br><span class="line">  <span class="keyword">constructor</span> () &#123;</span><br><span class="line">    <span class="keyword">this</span>.state = &#123; <span class="attr">greeted</span>: <span class="literal">false</span> &#125;;</span><br><span class="line">  &#125;,</span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">var</span> response = <span class="keyword">this</span>.state.greeted ? <span class="string">'Yes'</span> : <span class="string">'No'</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;div&gt;</span><br><span class="line">        &lt;div&gt;Hello &#123;this.props.name&#125;&lt;/div&gt;</span><br><span class="line">        &lt;span&gt;&#123;response&#125;&lt;/span&gt;</span><br><span class="line">        &lt;button onClick=&#123;()=&gt;&#123;</span><br><span class="line">            const greeted = !this.state.greeted;</span><br><span class="line">            this.setState(&#123;</span><br><span class="line">                    greeted: greeted,</span><br><span class="line">                &#125;);</span><br><span class="line">            this.props.changeName(greeted?'eric':'mazheng');   </span><br><span class="line">            &#125;,&#125;&gt;</span><br><span class="line">            Hi</span><br><span class="line">        &lt;/button&gt;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> UseGreeting = React.createClass(&#123;</span><br><span class="line">  <span class="keyword">constructor</span> () &#123;</span><br><span class="line">    <span class="keyword">this</span>.state = &#123; <span class="attr">name</span>: <span class="string">'eric'</span> &#125;;</span><br><span class="line">  &#125;,</span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">        &lt;Greeting</span><br><span class="line">            name=&#123;this.state.name&#125;</span><br><span class="line">            changeName=&#123;(newName)=&gt;&#123;</span><br><span class="line">                this.setState(&#123;</span><br><span class="line">                    name: newName,</span><br><span class="line">                &#125;); </span><br><span class="line">            &#125;&#125;</span><br><span class="line">        /&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <h3 id="兄弟组件沟通"><a href="#兄弟组件沟通" class="headerlink" title="兄弟组件沟通"></a>兄弟组件沟通</h3><ul>
 <li>按照React单向数据流方式，我们需要借助父组件进行传递，通过父组件回调函数改变兄弟组件的props。</li>
 </ul>
@@ -490,22 +490,6 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">WDS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">eslint</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">HMR</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">webpack-dev-server</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">reduxe</a>
               </li>
              
@@ -523,6 +507,166 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">reducer</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">单元测试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">unit test</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">react</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">effects</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">model</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">state</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">props</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">组件沟通</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">信息传递</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">shell</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">bash</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">脚本</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">终端</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">命令行</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">ubuntu</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">版本</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">版本管理</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">切换</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">webpack</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">前端</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">js</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">integrations</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">CI</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">持续集成</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">jenkins</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">continuous integration</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">shimming</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">pure funtion</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">纯函数</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">side effects</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">副作用</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">组件</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">高阶组件</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Higher Order Components</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">WDS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">eslint</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">HMR</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">webpack-dev-server</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -558,42 +702,6 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">单元测试</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">unit test</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">react</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">model</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">state</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">props</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">组件沟通</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">信息传递</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">effects</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">npm</a>
               </li>
              
@@ -610,115 +718,7 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">shell</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">bash</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">脚本</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">终端</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">命令行</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">CI</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">持续集成</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">jenkins</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">continuous integration</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">ubuntu</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">webpack</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">前端</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">js</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">integrations</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">python</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">版本</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">版本管理</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">切换</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">shimming</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">pure funtion</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">纯函数</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">side effects</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">副作用</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">高阶函数</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">高阶组件</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">组件</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Higher Order Components</a>
               </li>
             
             <div class="clearfix"></div>

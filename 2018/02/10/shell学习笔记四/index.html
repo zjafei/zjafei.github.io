@@ -6,17 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="//zjafei.coding.me">
-  <title>Tag: jenkins | 代码猴</title>
+  <title>shell学习笔记四 | 代码猴</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="代码猴">
-<meta property="og:url" content="//zjafei.coding.me/tags/jenkins/index.html">
+  <meta name="description" content="shell 命令重新初始化用户的登录会话。当给出该命令时，就会重新设置进程的控制终端的端口特征，并取消对端口的所有访问。然后 shell 命令为用户把进程凭证和环境重新设置为缺省值，并执行用户的初始程序。根据调用进程的登录用户标识建立所有的凭证和环境。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="shell学习笔记四">
+<meta property="og:url" content="//zjafei.coding.me/2018/02/10/shell学习笔记四/index.html">
 <meta property="og:site_name" content="代码猴">
-<meta property="og:description">
+<meta property="og:description" content="shell 命令重新初始化用户的登录会话。当给出该命令时，就会重新设置进程的控制终端的端口特征，并取消对端口的所有访问。然后 shell 命令为用户把进程凭证和环境重新设置为缺省值，并执行用户的初始程序。根据调用进程的登录用户标识建立所有的凭证和环境。">
+<meta property="og:updated_time" content="2018-02-10T13:45:24.721Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="代码猴">
-<meta name="twitter:description">
+<meta name="twitter:title" content="shell学习笔记四">
+<meta name="twitter:description" content="shell 命令重新初始化用户的登录会话。当给出该命令时，就会重新设置进程的控制终端的端口特征，并取消对端口的所有访问。然后 shell 命令为用户把进程凭证和环境重新设置为缺省值，并执行用户的初始程序。根据调用进程的登录用户标识建立所有的凭证和环境。">
   
   
     <link rel="icon" href="/0/logo.png">
@@ -156,64 +157,161 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-shell学习笔记四" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/12/06/ubuntu安装Jenkins/" class="archive-article-date">
-  	<time datetime="2017-12-06T11:40:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-06</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/12/06/ubuntu安装Jenkins/">ubuntu安装Jenkins</a>
+    <h1 class="article-title" itemprop="name">
+      shell学习笔记四
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2018/02/10/shell学习笔记四/" class="archive-article-date">
+  	<time datetime="2018-02-10T13:43:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-10</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>shell 命令重新初始化用户的登录会话。当给出该命令时，就会重新设置进程的控制终端的端口特征，并取消对端口的所有访问。然后 shell 命令为用户把进程凭证和环境重新设置为缺省值，并执行用户的初始程序。根据调用进程的登录用户标识建立所有的凭证和环境。<br><a id="more"></a></p>
+<h2 id="文本处理工具"><a href="#文本处理工具" class="headerlink" title="文本处理工具"></a>文本处理工具</h2><h3 id="sort-行排序"><a href="#sort-行排序" class="headerlink" title="sort 行排序"></a>sort 行排序</h3><p>基本命令格式<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sort [options] [file(s)]</span><br></pre></td></tr></table></figure></p>
+<p>基本参数 </p>
+<ul>
+<li>-b   忽略每行前面开始出的空格字符。</li>
+<li>-c   检查文件是否已经按照顺序排序。</li>
+<li>-d   排序时，处理英文字母、数字及空格字符外，忽略其他的字符。</li>
+<li>-f   排序时，将小写字母视为大写字母。</li>
+<li>-i   排序时，除了040至176之间的ASCII字符外，忽略其他的字符。</li>
+<li>-m   将几个排序好的文件进行合并。</li>
+<li>-M   将前面3个字母依照月份的缩写进行排序。</li>
+<li>-n    依照数值的大小排序。</li>
+<li>-o&lt;输出文件&gt;   将排序后的结果存入指定的文件。</li>
+<li>-r   以相反的顺序来排序。</li>
+<li>-t&lt;分隔字符&gt;   指定排序时所用的栏位分隔字符</li>
+<li>-k, –key=POS1[,POS2]  指定关键字,可以指定多个关键字</li>
+</ul>
+<p>输入<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">history</span> |  sort -k2.1,3.1 <span class="comment"># 从第二个字段的第一个字符比较到第三个字段的第一个字符</span></span><br></pre></td></tr></table></figure></p>
+<p>输出<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">488  alert</span><br><span class="line"> 92  apt</span><br><span class="line"> 93  apt -update</span><br><span class="line"> 94  apt --update</span><br><span class="line"> 96  apt update</span><br><span class="line"> 98  apt</span><br><span class="line"> 95  aptupdate</span><br><span class="line">109  cat /etc/issue</span><br><span class="line">358  cat</span><br><span class="line">406  cat file</span><br></pre></td></tr></table></figure></p>
+<h3 id="uniq-行排序"><a href="#uniq-行排序" class="headerlink" title="uniq 行排序"></a>uniq 行排序</h3><p>作为管道修饰，用于排除重复的记录</p>
+<p>基本参数 </p>
+<ul>
+<li>-c   相同值的计数</li>
+<li>-d   只显示重复的记录</li>
+<li>-u   只显示为重复的记录</li>
+</ul>
+<p>输入<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">history</span> | awk <span class="string">'&#123;print $2,$3&#125;'</span>| sort -k1.1,2.1</span><br></pre></td></tr></table></figure></p>
+<p>输出<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line">whoami |</span><br><span class="line">whoami |</span><br><span class="line">whoami |</span><br></pre></td></tr></table></figure></p>
+<p>输入<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">history | awk &apos;&#123;print $2,$3&#125;&apos;| sort -k1.1,2.1 | uniq</span><br></pre></td></tr></table></figure></p>
+<p>输出<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line">who |</span><br><span class="line">whoami</span><br><span class="line">whoami |</span><br></pre></td></tr></table></figure></p>
+<h3 id="wc-计算行数，字数，字符数"><a href="#wc-计算行数，字数，字符数" class="headerlink" title="wc 计算行数，字数，字符数"></a>wc 计算行数，字数，字符数</h3><p>wc命令的功能为统计指定文件中的字节数、字数、行数, 并将统计结果显示输出。</p>
+<p>基本参数 </p>
+<ul>
+<li>-c   统计字节数。  </li>
+<li>-l   统计行数</li>
+<li>-w   统计字数</li>
+</ul>
+<p>输入<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl www.baidu.com | wc</span><br></pre></td></tr></table></figure></p>
+<p>输出<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current</span><br><span class="line">                                 Dload  Upload   Total   Spent    Left  Speed</span><br><span class="line">100  2381  100  2381    0     0  26727      0 --:--:-- --:--:-- --:--:-- 27056</span><br><span class="line">      2     159    2381</span><br></pre></td></tr></table></figure></p>
+<p>输入<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wc ./README.md</span><br></pre></td></tr></table></figure></p>
+<p>输出<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">467  904 8158 ./README.md</span><br></pre></td></tr></table></figure></p>
+<h3 id="head-提取开头"><a href="#head-提取开头" class="headerlink" title="head 提取开头"></a>head 提取开头</h3><p>用来显示档案的开头至标准输出中，默认head命令打印其相应文件的开头10行。 </p>
+<p>基本参数 </p>
+<ul>
+<li>-q        隐藏文件名</li>
+<li>-v        显示文件名</li>
+<li>-c&lt;字节&gt;  显示字节数</li>
+<li>-n&lt;行数&gt;  显示的行数</li>
+</ul>
+<p>输入<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">history</span> | head -n 5</span><br></pre></td></tr></table></figure></p>
+<p>输出<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1  node -v</span><br><span class="line">2  git -v</span><br><span class="line">3  git status</span><br><span class="line">4  git branch</span><br><span class="line">5  <span class="built_in">cd</span> workspace</span><br></pre></td></tr></table></figure></p>
+<p>输入<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">history</span> | head -n -5 <span class="comment"># 负数表示除去后面5行以为的其他内容</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="tail-从指定点开始将文件写到标准输出"><a href="#tail-从指定点开始将文件写到标准输出" class="headerlink" title="tail 从指定点开始将文件写到标准输出"></a>tail 从指定点开始将文件写到标准输出</h3><p>命令从指定点开始将文件写到标准输出.使用tail命令的-f选项可以方便的查阅正在改变的日志文件,tail -f filename会把filename里最尾部的内容显示在屏幕上,并且不但刷新,使你看到最新的文件内容. </p>
+<p>基本参数 </p>
+<ul>
+<li>-f 循环读取</li>
+<li>-q 不显示处理信息</li>
+<li>-v 显示详细的处理信息</li>
+<li>-c&lt;数目&gt; 显示的字节数</li>
+<li>-n&lt;行数&gt; 显示行数</li>
+<li>–pid=PID 与-f合用,表示在进程ID,PID死掉之后结束. </li>
+<li>-q, –quiet, –silent 从不输出给出文件名的首部 </li>
+<li>-s, –sleep-interval=S 与-f合用,表示在每次反复的间隔休眠S秒</li>
+</ul>
+<p>输入<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">history</span> | tail -n 5</span><br></pre></td></tr></table></figure></p>
+<p>输出<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">754  ll</span><br><span class="line">755  <span class="built_in">cd</span> ~</span><br><span class="line">756  <span class="built_in">cd</span> workspace/shell-test/</span><br><span class="line">757  ll</span><br><span class="line">758  <span class="built_in">history</span> | tail</span><br></pre></td></tr></table></figure></p>
+<p>输入<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">history</span> | tail -n +750 <span class="comment"># 从750行开始显示到结尾</span></span><br></pre></td></tr></table></figure></p>
+<p>今天就到这里，下次继续。</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/0/alipay.png">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/0/weixin.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">ubuntu</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">shell</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">CI</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">bash</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">持续集成</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">脚本</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">jenkins</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">终端</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">continuous integration</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">命令行</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -226,17 +324,104 @@ var _hmt = _hmt || [];
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://zjafei.coding.me/2018/02/10/shell学习笔记四/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2018/01/23/shell学习笔记三/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">shell学习笔记三</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -259,9 +444,9 @@ var _hmt = _hmt || [];
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
