@@ -1,5 +1,5 @@
 ---
-title: react通过cloneElement修改props.children的props属性
+title: react 通过 cloneElement 修改 props.children 的 props 属性
 date: 2018-12-08 11:44:49
 tags: ['react','cloneElement','children','props']
 category: 'coding'
@@ -13,4 +13,9 @@ category: 'coding'
   <Children/>
 </Parent>
 ```
-一般是通
+一般是外围组件来实现的
+```javascript
+<Parent>
+  <Children/>
+</Parent>
+```
