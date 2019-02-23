@@ -1,7 +1,7 @@
 ---
 title: react hooks（钩子）概览和一些实践
 date: 2019-02-22 20:13:15
-tags: ['react','hooks','useState','useEffect','自定义钩子']
+tags: ['react','hooks','useState','useEffect','钩子','自定义钩子']
 category: 'coding'
 ---
 >钩子是 React 16.8中的新增功能。它们允许您在不编写类的情况下使用 state 和其他 React 功能。
