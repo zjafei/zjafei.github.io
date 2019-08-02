@@ -1,29 +1,25 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   
   <meta name="renderer" content="webkit">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="//zjafei.coding.me">
   <title>react hooks（钩子）概览和一些实践 | 代码猴</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="钩子是 React 16.8中的新增功能。它们允许您在不编写类的情况下使用 state 和其他 React 功能。
-
-钩子是向下兼容的。在我介绍向你介绍这个新功能前你最好对 React 有所了解。">
+  <meta name="description" content="钩子是 React 16.8中的新增功能。它们允许您在不编写类的情况下使用 state 和其他 React 功能。  钩子是向下兼容的。在我介绍向你介绍这个新功能前你最好对 React 有所了解。">
+<meta name="keywords" content="react,hooks,useState,useEffect,自定义钩子,钩子">
 <meta property="og:type" content="article">
 <meta property="og:title" content="react hooks（钩子）概览和一些实践">
 <meta property="og:url" content="//zjafei.coding.me/2019/02/22/react-hooks-概览/index.html">
 <meta property="og:site_name" content="代码猴">
-<meta property="og:description" content="钩子是 React 16.8中的新增功能。它们允许您在不编写类的情况下使用 state 和其他 React 功能。
-
-钩子是向下兼容的。在我介绍向你介绍这个新功能前你最好对 React 有所了解。">
-<meta property="og:updated_time" content="2019-02-23T02:08:31.842Z">
+<meta property="og:description" content="钩子是 React 16.8中的新增功能。它们允许您在不编写类的情况下使用 state 和其他 React 功能。  钩子是向下兼容的。在我介绍向你介绍这个新功能前你最好对 React 有所了解。">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-02-23T13:19:48.876Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="react hooks（钩子）概览和一些实践">
-<meta name="twitter:description" content="钩子是 React 16.8中的新增功能。它们允许您在不编写类的情况下使用 state 和其他 React 功能。
-
-钩子是向下兼容的。在我介绍向你介绍这个新功能前你最好对 React 有所了解。">
+<meta name="twitter:description" content="钩子是 React 16.8中的新增功能。它们允许您在不编写类的情况下使用 state 和其他 React 功能。  钩子是向下兼容的。在我介绍向你介绍这个新功能前你最好对 React 有所了解。">
   
   
     <link rel="icon" href="/0/logo.png">
@@ -50,7 +46,7 @@ var _hmt = _hmt || [];
 
 
 </head>
-
+</html>
 <body>
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
@@ -188,25 +184,31 @@ var _hmt = _hmt || [];
 </blockquote>
 <p>钩子是向下兼容的。在我介绍向你介绍这个新功能前你最好对 React 有所了解。</p>
 <a id="more"></a>
+
 <h2 id="状态钩子"><a href="#状态钩子" class="headerlink" title="状态钩子"></a>状态钩子</h2><p>下面是个计数器的事例。当你点击按钮时，数值就会增加：</p>
-<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; useState &#125; <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Example</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 声明一个新的状态变量，我们将其称为“count”</span></span><br><span class="line">  <span class="keyword">const</span> [count, setCount] = useState(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">      &lt;p&gt;You clicked &#123;count&#125; times&lt;/p&gt;</span><br><span class="line">      &lt;button onClick=&#123;() =&gt; setCount(count + 1)&#125;&gt;</span><br><span class="line">        Click me</span><br><span class="line">      &lt;/button&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; useState &#125; <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Example</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 声明一个新的状态变量，我们将其称为“count”</span></span><br><span class="line">  <span class="keyword">const</span> [count, setCount] = useState(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">      &lt;p&gt;You clicked &#123;count&#125; times&lt;<span class="regexp">/p&gt;</span></span><br><span class="line"><span class="regexp">      &lt;button onClick=&#123;() =&gt; setCount(count + 1)&#125;&gt;</span></span><br><span class="line"><span class="regexp">        Click me</span></span><br><span class="line"><span class="regexp">      &lt;/</span>button&gt;</span><br><span class="line">    &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">  );</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br></pre></td></tr></table></figure>
+
 <p>在这里 <code>useState</code> 就是一个钩子（过会我们再说这样做的意义）。在函数组件里面使用钩子为函数组件添加内部状态。React 将在每次渲染之间保留此状态。<code>useState</code> 方法会返回一个长度为2的数组。第一个元素就是你定义的状态，第二个元素就是用来更新这个状态的方法。你可以在处理事件的时候来调取这个方法。这个和类里面的 <code>this.setState</code> 和像，但是他不能像 <code>this.setState</code> 那样同时合并新旧状态。</p>
 <p><code>useState</code> 接受一个参数作为状态的初始值。在刚刚的事例中，这个值就是 <code>0</code>，因为通常计算都是从零开始的。但是不同于 <code>this.state</code>，钩子的状态不一定必须是对象。初始状态参数只在第一次渲染的时使用。</p>
 <h2 id="声明多个状态变量"><a href="#声明多个状态变量" class="headerlink" title="声明多个状态变量"></a>声明多个状态变量</h2><p>你可以在同一个组件里面定义多个状态钩子</p>
 <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">ExampleWithManyStates</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 声明多个状态变量！</span></span><br><span class="line">  <span class="keyword">const</span> [age, setAge] = useState(<span class="number">42</span>);</span><br><span class="line">  <span class="keyword">const</span> [fruit, setFruit] = useState(<span class="string">'banana'</span>);</span><br><span class="line">  <span class="keyword">const</span> [todos, setTodos] = useState([&#123; <span class="attr">text</span>: <span class="string">'Learn Hooks'</span> &#125;]);</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>数组解构语法允许我们为通过调用 <code>useState</code> 声明的状态变量赋予不同的名称。命名并不是 <code>useState</code> API的一部分。React 假设如果多次调用 <code>useState</code>，则在每次渲染期间以相同的顺序执行。下面我们将讨论为什么要这样做，以及何时使用他。</p>
 <h2 id="什么是钩子？"><a href="#什么是钩子？" class="headerlink" title="什么是钩子？"></a>什么是钩子？</h2><p>钩子函数可以使你的函数组件拥有 React state 和生命周期功能。钩子在类内部不起作用—-它们允许你在没有类的情况下使用 React。（我们并不建议你重写你现有的组件，但是你可以在新的组件里面使用钩子。）</p>
 <p>React 提供了一些像 <code>useState</code> 这样的内置钩子。你还可以创建自己的钩子以复用不同组件之间的状态行为。我们先来看看内置的钩子。</p>
 <h2 id="作用钩子"><a href="#作用钩子" class="headerlink" title="作用钩子"></a>作用钩子</h2><p>在 React 组件修改 DOM 前你一般都需要获取数据。我们管这种操作叫 <code>“side effects”（副作用）</code>（有时也简称“effects”），因为他们功能同时影响其他组件并且渲染无法完成。</p>
 <p>副作用钩子 <code>useEffect</code> 为组件添加了执行副作用操作的功能。这个与 React 类中的 <code>componentDidMount</code>，<code>componentDidUpdate</code> 和 <code>componentWillUnmount</code> 具有相同的用途，但是统一成为了一个API。（过会我们将展示一个使用 <code>useEffect</code> 副作用钩子的函数。 ）</p>
 <p>例如，此组件在 React 更新 DOM 后设置文档标题：</p>
-<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; useState, useEffect &#125; <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Example</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> [count, setCount] = useState(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 类似 componentDidMount 和 componentDidUpdate:</span></span><br><span class="line">  useEffect(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">// 通过浏览器的 API 更新文档的标题</span></span><br><span class="line">    <span class="built_in">document</span>.title = <span class="string">`You clicked <span class="subst">$&#123;count&#125;</span> times`</span>;</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">      &lt;p&gt;You clicked &#123;count&#125; times&lt;/p&gt;</span><br><span class="line">      &lt;button onClick=&#123;() =&gt; setCount(count + 1)&#125;&gt;</span><br><span class="line">        Click me</span><br><span class="line">      &lt;/button&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; useState, useEffect &#125; <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Example</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> [count, setCount] = useState(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 类似 componentDidMount 和 componentDidUpdate:</span></span><br><span class="line">  useEffect(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">// 通过浏览器的 API 更新文档的标题</span></span><br><span class="line">    <span class="built_in">document</span>.title = <span class="string">`You clicked <span class="subst">$&#123;count&#125;</span> times`</span>;</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">      &lt;p&gt;You clicked &#123;count&#125; times&lt;<span class="regexp">/p&gt;</span></span><br><span class="line"><span class="regexp">      &lt;button onClick=&#123;() =&gt; setCount(count + 1)&#125;&gt;</span></span><br><span class="line"><span class="regexp">        Click me</span></span><br><span class="line"><span class="regexp">      &lt;/</span>button&gt;</span><br><span class="line">    &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">  );</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br></pre></td></tr></table></figure>
+
 <p>但你调用 <code>useEffect</code> 的时候，你就在告诉 React 在重新渲染 DOM 之后执行你的作用函数。副作用函数是在组件内声明，因此可以访问其 props 和 state。默认情况下 React 在每次渲染后都会执行作用函数—-同样包括第一次渲染。（我们将更多地讨论如何使用效果钩，以及他与类的生命周期的差异。）</p>
 <p>作用函数还可以根据返回函数来指定如何“清理”它们。例如，下面这个组件使用作用函数来订阅朋友的在线状态，并通过取消订阅来清理状态：</p>
 <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; useState, useEffect &#125; <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">FriendStatus</span>(<span class="params">props</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> [isOnline, setIsOnline] = useState(<span class="literal">null</span>);</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">handleStatusChange</span>(<span class="params">status</span>) </span>&#123;</span><br><span class="line">    setIsOnline(status.isOnline);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  useEffect(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    ChatAPI.subscribeToFriendStatus(props.friend.id, handleStatusChange);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">      ChatAPI.unsubscribeFromFriendStatus(props.friend.id, handleStatusChange);</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (isOnline === <span class="literal">null</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">'Loading...'</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> isOnline ? <span class="string">'Online'</span> : <span class="string">'Offline'</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>在这个事例中， React 会在组件销毁的时候通过 <code>ChatAPI</code> 来取消订阅。而且每次渲染的时候都会重新执行效果函数。（甚至当传递给 <code>ChatAPI</code> 的  <code>props.friend.id</code> 没有改变的情况下可以告诉 React 忽略重新订阅。）</p>
 <p>就像使用 <code>useState</code> 一样，您可以在组件中使用多个作用函数：</p>
 <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">FriendStatusWithCounter</span>(<span class="params">props</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> [count, setCount] = useState(<span class="number">0</span>);</span><br><span class="line">  useEffect(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">document</span>.title = <span class="string">`You clicked <span class="subst">$&#123;count&#125;</span> times`</span>;</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> [isOnline, setIsOnline] = useState(<span class="literal">null</span>);</span><br><span class="line">  useEffect(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    ChatAPI.subscribeToFriendStatus(props.friend.id, handleStatusChange);</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">      ChatAPI.unsubscribeFromFriendStatus(props.friend.id, handleStatusChange);</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">handleStatusChange</span>(<span class="params">status</span>) </span>&#123;</span><br><span class="line">    setIsOnline(status.isOnline);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// ...</span></span><br></pre></td></tr></table></figure>
+
 <p>通过钩子，您可以根据需要组织组件中的副作用函数（例如添加和删除订阅），而不是强制通过生命周期的函数进行处理。</p>
 <h2 id="钩子的规则"><a href="#钩子的规则" class="headerlink" title="钩子的规则"></a>钩子的规则</h2><p>钩子本质就是一个 JavaScript 函数，但是他有两个特殊的规则：</p>
 <ul>
@@ -219,21 +221,26 @@ var _hmt = _hmt || [];
 <p>前面我们介绍了一个通过 <code>useState</code> 和 <code>useEffect</code> 钩子来订阅朋友在线状态的组件。现在我们想把这个订阅的逻辑使用到其他组件中去。</p>
 <p>首先我们将创建自定义钩子组件 <code>useFriendStatus</code> 用来封装这个逻辑。</p>
 <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; useState, useEffect &#125; <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">useFriendStatus</span>(<span class="params">friendID</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> [isOnline, setIsOnline] = useState(<span class="literal">null</span>);</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">handleStatusChange</span>(<span class="params">status</span>) </span>&#123;</span><br><span class="line">    setIsOnline(status.isOnline);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  useEffect(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    ChatAPI.subscribeToFriendStatus(friendID, handleStatusChange);</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">      ChatAPI.unsubscribeFromFriendStatus(friendID, handleStatusChange);</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> isOnline;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>使用 <code>friendID</code> 作为参数，并返回我们的朋友是否在线。</p>
 <p>现在我们可以在其他组件中使用它：</p>
 <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">FriendStatus</span>(<span class="params">props</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> isOnline = useFriendStatus(props.friend.id);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (isOnline === <span class="literal">null</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">'Loading...'</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> isOnline ? <span class="string">'Online'</span> : <span class="string">'Offline'</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">FriendListItem</span>(<span class="params">props</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> isOnline = useFriendStatus(props.friend.id);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;li style=&#123;&#123; color: isOnline ? 'green' : 'black' &#125;&#125;&gt;</span><br><span class="line">      &#123;props.friend.name&#125;</span><br><span class="line">    &lt;/li&gt;</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">FriendListItem</span>(<span class="params">props</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> isOnline = useFriendStatus(props.friend.id);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;li style=&#123;&#123; <span class="attr">color</span>: isOnline ? <span class="string">'green'</span> : <span class="string">'black'</span> &#125;&#125;&gt;</span><br><span class="line">      &#123;props.friend.name&#125;</span><br><span class="line">    &lt;<span class="regexp">/li&gt;</span></span><br><span class="line"><span class="regexp">  );</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br></pre></td></tr></table></figure>
+
 <p>这些组件的状态完全独立。钩子只是复用 <em>状态逻辑</em>` 的一种方式，而不是状态本身。事实上，每次调用钩子都有一个完全孤立的状态—-所以你甚至可以在一个组件中使用两次相同的自定义钩子。</p>
 <p>您可以编写自定义钩子，涵盖各种用例，如表单处理，动画，声明订阅，计时器，以及可能还有更多我们想到的用例。我们希望自定义钩子可以在 React 社区火起来。</p>
 <h2 id="其他钩子"><a href="#其他钩子" class="headerlink" title="其他钩子"></a>其他钩子</h2><p>你可能会发现一些不太常用的内置钩子也很有用。例如，<code>useContext</code> 允许你在不引入嵌套的情况下订阅 React 上下文：</p>
 <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Example</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> locale = useContext(LocaleContext);</span><br><span class="line">  <span class="keyword">const</span> theme = useContext(ThemeContext);</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p><code>useReducer</code> 允许你使用 reducer 管理复杂组件的本地状态：</p>
 <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Todos</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> [todos, dispatch] = useReducer(todosReducer);</span><br><span class="line">  <span class="comment">// ...</span></span><br></pre></td></tr></table></figure>
+
 <h2 id="推荐阅读"><a href="#推荐阅读" class="headerlink" title="推荐阅读"></a>推荐阅读</h2><ul>
-<li><a href="https://reactjs.org/docs/hooks-intro.html" target="_blank" rel="external">添加钩子功能的初衷</a></li>
-<li><a href="https://reactjs.org/docs/hooks-state.html" target="_blank" rel="external">状态钩子</a></li>
-<li><a href="https://reactjs.org/docs/hooks-reference.html" target="_blank" rel="external">钩子API介绍</a></li>
-<li><a href="https://reactjs.org/docs/hooks-faq.html" target="_blank" rel="external">钩子常见问题</a></li>
+<li><a href="https://reactjs.org/docs/hooks-intro.html" target="_blank" rel="noopener">添加钩子功能的初衷</a></li>
+<li><a href="https://reactjs.org/docs/hooks-state.html" target="_blank" rel="noopener">状态钩子</a></li>
+<li><a href="https://reactjs.org/docs/hooks-reference.html" target="_blank" rel="noopener">钩子API介绍</a></li>
+<li><a href="https://reactjs.org/docs/hooks-faq.html" target="_blank" rel="noopener">钩子常见问题</a></li>
 </ul>
 
       
@@ -296,6 +303,10 @@ var _hmt = _hmt || [];
       		 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">自定义钩子</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">钩子</a>
         		</li>
       		
 		</ul>
@@ -375,6 +386,15 @@ var _hmt = _hmt || [];
 
   
 <nav id="article-nav">
+  
+    <a href="/2019/02/28/优化代码的小技巧（三）/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          优化代码的小技巧（三）
+        
+      </div>
+    </a>
   
   
     <a href="/2019/02/20/react新生命周期替代旧生命周期的最佳实践/" id="article-nav-older" class="article-nav-link-wrap">
@@ -797,6 +817,34 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">自定义钩子</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">函数式编程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Functional programming</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">优化代码</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">钩子</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">taro.js</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">小程序</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">dvajs</a>
               </li>
             
             <div class="clearfix"></div>

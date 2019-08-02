@@ -1,38 +1,25 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   
   <meta name="renderer" content="webkit">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="//zjafei.coding.me">
   <title>react新生命周期替代旧生命周期的最佳实践 | 代码猴</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1. Fiber很长时间React团队一直致力于实现异步渲染以减少交互的卡顿现象，最后的产物就是Fiber。
-Fiber的基本原理：
-1.把可中断的工作拆分成小任务
-2.对正在做的工作调整优先次序、重做、复用上次（做了一半的）成果
-3.在父子任务之间从容切换（yield back and forth），以支持React执行过程中的布局刷新
-总结：改变原来一次性渲染到结束的不可控的线性栈式数据结构，">
+  <meta name="description" content="1. Fiber很长时间React团队一直致力于实现异步渲染以减少交互的卡顿现象，最后的产物就是Fiber。 Fiber的基本原理： 1.把可中断的工作拆分成小任务 2.对正在做的工作调整优先次序、重做、复用上次（做了一半的）成果 3.在父子任务之间从容切换（yield back and forth），以支持React执行过程中的布局刷新 总结：改变原来一次性渲染到结束的不可控的线性栈式数据结构，">
+<meta name="keywords" content="react,生命周期,Fiber,getSnapshotBeforeUpdate,getDerivedStateFromProps,最佳实践">
 <meta property="og:type" content="article">
 <meta property="og:title" content="react新生命周期替代旧生命周期的最佳实践">
 <meta property="og:url" content="//zjafei.coding.me/2019/02/20/react新生命周期替代旧生命周期的最佳实践/index.html">
 <meta property="og:site_name" content="代码猴">
-<meta property="og:description" content="1. Fiber很长时间React团队一直致力于实现异步渲染以减少交互的卡顿现象，最后的产物就是Fiber。
-Fiber的基本原理：
-1.把可中断的工作拆分成小任务
-2.对正在做的工作调整优先次序、重做、复用上次（做了一半的）成果
-3.在父子任务之间从容切换（yield back and forth），以支持React执行过程中的布局刷新
-总结：改变原来一次性渲染到结束的不可控的线性栈式数据结构，">
+<meta property="og:description" content="1. Fiber很长时间React团队一直致力于实现异步渲染以减少交互的卡顿现象，最后的产物就是Fiber。 Fiber的基本原理： 1.把可中断的工作拆分成小任务 2.对正在做的工作调整优先次序、重做、复用上次（做了一半的）成果 3.在父子任务之间从容切换（yield back and forth），以支持React执行过程中的布局刷新 总结：改变原来一次性渲染到结束的不可控的线性栈式数据结构，">
+<meta property="og:locale" content="default">
 <meta property="og:updated_time" content="2019-02-20T02:50:38.513Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="react新生命周期替代旧生命周期的最佳实践">
-<meta name="twitter:description" content="1. Fiber很长时间React团队一直致力于实现异步渲染以减少交互的卡顿现象，最后的产物就是Fiber。
-Fiber的基本原理：
-1.把可中断的工作拆分成小任务
-2.对正在做的工作调整优先次序、重做、复用上次（做了一半的）成果
-3.在父子任务之间从容切换（yield back and forth），以支持React执行过程中的布局刷新
-总结：改变原来一次性渲染到结束的不可控的线性栈式数据结构，">
+<meta name="twitter:description" content="1. Fiber很长时间React团队一直致力于实现异步渲染以减少交互的卡顿现象，最后的产物就是Fiber。 Fiber的基本原理： 1.把可中断的工作拆分成小任务 2.对正在做的工作调整优先次序、重做、复用上次（做了一半的）成果 3.在父子任务之间从容切换（yield back and forth），以支持React执行过程中的布局刷新 总结：改变原来一次性渲染到结束的不可控的线性栈式数据结构，">
   
   
     <link rel="icon" href="/0/logo.png">
@@ -59,7 +46,7 @@ var _hmt = _hmt || [];
 
 
 </head>
-
+</html>
 <body>
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
@@ -804,6 +791,34 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">自定义钩子</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">函数式编程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Functional programming</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">优化代码</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">钩子</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">taro.js</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">小程序</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">dvajs</a>
               </li>
             
             <div class="clearfix"></div>

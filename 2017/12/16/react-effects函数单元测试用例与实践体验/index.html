@@ -1,44 +1,25 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   
   <meta name="renderer" content="webkit">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="//zjafei.coding.me">
   <title>react effects函数单元测试用例与实践体验 | 代码猴</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="effects 函数是很强调业务的代码块
-所以复制的业务会有很多分支代码
-导致测试用例成倍的增长
-虽然测试用例相同的代码可以使用  beforeAll 和 afterAll 来归纳相同代码
-但是这样也使得测试代码本事的逻辑变的复杂 难以维护 难以理解
-所以对 effects 函数复杂业务的拆分是解决问题的关键
-把相同的业务进行抽取 做自己的的单元测试
-函数只写自己特有的代码">
+  <meta name="description" content="effects 函数是很强调业务的代码块 所以复制的业务会有很多分支代码 导致测试用例成倍的增长 虽然测试用例相同的代码可以使用  beforeAll 和 afterAll 来归纳相同代码 但是这样也使得测试代码本事的逻辑变的复杂 难以维护 难以理解 所以对 effects 函数复杂业务的拆分是解决问题的关键 把相同的业务进行抽取 做自己的的单元测试 函数只写自己特有的代码">
+<meta name="keywords" content="单元测试,unit test,react,effects">
 <meta property="og:type" content="article">
 <meta property="og:title" content="react effects函数单元测试用例与实践体验">
 <meta property="og:url" content="//zjafei.coding.me/2017/12/16/react-effects函数单元测试用例与实践体验/index.html">
 <meta property="og:site_name" content="代码猴">
-<meta property="og:description" content="effects 函数是很强调业务的代码块
-所以复制的业务会有很多分支代码
-导致测试用例成倍的增长
-虽然测试用例相同的代码可以使用  beforeAll 和 afterAll 来归纳相同代码
-但是这样也使得测试代码本事的逻辑变的复杂 难以维护 难以理解
-所以对 effects 函数复杂业务的拆分是解决问题的关键
-把相同的业务进行抽取 做自己的的单元测试
-函数只写自己特有的代码">
+<meta property="og:description" content="effects 函数是很强调业务的代码块 所以复制的业务会有很多分支代码 导致测试用例成倍的增长 虽然测试用例相同的代码可以使用  beforeAll 和 afterAll 来归纳相同代码 但是这样也使得测试代码本事的逻辑变的复杂 难以维护 难以理解 所以对 effects 函数复杂业务的拆分是解决问题的关键 把相同的业务进行抽取 做自己的的单元测试 函数只写自己特有的代码">
+<meta property="og:locale" content="default">
 <meta property="og:updated_time" content="2019-02-20T02:50:38.474Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="react effects函数单元测试用例与实践体验">
-<meta name="twitter:description" content="effects 函数是很强调业务的代码块
-所以复制的业务会有很多分支代码
-导致测试用例成倍的增长
-虽然测试用例相同的代码可以使用  beforeAll 和 afterAll 来归纳相同代码
-但是这样也使得测试代码本事的逻辑变的复杂 难以维护 难以理解
-所以对 effects 函数复杂业务的拆分是解决问题的关键
-把相同的业务进行抽取 做自己的的单元测试
-函数只写自己特有的代码">
+<meta name="twitter:description" content="effects 函数是很强调业务的代码块 所以复制的业务会有很多分支代码 导致测试用例成倍的增长 虽然测试用例相同的代码可以使用  beforeAll 和 afterAll 来归纳相同代码 但是这样也使得测试代码本事的逻辑变的复杂 难以维护 难以理解 所以对 effects 函数复杂业务的拆分是解决问题的关键 把相同的业务进行抽取 做自己的的单元测试 函数只写自己特有的代码">
   
   
     <link rel="icon" href="/0/logo.png">
@@ -65,7 +46,7 @@ var _hmt = _hmt || [];
 
 
 </head>
-
+</html>
 <body>
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
@@ -807,6 +788,34 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">自定义钩子</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">函数式编程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Functional programming</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">优化代码</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">钩子</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">taro.js</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">小程序</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">dvajs</a>
               </li>
             
             <div class="clearfix"></div>
