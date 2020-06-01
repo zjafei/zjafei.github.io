@@ -1,21 +1,41 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
   <meta charset="utf-8">
   
   <meta name="renderer" content="webkit">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="//zjafei.coding.me">
   <title>代码猴</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="keywords" content="前端,js,jquery,javascript,html5,开发者,程序猿,程序媛,极客,编程,代码,开源,IT网站,Developer,Programmer,Coder,Geek,html,css,css3,用户体验">
-<meta property="og:type" content="website">
+  <meta property="og:type" content="website">
 <meta property="og:title" content="代码猴">
-<meta property="og:url" content="//zjafei.coding.me/page/3/index.html">
+<meta property="og:url" content="page/3/index.html">
 <meta property="og:site_name" content="代码猴">
-<meta property="og:locale" content="default">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="Eric Ma">
+<meta property="article:tag" content="前端">
+<meta property="article:tag" content="js">
+<meta property="article:tag" content="jquery">
+<meta property="article:tag" content="javascript">
+<meta property="article:tag" content="html5">
+<meta property="article:tag" content="开发者">
+<meta property="article:tag" content="程序猿">
+<meta property="article:tag" content="程序媛">
+<meta property="article:tag" content="极客">
+<meta property="article:tag" content="编程">
+<meta property="article:tag" content="代码">
+<meta property="article:tag" content="开源">
+<meta property="article:tag" content="IT网站">
+<meta property="article:tag" content="Developer">
+<meta property="article:tag" content="Programmer">
+<meta property="article:tag" content="Coder">
+<meta property="article:tag" content="Geek">
+<meta property="article:tag" content="html">
+<meta property="article:tag" content="css">
+<meta property="article:tag" content="css3">
+<meta property="article:tag" content="用户体验">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="代码猴">
   
   
     <link rel="icon" href="/0/logo.png">
@@ -41,8 +61,8 @@ var _hmt = _hmt || [];
 </script>
 
 
-</head>
-</html>
+<meta name="generator" content="Hexo 4.2.1"></head>
+
 <body>
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
@@ -157,6 +177,113 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-react通过redux和redux-saga管理状态" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="2017/12/16/react通过redux和redux-saga管理状态/">react通过redux和redux-saga管理状态</a>
+    </h1>
+  
+
+        
+        <a href="2017/12/16/react通过redux和redux-saga管理状态/" class="archive-article-date">
+  	<time datetime="2017-12-16T11:53:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Redux"><a href="#Redux" class="headerlink" title="Redux"></a>Redux</h2><h3 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h3><ul>
+<li>某个组件的状态，需要共享</li>
+<li>某个状态需要在任何地方都可以拿到</li>
+<li>一个组件需要改变全局状态</li>
+<li>一个组件需要改变另一个组件的状态
+        
+          <a class="article-more-a" href="2017/12/16/react通过redux和redux-saga管理状态/#more">... >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">reduxe</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">redux-saga</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">effect</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">dispatch</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">reducer</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/coding//" class="article-tag-list-link color2">coding</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="2017/12/16/react通过redux和redux-saga管理状态/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-react的state和基于props的父子组件和兄弟组件沟通" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -164,12 +291,12 @@ var _hmt = _hmt || [];
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/16/react的state和基于props的父子组件和兄弟组件沟通/">react基于state和props的父子组件和兄弟组件沟通</a>
+      <a class="article-title" href="2017/12/16/react的state和基于props的父子组件和兄弟组件沟通/">react基于state和props的父子组件和兄弟组件沟通</a>
     </h1>
   
 
         
-        <a href="/2017/12/16/react的state和基于props的父子组件和兄弟组件沟通/" class="archive-article-date">
+        <a href="2017/12/16/react的state和基于props的父子组件和兄弟组件沟通/" class="archive-article-date">
   	<time datetime="2017-12-16T06:05:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-16</time>
 </a>
         
@@ -182,7 +309,7 @@ var _hmt = _hmt || [];
 <h2 id="React-Elements"><a href="#React-Elements" class="headerlink" title="React Elements"></a>React Elements</h2><p>代表 HTML 元素的 JavaScript 对象。 这些 JavaScript 对象最后被编译成对应的 HTML 元素。</p>
 <h2 id="JSX"><a href="#JSX" class="headerlink" title="JSX"></a>JSX</h2><p>React 定义的一种 JavaScript 语法扩展，类似于 XML 。 JSX 是可选的， 我们完全可以使用 JavaScript 来编写 React 应用， 不过 JSX 提供了一套更为简便的方式来写 React 应用。
         
-          <a class="article-more-a" href="/2017/12/16/react的state和基于props的父子组件和兄弟组件沟通/#more">... >></a>
+          <a class="article-more-a" href="2017/12/16/react的state和基于props的父子组件和兄弟组件沟通/#more">... >></a>
         
       
 
@@ -233,7 +360,7 @@ var _hmt = _hmt || [];
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/12/16/react的state和基于props的父子组件和兄弟组件沟通/">展开全文 >></a>
+          <a class="article-more-a" href="2017/12/16/react的state和基于props的父子组件和兄弟组件沟通/">展开全文 >></a>
         </p>
       
 
@@ -270,12 +397,12 @@ var _hmt = _hmt || [];
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/11/ubuntu16-0-4上python版本切换的问题/">ubuntu16.0.4上python版本切换的问题</a>
+      <a class="article-title" href="2017/12/11/ubuntu16-0-4上python版本切换的问题/">ubuntu16.0.4上python版本切换的问题</a>
     </h1>
   
 
         
-        <a href="/2017/12/11/ubuntu16-0-4上python版本切换的问题/" class="archive-article-date">
+        <a href="2017/12/11/ubuntu16-0-4上python版本切换的问题/" class="archive-article-date">
   	<time datetime="2017-12-11T12:53:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-11</time>
 </a>
         
@@ -289,7 +416,7 @@ var _hmt = _hmt || [];
 </blockquote>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">gyp verb check python checking <span class="keyword">for</span> Python executable <span class="string">"python2"</span> <span class="keyword">in</span> the PATH</span><br><span class="line">gyp verb `<span class="built_in">which</span>` failed Error: not found: python2</span><br></pre></td></tr></table></figure>
         
-          <a class="article-more-a" href="/2017/12/11/ubuntu16-0-4上python版本切换的问题/#more">... >></a>
+          <a class="article-more-a" href="2017/12/11/ubuntu16-0-4上python版本切换的问题/#more">... >></a>
         
       
 
@@ -340,7 +467,7 @@ var _hmt = _hmt || [];
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/12/11/ubuntu16-0-4上python版本切换的问题/">展开全文 >></a>
+          <a class="article-more-a" href="2017/12/11/ubuntu16-0-4上python版本切换的问题/">展开全文 >></a>
         </p>
       
 
@@ -377,12 +504,12 @@ var _hmt = _hmt || [];
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/11/npm对包版本管理的机制/">npm对项目依赖包版本管理的机制</a>
+      <a class="article-title" href="2017/12/11/npm对包版本管理的机制/">npm对项目依赖包版本管理的机制</a>
     </h1>
   
 
         
-        <a href="/2017/12/11/npm对包版本管理的机制/" class="archive-article-date">
+        <a href="2017/12/11/npm对包版本管理的机制/" class="archive-article-date">
   	<time datetime="2017-12-11T04:00:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-11</time>
 </a>
         
@@ -390,14 +517,14 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="semver"><a href="#semver" class="headerlink" title="semver"></a>semver</h2><p><a href="https://semver.org/lang/zh-CN/">语义化版本控制规范</a></p>
+        <h2 id="semver"><a href="#semver" class="headerlink" title="semver"></a>semver</h2><p><a href="https://semver.org/lang/zh-CN/" target="_blank" rel="noopener">语义化版本控制规范</a></p>
 <p>版本格式：主版本号.次版本号.修订号，版本号(major, minor, patch)递增规则如下：</p>
 <ol>
 <li>主版本号：当你做了不兼容的 API 修改，</li>
 <li>次版本号：当你做了向下兼容的功能性新增，</li>
 <li>修订号：当你做了向下兼容的问题修正。
         
-          <a class="article-more-a" href="/2017/12/11/npm对包版本管理的机制/#more">... >></a>
+          <a class="article-more-a" href="2017/12/11/npm对包版本管理的机制/#more">... >></a>
         
       
 
@@ -444,7 +571,7 @@ var _hmt = _hmt || [];
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/12/11/npm对包版本管理的机制/">展开全文 >></a>
+          <a class="article-more-a" href="2017/12/11/npm对包版本管理的机制/">展开全文 >></a>
         </p>
       
 
@@ -481,12 +608,12 @@ var _hmt = _hmt || [];
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/06/ubuntu安装Jenkins/">ubuntu安装Jenkins</a>
+      <a class="article-title" href="2017/12/06/ubuntu安装Jenkins/">ubuntu安装Jenkins</a>
     </h1>
   
 
         
-        <a href="/2017/12/06/ubuntu安装Jenkins/" class="archive-article-date">
+        <a href="2017/12/06/ubuntu安装Jenkins/" class="archive-article-date">
   	<time datetime="2017-12-06T11:40:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-06</time>
 </a>
         
@@ -503,7 +630,7 @@ var _hmt = _hmt || [];
 <p>3.安装JDK</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install default-jdk</span><br></pre></td></tr></table></figure>
         
-          <a class="article-more-a" href="/2017/12/06/ubuntu安装Jenkins/#more">... >></a>
+          <a class="article-more-a" href="2017/12/06/ubuntu安装Jenkins/#more">... >></a>
         
       
 
@@ -554,7 +681,7 @@ var _hmt = _hmt || [];
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/12/06/ubuntu安装Jenkins/">展开全文 >></a>
+          <a class="article-more-a" href="2017/12/06/ubuntu安装Jenkins/">展开全文 >></a>
         </p>
       
 
@@ -591,12 +718,12 @@ var _hmt = _hmt || [];
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/11/23/css布局：两栏、三栏，从圣杯到双飞翼/">css布局：两栏、三栏，从圣杯到双飞翼</a>
+      <a class="article-title" href="2017/11/23/css布局：两栏、三栏，从圣杯到双飞翼/">css布局：两栏、三栏，从圣杯到双飞翼</a>
     </h1>
   
 
         
-        <a href="/2017/11/23/css布局：两栏、三栏，从圣杯到双飞翼/" class="archive-article-date">
+        <a href="2017/11/23/css布局：两栏、三栏，从圣杯到双飞翼/" class="archive-article-date">
   	<time datetime="2017-11-23T14:45:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-23</time>
 </a>
         
@@ -606,7 +733,7 @@ var _hmt = _hmt || [];
       
         <h2 id="常规的垂直布局"><a href="#常规的垂直布局" class="headerlink" title="常规的垂直布局"></a>常规的垂直布局</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span><br><span class="line">        .header&#123;</span><br><span class="line">            background-color: red;</span><br><span class="line">            height: 100px;</span><br><span class="line">        &#125;</span><br><span class="line">        .bodyer&#123;</span><br><span class="line">            background-color: green;</span><br><span class="line">            height: 500px;</span><br><span class="line">        &#125;</span><br><span class="line">        .footer&#123;</span><br><span class="line">            background-color: yellow;</span><br><span class="line">            height: 50px;</span><br><span class="line">        &#125;</span><br><span class="line">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"header"</span>&gt;</span></span><br><span class="line">        Hello CSS layout</span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span> </span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"bodyer"</span>&gt;</span></span><br><span class="line">        some thing</span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span> </span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"footer"</span>&gt;</span>copyright<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
         
-          <a class="article-more-a" href="/2017/11/23/css布局：两栏、三栏，从圣杯到双飞翼/#more">... >></a>
+          <a class="article-more-a" href="2017/11/23/css布局：两栏、三栏，从圣杯到双飞翼/#more">... >></a>
         
       
 
@@ -669,7 +796,7 @@ var _hmt = _hmt || [];
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/23/css布局：两栏、三栏，从圣杯到双飞翼/">展开全文 >></a>
+          <a class="article-more-a" href="2017/11/23/css布局：两栏、三栏，从圣杯到双飞翼/">展开全文 >></a>
         </p>
       
 
@@ -706,12 +833,12 @@ var _hmt = _hmt || [];
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/11/15/从高阶函数到高阶组件/">从高阶函数到高阶组件</a>
+      <a class="article-title" href="2017/11/15/从高阶函数到高阶组件/">从高阶函数到高阶组件</a>
     </h1>
   
 
         
-        <a href="/2017/11/15/从高阶函数到高阶组件/" class="archive-article-date">
+        <a href="2017/11/15/从高阶函数到高阶组件/" class="archive-article-date">
   	<time datetime="2017-11-15T01:33:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-15</time>
 </a>
         
@@ -719,10 +846,10 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="纯函数-https-zh-wikipedia-org-wiki-纯函数"><a href="#纯函数-https-zh-wikipedia-org-wiki-纯函数" class="headerlink" title="纯函数(https://zh.wikipedia.org/wiki/纯函数)"></a>纯函数(<a href="https://zh.wikipedia.org/wiki/%E7%BA%AF%E5%87%BD%E6%95%B0">https://zh.wikipedia.org/wiki/纯函数</a>)</h2><p>如果一个函数遵循以下几个规则那么他就是纯函数：</p>
+        <h2 id="纯函数-https-zh-wikipedia-org-wiki-纯函数"><a href="#纯函数-https-zh-wikipedia-org-wiki-纯函数" class="headerlink" title="纯函数(https://zh.wikipedia.org/wiki/纯函数)"></a>纯函数(<a href="https://zh.wikipedia.org/wiki/%E7%BA%AF%E5%87%BD%E6%95%B0" target="_blank" rel="noopener">https://zh.wikipedia.org/wiki/纯函数</a>)</h2><p>如果一个函数遵循以下几个规则那么他就是纯函数：</p>
 <ul>
 <li>函数处理的数据都是通过参数传递给函数。</li>
-<li>他不接受不确定的数据或者任何其他数据（他们通常是<a href="https://zh.wikipedia.org/wiki/函数副作用">副作用</a>的）。</li>
+<li>他不接受不确定的数据或者任何其他数据（他们通常是<a href="https://zh.wikipedia.org/wiki/函数副作用" target="_blank" rel="noopener">副作用</a>的）。</li>
 <li>同样的输入，函数将得到同样的输出。</li>
 </ul>
 <p>纯函数的好处主要有几点：</p>
@@ -731,7 +858,7 @@ var _hmt = _hmt || [];
 <li><code>纯函数相互调用组装起来的函数，还是纯函数</code>。</li>
 <li>应用程序或者运行环境（Runtime）可以对纯函数的运算结果进行缓存，运算加快速度。
         
-          <a class="article-more-a" href="/2017/11/15/从高阶函数到高阶组件/#more">... >></a>
+          <a class="article-more-a" href="2017/11/15/从高阶函数到高阶组件/#more">... >></a>
         
       
 
@@ -790,7 +917,7 @@ var _hmt = _hmt || [];
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/15/从高阶函数到高阶组件/">展开全文 >></a>
+          <a class="article-more-a" href="2017/11/15/从高阶函数到高阶组件/">展开全文 >></a>
         </p>
       
 
@@ -827,12 +954,12 @@ var _hmt = _hmt || [];
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/11/12/高阶组件：react应用设计模式/">高阶组件：react应用设计模式</a>
+      <a class="article-title" href="2017/11/12/高阶组件：react应用设计模式/">高阶组件：react应用设计模式</a>
     </h1>
   
 
         
-        <a href="/2017/11/12/高阶组件：react应用设计模式/" class="archive-article-date">
+        <a href="2017/11/12/高阶组件：react应用设计模式/" class="archive-article-date">
   	<time datetime="2017-11-12T02:22:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-12</time>
 </a>
         
@@ -842,7 +969,7 @@ var _hmt = _hmt || [];
       
         <p>In this article we will discuss how to use Higher Order Components to keep your React applications tidy, well structured and easy to maintain. We’ll discuss how pure functions keep code clean and how these same principles can be applied to React components.<br>在这片文章里我们将讨论任何使用高阶组件保持你的react应用整洁，结构合理，易于维护。纯函数是如何保持代码整洁并且如何将这些原则应用到react组件中。
         
-          <a class="article-more-a" href="/2017/11/12/高阶组件：react应用设计模式/#more">... >></a>
+          <a class="article-more-a" href="2017/11/12/高阶组件：react应用设计模式/#more">... >></a>
         
       
 
@@ -917,123 +1044,7 @@ var _hmt = _hmt || [];
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/12/高阶组件：react应用设计模式/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-使您的JavaScript纯净" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/11/11/使您的JavaScript纯净/">使您的JavaScript纯净</a>
-    </h1>
-  
-
-        
-        <a href="/2017/11/11/使您的JavaScript纯净/" class="archive-article-date">
-  	<time datetime="2017-11-11T03:06:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-11</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Once your website or application goes past a small number of lines, it will inevitably contain bugs of some sort.</p>
-<p>一旦您的网站或应用程序达到一定的代码量，它将不可避免地包含某些类型的错误。</p>
-<p>This isn’t specific to JavaScript but is shared by nearly all languages—it’s very tricky, if not impossible, to thoroughly rule out the chance of any bugs in your application.</p>
-<p>这不是JavaScript特有的，而是几乎所有的程序语言都面临这个问题 - 这个问题非常棘手，是不是有可能，彻底的排除掉你的程序中出现任何错误的机会。</p>
-<p>However, that doesn’t mean we can’t take precautions by coding in a way that lessens our vulnerability to bugs.</p>
-<p>然而，这并不意味着我们不能通过编码以某种方式采取预防措施，使我们在bugs面前不显得那么脆弱。
-        
-          <a class="article-more-a" href="/2017/11/11/使您的JavaScript纯净/#more">... >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javascript</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">pure funtion</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">纯函数</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">side effects</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">副作用</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/coding//" class="article-tag-list-link color2">coding</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/11/使您的JavaScript纯净/">展开全文 >></a>
+          <a class="article-more-a" href="2017/11/12/高阶组件：react应用设计模式/">展开全文 >></a>
         </p>
       
 
@@ -1065,7 +1076,7 @@ var _hmt = _hmt || [];
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="page/2/">&amp;laquo; Prev</a><a class="page-number" href="">1</a><a class="page-number" href="page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="page/4/">4</a><a class="extend next" rel="next" href="page/4/">Next &amp;raquo;</a>
     </nav>
   
 
@@ -1077,7 +1088,7 @@ var _hmt = _hmt || [];
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2019 Eric Ma
+    		&copy; 2020 Eric Ma
     	</div>
       	<!-- <div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -1481,6 +1492,18 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">dvajs</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">nginx</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">pfx</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">https</a>
               </li>
             
             <div class="clearfix"></div>

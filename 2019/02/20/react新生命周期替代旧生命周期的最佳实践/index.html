@@ -1,25 +1,30 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
   <meta charset="utf-8">
   
   <meta name="renderer" content="webkit">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="//zjafei.coding.me">
   <title>react新生命周期替代旧生命周期的最佳实践 | 代码猴</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="1. Fiber很长时间React团队一直致力于实现异步渲染以减少交互的卡顿现象，最后的产物就是Fiber。 Fiber的基本原理： 1.把可中断的工作拆分成小任务 2.对正在做的工作调整优先次序、重做、复用上次（做了一半的）成果 3.在父子任务之间从容切换（yield back and forth），以支持React执行过程中的布局刷新 总结：改变原来一次性渲染到结束的不可控的线性栈式数据结构，">
-<meta name="keywords" content="react,生命周期,Fiber,getSnapshotBeforeUpdate,getDerivedStateFromProps,最佳实践">
 <meta property="og:type" content="article">
 <meta property="og:title" content="react新生命周期替代旧生命周期的最佳实践">
-<meta property="og:url" content="//zjafei.coding.me/2019/02/20/react新生命周期替代旧生命周期的最佳实践/index.html">
+<meta property="og:url" content="2019/02/20/react%E6%96%B0%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E6%9B%BF%E4%BB%A3%E6%97%A7%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E7%9A%84%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/index.html">
 <meta property="og:site_name" content="代码猴">
 <meta property="og:description" content="1. Fiber很长时间React团队一直致力于实现异步渲染以减少交互的卡顿现象，最后的产物就是Fiber。 Fiber的基本原理： 1.把可中断的工作拆分成小任务 2.对正在做的工作调整优先次序、重做、复用上次（做了一半的）成果 3.在父子任务之间从容切换（yield back and forth），以支持React执行过程中的布局刷新 总结：改变原来一次性渲染到结束的不可控的线性栈式数据结构，">
-<meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-02-20T02:50:38.513Z">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2019-02-20T00:17:39.000Z">
+<meta property="article:modified_time" content="2019-02-20T02:50:38.513Z">
+<meta property="article:author" content="Eric Ma">
+<meta property="article:tag" content="react">
+<meta property="article:tag" content="生命周期">
+<meta property="article:tag" content="Fiber">
+<meta property="article:tag" content="getSnapshotBeforeUpdate">
+<meta property="article:tag" content="getDerivedStateFromProps">
+<meta property="article:tag" content="最佳实践">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="react新生命周期替代旧生命周期的最佳实践">
-<meta name="twitter:description" content="1. Fiber很长时间React团队一直致力于实现异步渲染以减少交互的卡顿现象，最后的产物就是Fiber。 Fiber的基本原理： 1.把可中断的工作拆分成小任务 2.对正在做的工作调整优先次序、重做、复用上次（做了一半的）成果 3.在父子任务之间从容切换（yield back and forth），以支持React执行过程中的布局刷新 总结：改变原来一次性渲染到结束的不可控的线性栈式数据结构，">
   
   
     <link rel="icon" href="/0/logo.png">
@@ -45,8 +50,8 @@ var _hmt = _hmt || [];
 </script>
 
 
-</head>
-</html>
+<meta name="generator" content="Hexo 4.2.1"></head>
+
 <body>
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
@@ -171,7 +176,7 @@ var _hmt = _hmt || [];
   
 
         
-        <a href="/2019/02/20/react新生命周期替代旧生命周期的最佳实践/" class="archive-article-date">
+        <a href="2019/02/20/react新生命周期替代旧生命周期的最佳实践/" class="archive-article-date">
   	<time datetime="2019-02-20T00:17:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-20</time>
 </a>
         
@@ -347,7 +352,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://zjafei.coding.me/2019/02/20/react新生命周期替代旧生命周期的最佳实践/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http:2019/02/20/react新生命周期替代旧生命周期的最佳实践/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -361,7 +366,7 @@ var _hmt = _hmt || [];
   
 <nav id="article-nav">
   
-    <a href="/2019/02/22/react-hooks-概览/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="2019/02/22/react-hooks-概览/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
@@ -371,7 +376,7 @@ var _hmt = _hmt || [];
     </a>
   
   
-    <a href="/2018/08/19/vuepie----基于apicloud的vue混和app开发脚手架/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="2018/08/19/vuepie----基于apicloud的vue混和app开发脚手架/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">vuepie----基于apicloud的vue混和app开发脚手架</div>
       <i class="icon-circle-right"></i>
     </a>
@@ -415,7 +420,7 @@ var _hmt = _hmt || [];
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2019 Eric Ma
+    		&copy; 2020 Eric Ma
     	</div>
       	<!-- <div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -819,6 +824,18 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">dvajs</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">nginx</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">pfx</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">https</a>
               </li>
             
             <div class="clearfix"></div>

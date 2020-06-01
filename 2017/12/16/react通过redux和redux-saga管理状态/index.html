@@ -1,28 +1,32 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
   <meta charset="utf-8">
   
   <meta name="renderer" content="webkit">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="//zjafei.coding.me">
   <title>react通过redux和redux-saga管理状态 | 代码猴</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="Redux应用场景 某个组件的状态，需要共享 某个状态需要在任何地方都可以拿到 一个组件需要改变全局状态 一个组件需要改变另一个组件的状态">
-<meta name="keywords" content="reduxe,redux-saga,effect,dispatch,reducer">
 <meta property="og:type" content="article">
 <meta property="og:title" content="react通过redux和redux-saga管理状态">
-<meta property="og:url" content="//zjafei.coding.me/2017/12/16/react通过redux和redux-saga管理状态/index.html">
+<meta property="og:url" content="2017/12/16/react%E9%80%9A%E8%BF%87redux%E5%92%8Credux-saga%E7%AE%A1%E7%90%86%E7%8A%B6%E6%80%81/index.html">
 <meta property="og:site_name" content="代码猴">
 <meta property="og:description" content="Redux应用场景 某个组件的状态，需要共享 某个状态需要在任何地方都可以拿到 一个组件需要改变全局状态 一个组件需要改变另一个组件的状态">
-<meta property="og:locale" content="default">
-<meta property="og:image" content="//zjafei.coding.me/0/reducer.png">
-<meta property="og:image" content="//zjafei.coding.me/0/effect.png">
-<meta property="og:updated_time" content="2019-02-20T02:50:38.539Z">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="/0/reducer.png">
+<meta property="og:image" content="/0/effect.png">
+<meta property="article:published_time" content="2017-12-16T11:53:12.000Z">
+<meta property="article:modified_time" content="2019-02-20T02:50:38.539Z">
+<meta property="article:author" content="Eric Ma">
+<meta property="article:tag" content="reduxe">
+<meta property="article:tag" content="redux-saga">
+<meta property="article:tag" content="effect">
+<meta property="article:tag" content="dispatch">
+<meta property="article:tag" content="reducer">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="react通过redux和redux-saga管理状态">
-<meta name="twitter:description" content="Redux应用场景 某个组件的状态，需要共享 某个状态需要在任何地方都可以拿到 一个组件需要改变全局状态 一个组件需要改变另一个组件的状态">
-<meta name="twitter:image" content="//zjafei.coding.me/0/reducer.png">
+<meta name="twitter:image" content="/0/reducer.png">
   
   
     <link rel="icon" href="/0/logo.png">
@@ -48,8 +52,8 @@ var _hmt = _hmt || [];
 </script>
 
 
-</head>
-</html>
+<meta name="generator" content="Hexo 4.2.1"></head>
+
 <body>
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
@@ -174,7 +178,7 @@ var _hmt = _hmt || [];
   
 
         
-        <a href="/2017/12/16/react通过redux和redux-saga管理状态/" class="archive-article-date">
+        <a href="2017/12/16/react通过redux和redux-saga管理状态/" class="archive-article-date">
   	<time datetime="2017-12-16T11:53:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-16</time>
 </a>
         
@@ -328,7 +332,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://zjafei.coding.me/2017/12/16/react通过redux和redux-saga管理状态/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http:2017/12/16/react通过redux和redux-saga管理状态/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -342,7 +346,7 @@ var _hmt = _hmt || [];
   
 <nav id="article-nav">
   
-    <a href="/2017/12/16/react-reducers函数单元测试用例与实践体验/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="2017/12/16/react-reducers函数单元测试用例与实践体验/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
@@ -352,7 +356,7 @@ var _hmt = _hmt || [];
     </a>
   
   
-    <a href="/2017/12/16/react的state和基于props的父子组件和兄弟组件沟通/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="2017/12/16/react的state和基于props的父子组件和兄弟组件沟通/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">react基于state和props的父子组件和兄弟组件沟通</div>
       <i class="icon-circle-right"></i>
     </a>
@@ -396,7 +400,7 @@ var _hmt = _hmt || [];
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2019 Eric Ma
+    		&copy; 2020 Eric Ma
     	</div>
       	<!-- <div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -800,6 +804,18 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">dvajs</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">nginx</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">pfx</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">https</a>
               </li>
             
             <div class="clearfix"></div>
